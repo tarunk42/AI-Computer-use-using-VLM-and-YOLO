@@ -1,0 +1,16 @@
+
+path: /content/rico_chunk_01
+train: images
+val: images
+
+names:
+  0: Button
+  1: CheckBox
+  2: EditText
+  3: ImageButton
+  4: RadioButton
+  5: ToggleButton
+  6: Spinner
+  7: Switch
+  8: SeekBar
+  9: Misc
