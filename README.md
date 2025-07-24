@@ -24,6 +24,7 @@
 - [📈 Performance](#-performance)
 - [🛣️ Roadmap](#️-roadmap)
 - [🤝 Contributing](#-contributing)
+- [👤 Author](#-author)
 
 ---
 
@@ -478,7 +479,17 @@ This sequence ensures that the user specifies all necessary information to perfo
 
 ---
 
-## 📄 License
+## � Author
+
+**Tarun Kashyap**
+
+- **GitHub**: [@tarunk42](https://github.com/tarunk42)
+- **LinkedIn**: [tarun-kashyap](https://linkedin.com/in/tarun-kashyap)
+- **Website**: [tarunk42.github.io](https://tarunk42.github.io)
+
+---
+
+## �📄 License
 
 MIT License
 
