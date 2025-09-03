@@ -178,11 +178,14 @@ cd annotate
 
 ### Environment Setup
 ```bash
-# Activate virtual environment
-source annenv/bin/activate
+# Create virtual environment
+python -m venv venv
 
-# Install dependencies (already included in annenv)
-# pip install ultralytics opencv-python openai pillow numpy matplotlib
+# Activate virtual environment
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
 ```
 
 ### Configuration
