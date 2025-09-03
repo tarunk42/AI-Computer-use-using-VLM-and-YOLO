@@ -172,7 +172,7 @@ graph TD
 python --version
 
 # Clone repository
-git clone <repository-url>
+git clone https://github.com/tarunk42/AI-Computer-use-using-VLM-and-YOLO.git
 cd annotate
 ```
 
