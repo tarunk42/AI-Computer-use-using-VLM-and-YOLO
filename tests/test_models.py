@@ -15,8 +15,7 @@ base64_image = prepare_image("./resources/example.png")
 
 client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
-  api_key="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",           #llama4 
-#   api_key="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",           #gemini2.5exp
+  api_key="your_api_key",
 )
 
 completion = client.chat.completions.create(
@@ -60,7 +59,7 @@ except Exception as e:
 # response = requests.get(
 #   url="https://openrouter.ai/api/v1/auth/key",
 #   headers={
-#     "Authorization": f"Bearer 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"
+#     "Authorization": f"Bearer sk-or-v1-xxxxxx",
 #   }
 # )
 
