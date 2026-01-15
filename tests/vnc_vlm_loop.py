@@ -60,7 +60,8 @@ def run_vlm_analysis(image_path, detections_list):
     base64_image = prepare_image(image_path)
     
     # Prepare detailed prompt with detection information
-    detection_info = "\n".join([f"- {i+1}. {det}" for i, det in enumerate(detections_list)])
+    # Each entry already carries the "#<id>" drawn on its box in the image
+    detection_info = "\n".join(f"- {det}" for det in detections_list)
     prompt = f"""This image has colored bounding boxes around UI elements. The detected objects are:
 {detection_info}
 
@@ -129,12 +130,14 @@ while True:
             continue
 
         label = class_names[cls_id]
-        detections.append(f"{label} (conf: {conf:.2f})")
+        det_id = len(detections) + 1
+        x1, y1, x2, y2 = box.xyxy[0].cpu().numpy().astype(int)
+        # Same "#<id>" in the text list and on the image, so the VLM can match them
+        detections.append(f"#{det_id} {label} (conf: {conf:.2f}, bbox: [{x1}, {y1}, {x2}, {y2}])")
 
         color = get_random_color()
-        x1, y1, x2, y2 = box.xyxy[0].cpu().numpy().astype(int)
         cv2.rectangle(annotated_frame, (x1, y1), (x2, y2), color, 2)
-        cv2.putText(annotated_frame, f"{label} {conf:.2f}", (x1, y1 - 10),
+        cv2.putText(annotated_frame, f"#{det_id} {label} {conf:.2f}", (x1, max(12, y1 - 10)),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
 
     # Save annotated frame
@@ -142,9 +145,9 @@ while True:
     cv2.imwrite(str(annotated_path), cv2.cvtColor(annotated_frame, cv2.COLOR_RGB2BGR))
     print(f"Saved annotated frame: {annotated_path}")
 
-    # Run VLM analysis with detections
+    # Run VLM analysis on the annotated frame, so it can see the numbered boxes
     print("Running VLM analysis...")
-    vlm_output = run_vlm_analysis(OUTPUT_FRAME, detections)
+    vlm_output = run_vlm_analysis(annotated_path, detections)
 
     # Save VLM output
     text_path = Path(OUTPUT_DIR) / f"description_{frame_count:03d}.txt"
