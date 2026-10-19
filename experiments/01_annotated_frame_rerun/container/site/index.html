@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SkyHook - Compare cheap flights and book tickets</title>
+<style>
+  :root {
+    --navy: #003580;
+    --blue: #0071c2;
+    --red: #d4111e;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #d9d9d9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "DejaVu Sans", "Noto Sans", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: #ffffff;
+  }
+  /* ---------- top navigation bar ---------- */
+  .topbar {
+    background: var(--navy);
+    color: #fff;
+    padding: 10px 28px;
+    display: flex;
+    align-items: center;
+    gap: 26px;
+  }
+  .brand { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+  .nav { display: flex; gap: 8px; }
+  .tab {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.35);
+    background: transparent;
+  }
+  .tab.active { background: #1a4f8f; border-color: #1a4f8f; }
+  .right { margin-left: auto; display: flex; align-items: center; gap: 14px; }
+  .btn-ghost {
+    background: #fff; color: var(--navy);
+    border: 1px solid #fff; border-radius: 6px;
+    padding: 9px 16px; font-weight: 700; font-size: 14px;
+  }
+  .btn-ghost.solid { background: #ffffff; }
+  /* ---------- hero ---------- */
+  .hero {
+    background: var(--navy);
+    color: #fff;
+    padding: 30px 28px 118px 28px;
+  }
+  .hero h1 { margin: 0 0 8px 0; font-size: 40px; line-height: 1.15; font-weight: 700; }
+  .hero p { margin: 0; font-size: 17px; color: #d6e2f2; }
+  /* ---------- search card ---------- */
+  .searchwrap { padding: 0 28px; margin-top: -84px; }
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+    padding: 16px;
+  }
+  .row1 { display: flex; gap: 22px; align-items: center; font-size: 14px; margin-bottom: 12px; flex-wrap: wrap; }
+  .radio { display: flex; align-items: center; gap: 7px; }
+  .radio span.dot {
+    width: 16px; height: 16px; border-radius: 50%;
+    border: 2px solid var(--blue); display: inline-block;
+  }
+  .radio span.dot.on { border: 5px solid var(--blue); }
+  .row2 { display: flex; gap: 8px; align-items: stretch; }
+  .field {
+    flex: 1;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 9px 12px;
+    min-width: 0;
+  }
+  .field .lbl { font-size: 11px; color: var(--muted); margin-bottom: 3px; }
+  .field .val { font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; }
+  .field .val.placeholder { color: #9a9a9a; font-weight: 400; }
+  .search {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 0 30px;
+    min-width: 132px;
+  }
+  .row3 { display: flex; gap: 26px; margin-top: 12px; font-size: 14px; flex-wrap: wrap; }
+  .check { display: flex; align-items: center; gap: 8px; }
+  .box { width: 16px; height: 16px; border: 1px solid #767676; border-radius: 3px; display: inline-block; background: #fff; }
+  .box.checked { background: var(--blue); border-color: var(--blue); position: relative; }
+  .box.checked::after {
+    content: ""; position: absolute; left: 4px; top: 1px;
+    width: 5px; height: 9px; border: solid #fff; border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  /* ---------- destination cards ---------- */
+  .section { padding: 34px 28px 10px; }
+  .section h2 { font-size: 22px; margin: 0 0 16px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .dest {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 10px;
+    padding: 16px;
+    height: 132px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .dest .icon {
+    width: 26px; height: 26px; border: 2px solid #fff; border-radius: 5px;
+    margin-bottom: auto;
+  }
+  .dest .name { font-size: 17px; font-weight: 700; }
+  .dest .sub { font-size: 12px; color: #c9d8ee; margin-top: 2px; }
+  footer { padding: 22px 28px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); margin-top: 26px; }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand">SkyHook</div>
+    <div class="nav">
+      <div class="tab active">Flights</div>
+      <div class="tab">Hotels</div>
+      <div class="tab">Car hire</div>
+      <div class="tab">Packages</div>
+    </div>
+    <div class="right">
+      <div class="btn-ghost">Register</div>
+      <div class="btn-ghost solid">Sign in</div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Compare cheap flights and<br>book tickets with ease</h1>
+    <p>Millions of cheap flights. One simple search.</p>
+  </div>
+
+  <div class="searchwrap">
+    <div class="card">
+      <div class="row1">
+        <div class="radio"><span class="dot on"></span> Round-trip</div>
+        <div class="radio"><span class="dot"></span> One-way</div>
+        <div class="radio"><span class="dot"></span> Multi-city</div>
+        <div class="radio" style="margin-left:auto;"><span class="dot"></span> Economy</div>
+      </div>
+      <div class="row2">
+        <div class="field" id="from">
+          <div class="lbl">From</div>
+          <div class="val">London (all airports)</div>
+        </div>
+        <div class="field" id="to">
+          <div class="lbl">To</div>
+          <div class="val placeholder">Country, city or airport</div>
+        </div>
+        <div class="field" id="depart">
+          <div class="lbl">Depart</div>
+          <div class="val placeholder">Add date</div>
+        </div>
+        <div class="field" id="return">
+          <div class="lbl">Return</div>
+          <div class="val placeholder">Add date</div>
+        </div>
+        <div class="field" id="travellers">
+          <div class="lbl">Travellers and cabin class</div>
+          <div class="val">1 adult, Economy</div>
+        </div>
+        <div class="search" id="search">Search</div>
+      </div>
+      <div class="row3">
+        <div class="check"><span class="box"></span> Add nearby airports</div>
+        <div class="check"><span class="box checked"></span> Direct flights only</div>
+        <div class="check"><span class="box"></span> Add a hotel</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Explore by country</h2>
+    <div class="grid">
+      <div class="dest"><div class="icon"></div><div class="name">India</div><div class="sub">From £412</div></div>
+      <div class="dest"><div class="icon"></div><div class="name">Japan</div><div class="sub">From £688</div></div>
+      <div class="dest"><div class="icon"></div><div class="name">Spain</div><div class="sub">From £58</div></div>
+      <div class="dest"><div class="icon"></div><div class="name">Italy</div><div class="sub">From £71</div></div>
+    </div>
+  </div>
+
+  <footer>SkyHook is a local mock page built for the UI-detection experiment. No real bookings are made.</footer>
+
+</body>
+</html>
