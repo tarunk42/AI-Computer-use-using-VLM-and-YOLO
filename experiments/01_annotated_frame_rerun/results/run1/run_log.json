@@ -1,0 +1,842 @@
+{
+  "timestamp_utc": "2026-10-20T13:55:32Z",
+  "vnc_target": "192.168.64.11::5900",
+  "frame": {
+    "width": 1280,
+    "height": 800,
+    "capture_seconds": 4.473
+  },
+  "model_load_seconds": 0.07,
+  "api_model": "deepseek-flash",
+  "confidence_threshold": 0.5,
+  "detectors": {
+    "yolov8_ui_model": {
+      "path": "models/yolov8_ui_model.pt",
+      "inference_ms": 68.3,
+      "count": 28,
+      "detections": [
+        {
+          "label": "button",
+          "class_id": 0,
+          "confidence": 0.9337,
+          "bbox": [
+            1163,
+            12,
+            1252,
+            49
+          ],
+          "center": [
+            1207,
+            30
+          ],
+          "id": 1,
+          "color": [
+            56,
+            56,
+            255
+          ]
+        },
+        {
+          "label": "button",
+          "class_id": 0,
+          "confidence": 0.9101,
+          "bbox": [
+            1047,
+            11,
+            1150,
+            48
+          ],
+          "center": [
+            1098,
+            29
+          ],
+          "id": 2,
+          "color": [
+            56,
+            56,
+            255
+          ]
+        },
+        {
+          "label": "button",
+          "class_id": 0,
+          "confidence": 0.8512,
+          "bbox": [
+            890,
+            289,
+            1094,
+            345
+          ],
+          "center": [
+            992,
+            317
+          ],
+          "id": 3,
+          "color": [
+            56,
+            56,
+            255
+          ]
+        },
+        {
+          "label": "text",
+          "class_id": 7,
+          "confidence": 0.8467,
+          "bbox": [
+            68,
+            356,
+            210,
+            374
+          ],
+          "center": [
+            139,
+            365
+          ],
+          "id": 4,
+          "color": [
+            49,
+            160,
+            255
+          ]
+        },
+        {
+          "label": "text",
+          "class_id": 7,
+          "confidence": 0.8165,
+          "bbox": [
+            52,
+            314,
+            232,
+            337
+          ],
+          "center": [
+            142,
+            325
+          ],
+          "id": 5,
+          "color": [
+            49,
+            160,
+            255
+          ]
+        },
+        {
+          "label": "button",
+          "class_id": 0,
+          "confidence": 0.8067,
+          "bbox": [
+            495,
+            10,
+            613,
+            49
+          ],
+          "center": [
+            554,
+            29
+          ],
+          "id": 6,
+          "color": [
+            56,
+            56,
+            255
+          ]
+        },
+        {
+          "label": "text",
+          "class_id": 7,
+          "confidence": 0.796,
+          "bbox": [
+            66,
+            260,
+            143,
+            279
+          ],
+          "center": [
+            104,
+            269
+          ],
+          "id": 7,
+          "color": [
+            49,
+            160,
+            255
+          ]
+        },
+        {
+          "label": "button",
+          "class_id": 0,
+          "confidence": 0.7852,
+          "bbox": [
+            42,
+            293,
+            249,
+            344
+          ],
+          "center": [
+            145,
+            318
+          ],
+          "id": 8,
+          "color": [
+            56,
+            56,
+            255
+          ]
+        },
+        {
+          "label": "heading",
+          "class_id": 2,
+          "confidence": 0.777,
+          "bbox": [
+            21,
+            88,
+            645,
+            181
+          ],
+          "center": [
+            333,
+            134
+          ],
+          "id": 9,
+          "color": [
+            0,
+            176,
+            80
+          ]
+        },
+        {
+          "label": "button",
+          "class_id": 0,
+          "confidence": 0.7637,
+          "bbox": [
+            280,
+            11,
+            375,
+            48
+          ],
+          "center": [
+            327,
+            29
+          ],
+          "id": 10,
+          "color": [
+            56,
+            56,
+            255
+          ]
+        },
+        {
+          "label": "button",
+          "class_id": 0,
+          "confidence": 0.7596,
+          "bbox": [
+            383,
+            11,
+            486,
+            49
+          ],
+          "center": [
+            434,
+            30
+          ],
+          "id": 11,
+          "color": [
+            56,
+            56,
+            255
+          ]
+        },
+        {
+          "label": "text",
+          "class_id": 7,
+          "confidence": 0.757,
+          "bbox": [
+            253,
+            355,
+            384,
+            375
+          ],
+          "center": [
+            318,
+            365
+          ],
+          "id": 12,
+          "color": [
+            49,
+            160,
+            255
+          ]
+        },
+        {
+          "label": "field",
+          "class_id": 1,
+          "confidence": 0.7524,
+          "bbox": [
+            467,
+            291,
+            670,
+            344
+          ],
+          "center": [
+            568,
+            317
+          ],
+          "id": 13,
+          "color": [
+            255,
+            105,
+            180
+          ]
+        },
+        {
+          "label": "button",
+          "class_id": 0,
+          "confidence": 0.7174,
+          "bbox": [
+            956,
+            467,
+            1256,
+            601
+          ],
+          "center": [
+            1106,
+            534
+          ],
+          "id": 14,
+          "color": [
+            56,
+            56,
+            255
+          ]
+        },
+        {
+          "label": "text",
+          "class_id": 7,
+          "confidence": 0.7065,
+          "bbox": [
+            184,
+            260,
+            249,
+            279
+          ],
+          "center": [
+            216,
+            269
+          ],
+          "id": 15,
+          "color": [
+            49,
+            160,
+            255
+          ]
+        },
+        {
+          "label": "image",
+          "class_id": 4,
+          "confidence": 0.6958,
+          "bbox": [
+            232,
+            357,
+            249,
+            375
+          ],
+          "center": [
+            240,
+            366
+          ],
+          "id": 16,
+          "color": [
+            0,
+            215,
+            255
+          ]
+        },
+        {
+          "label": "button",
+          "class_id": 0,
+          "confidence": 0.6858,
+          "bbox": [
+            175,
+            9,
+            275,
+            49
+          ],
+          "center": [
+            225,
+            29
+          ],
+          "id": 17,
+          "color": [
+            56,
+            56,
+            255
+          ]
+        },
+        {
+          "label": "button",
+          "class_id": 0,
+          "confidence": 0.6567,
+          "bbox": [
+            679,
+            291,
+            883,
+            345
+          ],
+          "center": [
+            781,
+            318
+          ],
+          "id": 18,
+          "color": [
+            56,
+            56,
+            255
+          ]
+        },
+        {
+          "label": "field",
+          "class_id": 1,
+          "confidence": 0.6415,
+          "bbox": [
+            257,
+            292,
+            459,
+            344
+          ],
+          "center": [
+            358,
+            318
+          ],
+          "id": 19,
+          "color": [
+            255,
+            105,
+            180
+          ]
+        },
+        {
+          "label": "text",
+          "class_id": 7,
+          "confidence": 0.6127,
+          "bbox": [
+            429,
+            356,
+            513,
+            375
+          ],
+          "center": [
+            471,
+            365
+          ],
+          "id": 20,
+          "color": [
+            49,
+            160,
+            255
+          ]
+        },
+        {
+          "label": "text",
+          "class_id": 7,
+          "confidence": 0.6085,
+          "bbox": [
+            19,
+            658,
+            605,
+            674
+          ],
+          "center": [
+            312,
+            666
+          ],
+          "id": 21,
+          "color": [
+            49,
+            160,
+            255
+          ]
+        },
+        {
+          "label": "text",
+          "class_id": 7,
+          "confidence": 0.6019,
+          "bbox": [
+            291,
+            261,
+            358,
+            279
+          ],
+          "center": [
+            324,
+            270
+          ],
+          "id": 22,
+          "color": [
+            49,
+            160,
+            255
+          ]
+        },
+        {
+          "label": "image",
+          "class_id": 4,
+          "confidence": 0.5515,
+          "bbox": [
+            43,
+            357,
+            63,
+            376
+          ],
+          "center": [
+            53,
+            366
+          ],
+          "id": 23,
+          "color": [
+            0,
+            215,
+            255
+          ]
+        },
+        {
+          "label": "field",
+          "class_id": 1,
+          "confidence": 0.5367,
+          "bbox": [
+            682,
+            290,
+            883,
+            345
+          ],
+          "center": [
+            782,
+            317
+          ],
+          "id": 24,
+          "color": [
+            255,
+            105,
+            180
+          ]
+        },
+        {
+          "label": "image",
+          "class_id": 4,
+          "confidence": 0.5362,
+          "bbox": [
+            160,
+            261,
+            181,
+            280
+          ],
+          "center": [
+            170,
+            270
+          ],
+          "id": 25,
+          "color": [
+            0,
+            215,
+            255
+          ]
+        },
+        {
+          "label": "heading",
+          "class_id": 2,
+          "confidence": 0.5336,
+          "bbox": [
+            29,
+            425,
+            262,
+            454
+          ],
+          "center": [
+            145,
+            439
+          ],
+          "id": 26,
+          "color": [
+            0,
+            176,
+            80
+          ]
+        },
+        {
+          "label": "image",
+          "class_id": 4,
+          "confidence": 0.5135,
+          "bbox": [
+            269,
+            261,
+            287,
+            279
+          ],
+          "center": [
+            278,
+            270
+          ],
+          "id": 27,
+          "color": [
+            0,
+            215,
+            255
+          ]
+        },
+        {
+          "label": "button",
+          "class_id": 0,
+          "confidence": 0.5096,
+          "bbox": [
+            651,
+            467,
+            943,
+            600
+          ],
+          "center": [
+            797,
+            533
+          ],
+          "id": 28,
+          "color": [
+            56,
+            56,
+            255
+          ]
+        }
+      ]
+    },
+    "chunk02_best": {
+      "path": "models/chunk02_best.pt",
+      "inference_ms": 64.3,
+      "count": 0,
+      "detections": [],
+      "count_at_015": 7,
+      "detections_at_015": [
+        {
+          "label": "Misc",
+          "class_id": 9,
+          "confidence": 0.4186,
+          "bbox": [
+            1162,
+            11,
+            1252,
+            48
+          ],
+          "center": [
+            1207,
+            29
+          ],
+          "id": 1,
+          "color": [
+            56,
+            56,
+            255
+          ]
+        },
+        {
+          "label": "Misc",
+          "class_id": 9,
+          "confidence": 0.4135,
+          "bbox": [
+            43,
+            289,
+            253,
+            345
+          ],
+          "center": [
+            148,
+            317
+          ],
+          "id": 2,
+          "color": [
+            56,
+            56,
+            255
+          ]
+        },
+        {
+          "label": "Misc",
+          "class_id": 9,
+          "confidence": 0.3458,
+          "bbox": [
+            244,
+            470,
+            1263,
+            609
+          ],
+          "center": [
+            753,
+            539
+          ],
+          "id": 3,
+          "color": [
+            56,
+            56,
+            255
+          ]
+        },
+        {
+          "label": "EditText",
+          "class_id": 2,
+          "confidence": 0.342,
+          "bbox": [
+            679,
+            289,
+            883,
+            346
+          ],
+          "center": [
+            781,
+            317
+          ],
+          "id": 4,
+          "color": [
+            49,
+            160,
+            255
+          ]
+        },
+        {
+          "label": "Misc",
+          "class_id": 9,
+          "confidence": 0.3113,
+          "bbox": [
+            27,
+            469,
+            319,
+            601
+          ],
+          "center": [
+            173,
+            535
+          ],
+          "id": 5,
+          "color": [
+            56,
+            56,
+            255
+          ]
+        },
+        {
+          "label": "RadioButton",
+          "class_id": 4,
+          "confidence": 0.302,
+          "bbox": [
+            281,
+            10,
+            375,
+            49
+          ],
+          "center": [
+            328,
+            29
+          ],
+          "id": 6,
+          "color": [
+            0,
+            176,
+            80
+          ]
+        },
+        {
+          "label": "Misc",
+          "class_id": 9,
+          "confidence": 0.2816,
+          "bbox": [
+            11,
+            1,
+            175,
+            55
+          ],
+          "center": [
+            93,
+            28
+          ],
+          "id": 7,
+          "color": [
+            56,
+            56,
+            255
+          ]
+        }
+      ]
+    }
+  },
+  "vlm_runs": {
+    "A1_as_published": {
+      "text": "Based on the provided image, here is an analysis of the UI and its elements. Note that while the prompt states there are colored bounding boxes, **no colored boxes are visible in the image provided**. The analysis below is based purely on the visible UI components and their standard functions.\n\n### 1. UI Element Identification & Functionality\n\n*   **Navigation Menu (Top Left):**\n    *   **Flights** (active, highlighted in blue), **Hotels**, **Car hire**, **Packages**. These are tabs to switch between different search modes.\n    *   **Action:** Click to change the search context (e.g., from flights to hotels).\n*   **User Account Buttons (Top Right):**\n    *   **Register** and **Sign in**. Standard authentication buttons.\n    *   **Action:** Click to create an account or log into an existing one.\n*   **Trip Type Selection (Within Search Box):**\n    *   **Round-trip** (selected radio button), **One-way**, **Multi-city**.\n    *   **Action:** Switch the flight search logic.\n*   **Search Input Fields:**\n    *   **From:** Currently set to \"London (all airports)\".\n    *   **To:** Placeholder \"Country, city or airport\".\n    *   **Depart / Return:** Date picker fields.\n    *   **Travellers and cabin class:** Currently set to \"1 adult, Economy\".\n    *   **Action:** Click to type a location or open a calendar/selection menu.\n*   **Search Filters & Options:**\n    *   **Checkboxes:** \"Add nearby airports\", \"Direct flights only\" (checked), \"Add a hotel\".\n    *   **Action:** Toggle these to refine search results.\n*   **Primary Action Button:**\n    *   **Search** (Large blue button on the right).\n    *   **Action:** Click to execute the flight search based on the entered criteria.\n*   **Destination Cards (Bottom Section):**\n    *   Four cards: **India** (From \u00a3412), **Japan** (From \u00a3688), **Spain** (From \u00a358), **Italy** (From \u00a371). Each has a checkbox.\n    *   **Action:** Clicking the card likely takes you to a dedicated page for that country's flights. Clicking the checkbox allows for comparison.\n\n### 2. Matching Detection Boxes to Elements\nSince no colored boxes are rendered in the image, I have identified the likely targets for detection:\n*   **Box 1 (Top Nav):** The \"Flights\" tab.\n*   **Box 2 (Auth):** The \"Sign in\" button.\n*   **Box 3 (Search Form):** The \"Round-trip\" radio button.\n*   **Box 4 (Inputs):** The \"To\" text field.\n*   **Box 5 (Action):** The main \"Search\" button.\n*   **Box 6 (Promo):** The \"Spain\" destination card.\n\n### 3. User Actions\n*   **Navigation:** Users can switch between travel products (Flights, Hotels, etc.).\n*   **Filtering:** Users can filter by \"Direct flights only\" or include nearby airports.\n*   **Booking:** Users can fill in departure/arrival details and click \"Search\" to find tickets.\n*   **Exploration:** Users can browse the \"Explore by country\" section to find inspiration for cheap travel.\n\n### 4. Logical Sequence of Actions\n1.  **Select Trip Type:** Ensure \"Round-trip\" is selected (or change to One-way).\n2.  **Enter Origin:** Click the \"From\" field and confirm \"London\".\n3.  **Enter Destination:** Click the \"To\" field and type a city (e.g., \"Paris\").\n4.  **Choose Dates:** Click the \"Depart\" field to pick a date, then the \"Return\" field.\n5.  **Set Passengers:** Click the \"Travellers\" field to adjust the number of adults or children.\n6.  **Refine:** Check \"Direct flights only\" if preferred.\n7.  **Execute:** Click the **Search** button to view results.\n8.  **Alternative:** If just browsing, the user might scroll down and click on a card like **Japan** to",
+      "model": "deepseek-flash",
+      "thinking": false,
+      "seconds": 6.42,
+      "finish_reason": "length",
+      "prompt_tokens": 764,
+      "completion_tokens": 900,
+      "reasoning_tokens": null,
+      "prompt": "This image has colored bounding boxes around UI elements. The detected objects are:\n- none\n\nPlease analyze the UI and provide:\n1. For each colored bounding box, identify the UI element type and its specific function\n2. Match each detection box with its likely corresponding element in the UI (e.g., \"The blue bounding box (#3) is a Search button\")\n3. Explain what actions a user could take with each identified element\n4. Suggest a logical sequence of actions a user might perform on this screen\n\nFocus on correlating the visible bounding boxes with their actual UI functions.",
+      "image": "frame_raw.png",
+      "requested_thinking": false,
+      "max_tokens": 900,
+      "attempts": [
+        {
+          "thinking": false,
+          "max_tokens": null,
+          "seconds": 6.42,
+          "finish_reason": "length",
+          "completion_tokens": 900,
+          "reasoning_tokens": null,
+          "reply_chars": 3535
+        }
+      ]
+    },
+    "A2_model_swap": {
+      "text": "Based on the visual layout of the webpage and the provided detection data, here is the analysis of the UI elements:\n\n### 1. Bounding Box Identification & Function\n\n*   **#1 (Button - \"Register\"):** The \"Register\" button in the top-right header. It initiates the account creation process.\n*   **#2 (Button - \"Sign in\"):** The \"Sign in\" button in the top-right header. It opens the login interface for existing users.\n*   **#3 (Button - \"Flights\"):** The active tab in the main navigation bar. It indicates the current search mode.\n*   **#4 (Text - Title):** The main heading \"Compare cheap flights and book tickets with ease.\" It provides the primary value proposition.\n*   **#5 (Text - Subtitle):** The sub-heading \"Millions of cheap flights. One simple search.\" It reinforces the service offering.\n*   **#6 (Button - \"Hotels\"):** A navigation tab that would switch the search interface to hotel bookings.\n*   **#7 (Text - Label):** The label \"From\" above the origin airport input field.\n*   **#8 (Button - \"Car hire\"):** A navigation tab for car rental services.\n*   **#9 (Heading - Section Title):** The text \"Explore by country,\" introducing the destination cards.\n*   **#10 (Button - \"Packages\"):** A navigation tab for combined flight and hotel deals.\n*   **#11 (Button - \"Search\"):** The large blue primary action button. It executes the flight search based on the selected criteria.\n*   **#12 (Text - Footer Disclaimer):** The text at the bottom stating \"SkyHook is a local mock page...\"\n*   **#13 (Field - \"From\" input):** The text box for entering the departure city/airport. Currently contains \"London (all airports).\"\n*   **#14-#18 (Buttons - Country Cards):** Interactive cards for India, Japan, Spain, and Italy. Clicking them would likely pre-fill a search for that destination.\n*   **#19 (Field - \"To\" input):** The text box for entering the arrival city/airport.\n*   **#20-#22 (Text - Card Data):** The price information (e.g., \"From \u00a3412\") displayed on the destination cards.\n*   **#24 (Field - \"Travellers\"):** The input box showing \"1 adult, Economy.\" Clicking this usually opens a dropdown to select passenger counts and cabin class.\n*   **#26 (Heading - Title):** The \"SkyHook\" brand logo/name in the top-left corner.\n\n### 2. Likely Action Sequence\n\nA typical user journey on this screen would follow these steps:\n\n1.  **Select Service:** The user confirms they are on the correct tab (default is **Flights**).\n2.  **Define Search:** \n    *   Enter a destination in the **\"To\" field** (#19).\n    *   Click the **\"Depart\"** field to pick a date from a calendar.\n    *   Adjust the number of passengers by clicking the **\"Travellers\" field** (#24).\n3.  **Refine Search:** The user might check the **\"Direct flights only\"** box or **\"Add a hotel\"** if they want a package deal.\n4.  **Execute:** Click the large blue **\"Search\" button** (#11) to see results.\n5.  **Alternative Path:** If the user is undecided, they might click one of the **Country Cards** (e.g., \"Japan\") to see deals for that specific region.\n6.  **Account Management:** A new user might click **\"Register\"** (#1), while a returning user would click **\"Sign in\"** (#2).",
+      "model": "deepseek-flash",
+      "thinking": false,
+      "seconds": 5.39,
+      "finish_reason": "stop",
+      "prompt_tokens": 1125,
+      "completion_tokens": 816,
+      "reasoning_tokens": null,
+      "prompt": "This image has colored bounding boxes around UI elements. The detected objects are:\n- 1. button (conf: 0.93)\n- 2. button (conf: 0.91)\n- 3. button (conf: 0.85)\n- 4. text (conf: 0.85)\n- 5. text (conf: 0.82)\n- 6. button (conf: 0.81)\n- 7. text (conf: 0.80)\n- 8. button (conf: 0.79)\n- 9. heading (conf: 0.78)\n- 10. button (conf: 0.76)\n- 11. button (conf: 0.76)\n- 12. text (conf: 0.76)\n- 13. field (conf: 0.75)\n- 14. button (conf: 0.72)\n- 15. text (conf: 0.71)\n- 16. image (conf: 0.70)\n- 17. button (conf: 0.69)\n- 18. button (conf: 0.66)\n- 19. field (conf: 0.64)\n- 20. text (conf: 0.61)\n- 21. text (conf: 0.61)\n- 22. text (conf: 0.60)\n- 23. image (conf: 0.55)\n- 24. field (conf: 0.54)\n- 25. image (conf: 0.54)\n- 26. heading (conf: 0.53)\n- 27. image (conf: 0.51)\n- 28. button (conf: 0.51)\n\nPlease analyze the UI and provide:\n1. For each colored bounding box, identify the UI element type and its specific function\n2. Match each detection box with its likely corresponding element in the UI (e.g., \"The blue bounding box (#3) is a Search button\")\n3. Explain what actions a user could take with each identified element\n4. Suggest a logical sequence of actions a user might perform on this screen\n\nFocus on correlating the visible bounding boxes with their actual UI functions.",
+      "image": "frame_raw.png",
+      "requested_thinking": false,
+      "max_tokens": 900,
+      "attempts": [
+        {
+          "thinking": false,
+          "max_tokens": null,
+          "seconds": 5.39,
+          "finish_reason": "stop",
+          "completion_tokens": 816,
+          "reasoning_tokens": null,
+          "reply_chars": 3155
+        }
+      ]
+    },
+    "B_fixed": {
+      "text": "1. BOX MAPPING\n- #1: \"Sign in\" button in the top-right header.\n- #2: \"Register\" button in the top-right header.\n- #3: Main \"Search\" button on the right side of the flight search widget.\n- #4: \"Country, city or airport\" text (part of the \"To\" field label/placeholder).\n- #5: \"London (all airports)\" text (the \"From\" field value).\n- #6: \"Car hire\" navigation tab.\n- #7: \"Return\" trip-type radio button label.\n- #8: Entire \"From\" input field (with #5 inside it).\n- #9: Large main page heading \"Compare cheap flights and book tickets with ease\".\n- #10: \"Flights\" navigation tab.\n- #11: \"Hotels\" navigation tab.\n- #12: \"Country, city or airport\" placeholder text inside the \"To\" field.\n- #13: \"Depart\" date field.\n- #14: \"Italy\" destination card (bottom-right).\n- #15: \"One-way\" trip-type radio button label.\n- #16: \"Direct flights only\" checkbox.\n- #17: \"Packages\" navigation tab.\n- #18: \"Travellers and cabin class\" field (1 adult, Economy).\n- #19: \"To\" input field (destination).\n- #20: \"Add a hotel\" checkbox label.\n- #21: Footer disclaimer text.\n- #22: \"Multi-city\" trip-type radio button label.\n- #23: \"Add nearby airports\" checkbox.\n- #24: \"Return\" date field.\n- #25: Small image/icon next to the \"One-way\" label.\n- #26: \"Explore by country\" section heading.\n- #27: Small image/icon next to the \"Multi-city\" label.\n- #28: \"Spain\" destination card (bottom-center).\n\n2. DETECTOR ERRORS\n- #3 and #14/#28 appear mis-sized/mislabelled relative to their actual role: #3 covers the Search button correctly, but #14 and #28 are destination cards, not buttons in the usual sense.\n- #6 (#6 \"Car hire\" tab) is labelled button but functions as a nav tab.\n- #18 is labelled \"button\" but is actually a field/selector; #24 is labelled field but is the \"Return\" date field, which is fine, yet #24 overlaps with #13/#3 area labels in the JSON? #24 bbox [682,290,883,345] overlaps #13's right edge and #3's left edge slightly \u2014 likely duplicate/overlapping detection of the \"Return\" date field and adjacent controls.\n- #8 overlaps #5 (text inside the field) and #23 (checkbox) \u2014 #8's bbox [42,293,249,344] overlaps #5's text and #23's checkbox, indicating imprecise field boundary.\n- #19 overlaps #12 (placeholder text inside the \"To\" field) \u2014 same issue as #8/#5.\n- #13 overlaps #24 and #3 \u2014 #13 bbox [467,291,670,344] and #24 bbox [682,290,883,345] are adjacent, but #24 overlaps #3's area slightly; #3 bbox [890,289,1094,345] is the Search button and should not overlap #24.\n- #25 and #27 are mislabelled as \"image\"; they are radio buttons/icons, not images.\n- #16 and #23 are checkboxes but labelled \"image\"/\"button\" incorrectly (#16 is image, #23 is image).\n- #14/#28 are destination cards, not buttons; #28 is labelled button (0.51) and #14 button (0.72) \u2014 mislabelled.\n\n3. MISSING ELEMENTS\n- The radio buttons themselves (One-way, Return, Multi-city) are not boxed \u2014 only their labels are (#7, #15, #22).\n- The checkbox squares for \"Add nearby airports\" (#23), \"Direct flights only\" (#16), and \"Add a hotel\" (#20) are not individually boxed.\n- The \"From\" field label \"From\" text is not boxed (only the value #5 is).\n- The \"Economy\" selector text on the right is not boxed.\n- The navigation logo \"SkyHook\" is not boxed.\n- The \"India\" and \"Japan\" destination cards are not boxed (only Spain #28 and Italy #14 are).\n- The small search icon inside the Search button is not separately boxed (fine, part of #3).\n\n4. ACTION SEQUENCE\nTo perform a flight search:\n1. Select trip type: click the \"One-way\" radio/label (#15) or \"Return\" (#7).\n2. Enter origin: click the \"From\" field (#8) and type the city (value shown as #5).\n3. Enter destination: click the \"To\" field (#19) / placeholder text (#12).\n4. Pick departure date: click the \"Depart\" field (#13).\n5. Pick return date (if Return selected): click the \"Return\" field (#24).\n6. Set travellers/cabin: click the \"Travellers and cabin class\" field (#18).\n7. Optionally toggle \"Direct flights only\" (#16) or \"Add nearby airports\" (#23).\n8. Submit: click the \"Search\" button (#3).",
+      "model": "deepseek-flash",
+      "thinking": false,
+      "seconds": 6.89,
+      "finish_reason": "stop",
+      "prompt_tokens": 2576,
+      "completion_tokens": 1159,
+      "reasoning_tokens": null,
+      "prompt": "You are analysing a screenshot of a Linux desktop application.\nNumbered, coloured bounding boxes are drawn on the image; each box is labelled \"#<id> <label> <confidence>\".\n\nThe detector reported these elements (JSON):\n[\n  {\n    \"id\": 1,\n    \"label\": \"button\",\n    \"confidence\": 0.9337,\n    \"bbox_xyxy\": [\n      1163,\n      12,\n      1252,\n      49\n    ],\n    \"center\": [\n      1207,\n      30\n    ]\n  },\n  {\n    \"id\": 2,\n    \"label\": \"button\",\n    \"confidence\": 0.9101,\n    \"bbox_xyxy\": [\n      1047,\n      11,\n      1150,\n      48\n    ],\n    \"center\": [\n      1098,\n      29\n    ]\n  },\n  {\n    \"id\": 3,\n    \"label\": \"button\",\n    \"confidence\": 0.8512,\n    \"bbox_xyxy\": [\n      890,\n      289,\n      1094,\n      345\n    ],\n    \"center\": [\n      992,\n      317\n    ]\n  },\n  {\n    \"id\": 4,\n    \"label\": \"text\",\n    \"confidence\": 0.8467,\n    \"bbox_xyxy\": [\n      68,\n      356,\n      210,\n      374\n    ],\n    \"center\": [\n      139,\n      365\n    ]\n  },\n  {\n    \"id\": 5,\n    \"label\": \"text\",\n    \"confidence\": 0.8165,\n    \"bbox_xyxy\": [\n      52,\n      314,\n      232,\n      337\n    ],\n    \"center\": [\n      142,\n      325\n    ]\n  },\n  {\n    \"id\": 6,\n    \"label\": \"button\",\n    \"confidence\": 0.8067,\n    \"bbox_xyxy\": [\n      495,\n      10,\n      613,\n      49\n    ],\n    \"center\": [\n      554,\n      29\n    ]\n  },\n  {\n    \"id\": 7,\n    \"label\": \"text\",\n    \"confidence\": 0.796,\n    \"bbox_xyxy\": [\n      66,\n      260,\n      143,\n      279\n    ],\n    \"center\": [\n      104,\n      269\n    ]\n  },\n  {\n    \"id\": 8,\n    \"label\": \"button\",\n    \"confidence\": 0.7852,\n    \"bbox_xyxy\": [\n      42,\n      293,\n      249,\n      344\n    ],\n    \"center\": [\n      145,\n      318\n    ]\n  },\n  {\n    \"id\": 9,\n    \"label\": \"heading\",\n    \"confidence\": 0.777,\n    \"bbox_xyxy\": [\n      21,\n      88,\n      645,\n      181\n    ],\n    \"center\": [\n      333,\n      134\n    ]\n  },\n  {\n    \"id\": 10,\n    \"label\": \"button\",\n    \"confidence\": 0.7637,\n    \"bbox_xyxy\": [\n      280,\n      11,\n      375,\n      48\n    ],\n    \"center\": [\n      327,\n      29\n    ]\n  },\n  {\n    \"id\": 11,\n    \"label\": \"button\",\n    \"confidence\": 0.7596,\n    \"bbox_xyxy\": [\n      383,\n      11,\n      486,\n      49\n    ],\n    \"center\": [\n      434,\n      30\n    ]\n  },\n  {\n    \"id\": 12,\n    \"label\": \"text\",\n    \"confidence\": 0.757,\n    \"bbox_xyxy\": [\n      253,\n      355,\n      384,\n      375\n    ],\n    \"center\": [\n      318,\n      365\n    ]\n  },\n  {\n    \"id\": 13,\n    \"label\": \"field\",\n    \"confidence\": 0.7524,\n    \"bbox_xyxy\": [\n      467,\n      291,\n      670,\n      344\n    ],\n    \"center\": [\n      568,\n      317\n    ]\n  },\n  {\n    \"id\": 14,\n    \"label\": \"button\",\n    \"confidence\": 0.7174,\n    \"bbox_xyxy\": [\n      956,\n      467,\n      1256,\n      601\n    ],\n    \"center\": [\n      1106,\n      534\n    ]\n  },\n  {\n    \"id\": 15,\n    \"label\": \"text\",\n    \"confidence\": 0.7065,\n    \"bbox_xyxy\": [\n      184,\n      260,\n      249,\n      279\n    ],\n    \"center\": [\n      216,\n      269\n    ]\n  },\n  {\n    \"id\": 16,\n    \"label\": \"image\",\n    \"confidence\": 0.6958,\n    \"bbox_xyxy\": [\n      232,\n      357,\n      249,\n      375\n    ],\n    \"center\": [\n      240,\n      366\n    ]\n  },\n  {\n    \"id\": 17,\n    \"label\": \"button\",\n    \"confidence\": 0.6858,\n    \"bbox_xyxy\": [\n      175,\n      9,\n      275,\n      49\n    ],\n    \"center\": [\n      225,\n      29\n    ]\n  },\n  {\n    \"id\": 18,\n    \"label\": \"button\",\n    \"confidence\": 0.6567,\n    \"bbox_xyxy\": [\n      679,\n      291,\n      883,\n      345\n    ],\n    \"center\": [\n      781,\n      318\n    ]\n  },\n  {\n    \"id\": 19,\n    \"label\": \"field\",\n    \"confidence\": 0.6415,\n    \"bbox_xyxy\": [\n      257,\n      292,\n      459,\n      344\n    ],\n    \"center\": [\n      358,\n      318\n    ]\n  },\n  {\n    \"id\": 20,\n    \"label\": \"text\",\n    \"confidence\": 0.6127,\n    \"bbox_xyxy\": [\n      429,\n      356,\n      513,\n      375\n    ],\n    \"center\": [\n      471,\n      365\n    ]\n  },\n  {\n    \"id\": 21,\n    \"label\": \"text\",\n    \"confidence\": 0.6085,\n    \"bbox_xyxy\": [\n      19,\n      658,\n      605,\n      674\n    ],\n    \"center\": [\n      312,\n      666\n    ]\n  },\n  {\n    \"id\": 22,\n    \"label\": \"text\",\n    \"confidence\": 0.6019,\n    \"bbox_xyxy\": [\n      291,\n      261,\n      358,\n      279\n    ],\n    \"center\": [\n      324,\n      270\n    ]\n  },\n  {\n    \"id\": 23,\n    \"label\": \"image\",\n    \"confidence\": 0.5515,\n    \"bbox_xyxy\": [\n      43,\n      357,\n      63,\n      376\n    ],\n    \"center\": [\n      53,\n      366\n    ]\n  },\n  {\n    \"id\": 24,\n    \"label\": \"field\",\n    \"confidence\": 0.5367,\n    \"bbox_xyxy\": [\n      682,\n      290,\n      883,\n      345\n    ],\n    \"center\": [\n      782,\n      317\n    ]\n  },\n  {\n    \"id\": 25,\n    \"label\": \"image\",\n    \"confidence\": 0.5362,\n    \"bbox_xyxy\": [\n      160,\n      261,\n      181,\n      280\n    ],\n    \"center\": [\n      170,\n      270\n    ]\n  },\n  {\n    \"id\": 26,\n    \"label\": \"heading\",\n    \"confidence\": 0.5336,\n    \"bbox_xyxy\": [\n      29,\n      425,\n      262,\n      454\n    ],\n    \"center\": [\n      145,\n      439\n    ]\n  },\n  {\n    \"id\": 27,\n    \"label\": \"image\",\n    \"confidence\": 0.5135,\n    \"bbox_xyxy\": [\n      269,\n      261,\n      287,\n      279\n    ],\n    \"center\": [\n      278,\n      270\n    ]\n  },\n  {\n    \"id\": 28,\n    \"label\": \"button\",\n    \"confidence\": 0.5096,\n    \"bbox_xyxy\": [\n      651,\n      467,\n      943,\n      600\n    ],\n    \"center\": [\n      797,\n      533\n    ]\n  }\n]\n\nAnswer with these sections:\n1. BOX MAPPING - one line per box id: what the element actually is, in the page.\n2. DETECTOR ERRORS - boxes that are mislabelled, misplaced or duplicates.\n3. MISSING ELEMENTS - important interactive elements that have no box.\n4. ACTION SEQUENCE - to perform a flight search, list the elements to interact with, in order, using box ids where available.\n\nBe concrete and reference box ids. Do not invent box ids that are not in the JSON.",
+      "image": "frame_web_annotated.png",
+      "requested_thinking": false,
+      "max_tokens": 2000,
+      "attempts": [
+        {
+          "thinking": false,
+          "max_tokens": null,
+          "seconds": 6.89,
+          "finish_reason": "stop",
+          "completion_tokens": 1159,
+          "reasoning_tokens": null,
+          "reply_chars": 4011
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "_rules": "Strict: a claim counts only if it names the element the box covers (truth = IoU match to benchmark_data.GROUND_TRUTH, verified for all 28 boxes). Group-level claims ('#4,#5,#7 are labels') are not scored.",
+  "truth": {"1":"Sign in button","2":"Register button","3":"Travellers field","4":"Nearby airports label","5":"London text in From field","6":"Packages tab","7":"Round-trip label","8":"From field","9":"Hero heading","10":"Hotels tab","11":"Car hire tab","12":"Direct flights label","13":"Depart field","14":"Italy card","15":"One-way label","16":"Direct flights checkbox","17":"Flights tab","18":"Return field","19":"To field","20":"Add hotel label","21":"Footer note","22":"Multi-city label","23":"Nearby airports checkbox","24":"Return field (duplicate of 18)","25":"One-way radio","26":"Explore heading","27":"Multi-city radio","28":"Spain card"},
+  "B_fixed": {
+    "run1": {"addressed":28,"correct":19,"wrong":[3,4,6,7,10,11,12,17,18]},
+    "run2": {"addressed":28,"correct":18,"wrong":[3,6,7,8,12,17,18,20,23,25]},
+    "run3": {"addressed":28,"correct":18,"wrong":[3,4,6,7,11,12,17,18,25,27]},
+    "prior_run_rescored": {"addressed":28,"correct":13,"wrong":[3,4,6,7,10,11,12,15,17,18,22,23,24,25,27],"note":"prior/results/vlm_B_fixed.md under the same rules; prior report said 16/28 because it marked 4 wrong tab claims as correct"}
+  },
+  "A2_model_swap": {
+    "run1": {"addressed":24,"correct":2,"correct_ids":[14,19]},
+    "run2": {"addressed":27,"correct":1,"correct_ids":[13]},
+    "run3": {"addressed":5,"correct":3,"correct_ids":[9,19,26],"note":"grouped most boxes by detector class instead of mapping them; only 5 one-to-one claims"},
+    "prior_run": {"addressed":13,"correct":1}
+  }
+}
