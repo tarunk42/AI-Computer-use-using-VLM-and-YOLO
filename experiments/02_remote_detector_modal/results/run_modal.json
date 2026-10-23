@@ -1,0 +1,120 @@
+{
+  "runs": [
+    {
+      "call": 1,
+      "capture_ms": 58.5,
+      "upload_bytes": 79279,
+      "modal_wall_ms": 10572.2,
+      "modal_total_ms": 8550.3,
+      "modal_inference_ms": 4312.9,
+      "modal_decode_ms": 4237.4,
+      "net_ms": 2021.9,
+      "device": "cpu",
+      "task_id": "ta-01M66FWV406J6NHBSTN0KKM2AR",
+      "count": 29
+    },
+    {
+      "call": 2,
+      "capture_ms": null,
+      "upload_bytes": 79279,
+      "modal_wall_ms": 1922.3,
+      "modal_total_ms": 90.6,
+      "modal_inference_ms": 72.6,
+      "modal_decode_ms": 18.0,
+      "net_ms": 1831.7,
+      "device": "cpu",
+      "task_id": "ta-01M66FWV406J6NHBSTN0KKM2AR",
+      "count": 29
+    },
+    {
+      "call": 3,
+      "capture_ms": null,
+      "upload_bytes": 79279,
+      "modal_wall_ms": 1733.0,
+      "modal_total_ms": 98.1,
+      "modal_inference_ms": 82.6,
+      "modal_decode_ms": 15.6,
+      "net_ms": 1634.9,
+      "device": "cpu",
+      "task_id": "ta-01M66FWV406J6NHBSTN0KKM2AR",
+      "count": 29
+    },
+    {
+      "call": 4,
+      "capture_ms": 108.0,
+      "upload_bytes": 79279,
+      "modal_wall_ms": 1736.9,
+      "modal_total_ms": 114.5,
+      "modal_inference_ms": 100.5,
+      "modal_decode_ms": 14.1,
+      "net_ms": 1622.4,
+      "device": "cpu",
+      "task_id": "ta-01M66FWV406J6NHBSTN0KKM2AR",
+      "count": 29
+    },
+    {
+      "call": 5,
+      "capture_ms": null,
+      "upload_bytes": 79279,
+      "modal_wall_ms": 1626.5,
+      "modal_total_ms": 99.6,
+      "modal_inference_ms": 85.2,
+      "modal_decode_ms": 14.4,
+      "net_ms": 1526.9,
+      "device": "cpu",
+      "task_id": "ta-01M66FWV406J6NHBSTN0KKM2AR",
+      "count": 29
+    },
+    {
+      "call": 6,
+      "capture_ms": null,
+      "upload_bytes": 79279,
+      "modal_wall_ms": 1875.9,
+      "modal_total_ms": 79.9,
+      "modal_inference_ms": 65.3,
+      "modal_decode_ms": 14.6,
+      "net_ms": 1796.0,
+      "device": "cpu",
+      "task_id": "ta-01M66FWV406J6NHBSTN0KKM2AR",
+      "count": 29
+    },
+    {
+      "call": 7,
+      "capture_ms": 75.0,
+      "upload_bytes": 79279,
+      "modal_wall_ms": 2051.0,
+      "modal_total_ms": 80.3,
+      "modal_inference_ms": 64.8,
+      "modal_decode_ms": 15.6,
+      "net_ms": 1970.7,
+      "device": "cpu",
+      "task_id": "ta-01M66FWV406J6NHBSTN0KKM2AR",
+      "count": 29
+    },
+    {
+      "call": 8,
+      "capture_ms": null,
+      "upload_bytes": 79279,
+      "modal_wall_ms": 1657.1,
+      "modal_total_ms": 85.4,
+      "modal_inference_ms": 69.2,
+      "modal_decode_ms": 16.2,
+      "net_ms": 1571.7,
+      "device": "cpu",
+      "task_id": "ta-01M66FWV406J6NHBSTN0KKM2AR",
+      "count": 29
+    }
+  ],
+  "vlm": {
+    "text": "1. BOX MAPPING\n- #1: \"Sign in\" text button in the top-right header.\n- #2: \"Register\" outline button in the top-right header.\n- #3: Blue \"Search\" button in the flight search panel.\n- #4: \"Direct flights only\" checkbox label text.\n- #5: \"London\" text showing the Origin field's current value.\n- #6: \"Round-trip\" radio button label.\n- #7: \"Car hire\" top navigation button.\n- #8: The Origin/From field row (London (all airports)) \u2014 detected as a button, but it is really the origin input area.\n- #9: Hero heading \"Compare cheap flights and book tickets with ease\".\n- #10: \"Add a hotel\" checkbox label text.\n- #11: \"Flights\" top navigation tab button (active).\n- #12: \"Depart\" date field in the search panel.\n- #13: \"Hotels\" top navigation button.\n- #14: \"Spain\" destination card (image/tile).\n- #15: \"(all airports)\" text part of the Origin value.\n- #16: The \"Direct flights only\" checkbox tick icon.\n- #17: \"Spain\" destination card image/tile.\n- #18: \"SkyHook\" logo/button at top-left.\n- #19: \"To\" origin/destination field (Country, city or airport).\n- #20: Demo note text at the footer.\n- #21: \"Add a hotel\" checkbox box.\n- #22: \"One-way\" radio button label.\n- #23: \"Add nearby airports\" checkbox icon.\n- #24: \"Return\" date field's surrounding area.\n- #25: Round-trip radio button icon.\n- #26: \"Explore by country\" section heading.\n- #27: \"Return\" date field (Add date) \u2014 detected as button.\n- #28: One-way radio button icon.\n- #29: \"Italy\" destination card image/tile.\n\n2. DETECTOR ERRORS\n- #8 is labelled \"button\" but is the Origin/Flight-from row (a field/selection area), not a button.\n- #24 and #27 are duplicates: both cover the Return date field; #24 is the container, #27 is over-classified as a button.\n- #3 overlaps the same region as the actual blue Search button correctly, but #27 and #12 partially share the bounded area; #27 label should be \"field\".\n- #5 is only the value text \"London\", not the whole origin button/field \u2014 partial box.\n- #15 and #5 together cover the origin value; #15 is fragmentary.\n- #16 and #4 duplicate the Direct-flights checkbox (icon vs label) \u2014 not merged.\n- #23 and #4 / #21 are separate parts of related checkboxes; #23 label \"image\" is an icon, fine but non-semantic.\n- #29 and #14: #29 is labelled \"image\" but same Spain tile type as #17 \u2014 inconsistent; #14 is duplicate region of #17/#29 family.\n- #1 and #2 are correctly buttons, but #1 bbox slightly clips the \"Sign in\" button border.\n- #18 is a logo/button merged; acceptable but not a true interactive button.\n- #6/#25 and #22/#28 are duplicate pairs for Round-trip and One-way radio controls (label + icon).\n- #24 bbox extends past the visual field. Minor.\n\n3. MISSING ELEMENTS\n- \"Economy\" cabin-class dropdown selector (top-right of search panel) is not boxed.\n- The \"Travellers and cabin class\" combined dropdown (contains \"1 adult, Economy\") is partly covered by #3's area but no box identifies the dropdown itself.\n- \"India\", \"Japan\" destination cards have no boxes (#14/#17/#29 box only Spain/Italy; India and Japan tiles are unlabeled).\n- The date-picker calendar icons / clear controls inside #12 and #27 are not separately boxed.\n- The Origin field's full clickable input (#8 covers only part) \u2014 the whole styled box including dropdown arrow is not cleanly boxed.\n- The \"Explore by country\" section's card names \"India\" and \"Japan\" plus their \"From \u00a3\" price lines lack boxes.\n- The top nav \"Car hire\"/\"Packages\" have boxes (#7) but \"Packages\" itself is not boxed \u2014 #7 is Car hire only.\n\n4. ACTION SEQUENCE\nTo perform a flight search:\n1. Click #8 (Origin field) \u2014 optionally choose \"Add nearby airports\" via #23.\n2. Type/select origin; the value text is #5/#15.\n3. Click #19 (Destination / \"To\" field) and enter a city/airport.\n4. Select trip type: #6/#25 for Round-trip or #22/#28 for One-way.\n5. Click #12 (Depart date field) and pick a date.\n6. If round-trip, click #27/#24 (Return date field) and pick a date.\n7. Optionally tick \"Direct flights only\" via #16/#4.\n8. Optionally tick \"Add a hotel\" via #21/#10.\n9. Click #3 (Search button) to run the search.",
+    "seconds": 7.33,
+    "prompt_tokens": 2260,
+    "completion_tokens": 1128,
+    "reasoning_tokens": null,
+    "finish_reason": "stop"
+  },
+  "container": {
+    "system": "Linux",
+    "release": "6.18.35"
+  }
+}

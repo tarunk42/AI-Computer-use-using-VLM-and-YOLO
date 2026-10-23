@@ -1,0 +1,13 @@
+{
+  "call": 1,
+  "capture_ms": 58.5,
+  "upload_bytes": 79279,
+  "modal_wall_ms": 10572.2,
+  "modal_total_ms": 8550.3,
+  "modal_inference_ms": 4312.9,
+  "modal_decode_ms": 4237.4,
+  "net_ms": 2021.9,
+  "device": "cpu",
+  "task_id": "ta-01M66FWV406J6NHBSTN0KKM2AR",
+  "count": 29
+}
