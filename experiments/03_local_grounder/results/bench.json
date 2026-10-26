@@ -1,0 +1,1336 @@
+{
+  "summary": {
+    "repeats": 3,
+    "tasks": {
+      "T1": {
+        "prompt": "Search for flights to Tokyo.",
+        "runs": 3,
+        "successes": 3,
+        "success_rate": 1.0,
+        "mean_steps": 3.67,
+        "mean_seconds": 16.2
+      },
+      "T2": {
+        "prompt": "Switch the trip type to one-way, then search for flights to Japan.",
+        "runs": 3,
+        "successes": 3,
+        "success_rate": 1.0,
+        "mean_steps": 4,
+        "mean_seconds": 17.3
+      },
+      "T3": {
+        "prompt": "Tick 'Add nearby airports', set the departure date to 2026-12-01, then search for flights to Italy.",
+        "runs": 3,
+        "successes": 2,
+        "success_rate": 0.667,
+        "mean_steps": 6,
+        "mean_seconds": 24.7
+      }
+    },
+    "overall": {
+      "episodes": 9,
+      "successes": 8,
+      "success_rate": 0.889,
+      "mean_steps": 4.56,
+      "mean_seconds": 19.4,
+      "plan_ms_median": 1460,
+      "ground_ms_median": 906,
+      "capture_ms_median": 80,
+      "grounding_in_element": "33/33",
+      "grounding_rate": 1.0
+    }
+  },
+  "episodes": [
+    {
+      "task": "Search for flights to Tokyo.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "type",
+          "target": "the To destination input field labeled 'Country, city or airport'",
+          "text": "Tokyo",
+          "reason": "Enter Tokyo as the flight destination.",
+          "capture_s": 0.07,
+          "plan_s": 6.98,
+          "planner_tokens": {
+            "prompt_tokens": 852,
+            "completion_tokens": 35
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              357,
+              318
+            ],
+            "infer_ms": 1626.9,
+            "wall_ms": 1650.1,
+            "raw": "</s><s>(<loc_279>,<loc_397>)</s>"
+          },
+          "click_s": 0.12,
+          "type_s": 0.05,
+          "result": "executed"
+        },
+        {
+          "step": 2,
+          "action": "click",
+          "target": "the Search button",
+          "text": null,
+          "reason": "Destination Tokyo is entered; clicking Search runs the flight search.",
+          "capture_s": 0.07,
+          "plan_s": 1.27,
+          "planner_tokens": {
+            "prompt_tokens": 867,
+            "completion_tokens": 26
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              1169,
+              320
+            ],
+            "infer_ms": 949.4,
+            "wall_ms": 960.9,
+            "raw": "</s><s>(<loc_913>,<loc_400>)</s>"
+          },
+          "click_s": 0.11,
+          "result": "executed"
+        },
+        {
+          "step": 3,
+          "action": "done",
+          "target": null,
+          "text": null,
+          "reason": "The search executed successfully: Tokyo is entered as the destination and the page shows 'RESULTS READY \u2014 flights from London (all airports) to Tokyo'.",
+          "capture_s": 0.08,
+          "plan_s": 1.34,
+          "planner_tokens": {
+            "prompt_tokens": 876,
+            "completion_tokens": 39
+          },
+          "result": "done"
+        }
+      ],
+      "final_state": {
+        "seq": 10,
+        "session": "h4xngcege9w",
+        "from": "London (all airports)",
+        "to": "Tokyo",
+        "depart": "",
+        "return": "",
+        "travellers": "1 adult, Economy",
+        "trip": "round-trip",
+        "direct": true,
+        "nearby": false,
+        "hotel": false,
+        "status": "results",
+        "submitted": {
+          "from": "London (all airports)",
+          "to": "Tokyo",
+          "depart": ""
+        },
+        "focus": "search"
+      },
+      "total_s": 14.34,
+      "n_steps": 3,
+      "task_id": "T1",
+      "run": 1,
+      "success": true,
+      "ground_hits": [
+        "To field",
+        "Search button",
+        null
+      ],
+      "ground_in_element": 2,
+      "ground_calls": 2
+    },
+    {
+      "task": "Search for flights to Tokyo.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "type",
+          "target": "the To destination input field",
+          "text": "Tokyo",
+          "reason": "Enter Tokyo as the flight destination.",
+          "capture_s": 0.08,
+          "plan_s": 6.83,
+          "planner_tokens": {
+            "prompt_tokens": 852,
+            "completion_tokens": 27
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              361,
+              318
+            ],
+            "infer_ms": 1252.4,
+            "wall_ms": 1260.7,
+            "raw": "</s><s>(<loc_282>,<loc_397>)</s>"
+          },
+          "click_s": 0.12,
+          "type_s": 0.06,
+          "result": "executed"
+        },
+        {
+          "step": 2,
+          "action": "click",
+          "target": "the Tokyo suggestion in the destination dropdown",
+          "text": null,
+          "reason": "Selecting the Tokyo airport suggestion ensures the destination is properly set before searching.",
+          "capture_s": 0.09,
+          "plan_s": 1.35,
+          "planner_tokens": {
+            "prompt_tokens": 859,
+            "completion_tokens": 33
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              358,
+              319
+            ],
+            "infer_ms": 900.7,
+            "wall_ms": 912.3,
+            "raw": "</s><s>(<loc_280>,<loc_399>)</s>"
+          },
+          "click_s": 0.12,
+          "result": "executed"
+        },
+        {
+          "step": 3,
+          "action": "click",
+          "target": "the Search button",
+          "text": null,
+          "reason": "Destination Tokyo is set; clicking Search runs the flight search for Tokyo.",
+          "capture_s": 0.08,
+          "plan_s": 1.28,
+          "planner_tokens": {
+            "prompt_tokens": 872,
+            "completion_tokens": 28
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              1169,
+              320
+            ],
+            "infer_ms": 906.1,
+            "wall_ms": 914.5,
+            "raw": "</s><s>(<loc_913>,<loc_400>)</s>"
+          },
+          "click_s": 0.12,
+          "result": "executed"
+        },
+        {
+          "step": 4,
+          "action": "done",
+          "target": null,
+          "text": null,
+          "reason": "The search executed successfully; a green 'RESULTS READY \u2014 flights from London (all airports) to Tokyo' confirmation is displayed, so the task of searching for flights to Tokyo is complete.",
+          "capture_s": 0.07,
+          "plan_s": 1.39,
+          "planner_tokens": {
+            "prompt_tokens": 881,
+            "completion_tokens": 46
+          },
+          "result": "done"
+        }
+      ],
+      "final_state": {
+        "seq": 10,
+        "session": "g23zo6c6wzj",
+        "from": "London (all airports)",
+        "to": "Tokyo",
+        "depart": "",
+        "return": "",
+        "travellers": "1 adult, Economy",
+        "trip": "round-trip",
+        "direct": true,
+        "nearby": false,
+        "hotel": false,
+        "status": "results",
+        "submitted": {
+          "from": "London (all airports)",
+          "to": "Tokyo",
+          "depart": ""
+        },
+        "focus": "search"
+      },
+      "total_s": 17.1,
+      "n_steps": 4,
+      "task_id": "T1",
+      "run": 2,
+      "success": true,
+      "ground_hits": [
+        "To field",
+        "To field",
+        "Search button",
+        null
+      ],
+      "ground_in_element": 3,
+      "ground_calls": 3
+    },
+    {
+      "task": "Search for flights to Tokyo.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "click",
+          "target": "the To destination input field",
+          "text": null,
+          "reason": "Fill in destination as Tokyo for the flight search",
+          "capture_s": 0.05,
+          "plan_s": 6.83,
+          "planner_tokens": {
+            "prompt_tokens": 852,
+            "completion_tokens": 25
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              361,
+              318
+            ],
+            "infer_ms": 1354.8,
+            "wall_ms": 1366.8,
+            "raw": "</s><s>(<loc_282>,<loc_397>)</s>"
+          },
+          "click_s": 0.12,
+          "result": "executed"
+        },
+        {
+          "step": 2,
+          "action": "type",
+          "target": "the To destination input field (placeholder 'Country, city or airport')",
+          "text": "Tokyo",
+          "reason": "Typing Tokyo into the destination field to search flights to Tokyo.",
+          "capture_s": 0.06,
+          "plan_s": 1.28,
+          "planner_tokens": {
+            "prompt_tokens": 859,
+            "completion_tokens": 42
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              357,
+              318
+            ],
+            "infer_ms": 866.2,
+            "wall_ms": 874.7,
+            "raw": "</s><s>(<loc_279>,<loc_397>)</s>"
+          },
+          "click_s": 0.12,
+          "type_s": 0.06,
+          "result": "executed"
+        },
+        {
+          "step": 3,
+          "action": "click",
+          "target": "the Search button",
+          "text": null,
+          "reason": "The destination field now contains 'Tokyo', so clicking Search will run the flight search.",
+          "capture_s": 0.08,
+          "plan_s": 1.38,
+          "planner_tokens": {
+            "prompt_tokens": 879,
+            "completion_tokens": 31
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              1169,
+              320
+            ],
+            "infer_ms": 869.7,
+            "wall_ms": 879.5,
+            "raw": "</s><s>(<loc_913>,<loc_400>)</s>"
+          },
+          "click_s": 0.11,
+          "result": "executed"
+        },
+        {
+          "step": 4,
+          "action": "done",
+          "target": null,
+          "text": null,
+          "reason": "The search completed successfully \u2014 a green 'RESULTS READY \u2014 flights from London (all airports) to Tokyo' banner confirms the Tokyo flight search.",
+          "capture_s": 0.08,
+          "plan_s": 1.31,
+          "planner_tokens": {
+            "prompt_tokens": 888,
+            "completion_tokens": 37
+          },
+          "result": "done"
+        }
+      ],
+      "final_state": {
+        "seq": 10,
+        "session": "2ghbtpr5n0k",
+        "from": "London (all airports)",
+        "to": "Tokyo",
+        "depart": "",
+        "return": "",
+        "travellers": "1 adult, Economy",
+        "trip": "round-trip",
+        "direct": true,
+        "nearby": false,
+        "hotel": false,
+        "status": "results",
+        "submitted": {
+          "from": "London (all airports)",
+          "to": "Tokyo",
+          "depart": ""
+        },
+        "focus": "search"
+      },
+      "total_s": 17.04,
+      "n_steps": 4,
+      "task_id": "T1",
+      "run": 3,
+      "success": true,
+      "ground_hits": [
+        "To field",
+        "To field",
+        "Search button",
+        null
+      ],
+      "ground_in_element": 3,
+      "ground_calls": 3
+    },
+    {
+      "task": "Switch the trip type to one-way, then search for flights to Japan.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "click",
+          "target": "the One-way radio button",
+          "text": null,
+          "reason": "Switch the trip type to one-way as requested.",
+          "capture_s": 0.08,
+          "plan_s": 6.32,
+          "planner_tokens": {
+            "prompt_tokens": 861,
+            "completion_tokens": 26
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              201,
+              271
+            ],
+            "infer_ms": 1261.6,
+            "wall_ms": 1270.7,
+            "raw": "</s><s>(<loc_157>,<loc_339>)</s>"
+          },
+          "click_s": 0.12,
+          "result": "executed"
+        },
+        {
+          "step": 2,
+          "action": "type",
+          "target": "the To destination input field",
+          "text": "Japan",
+          "reason": "Enter Japan as the flight destination before searching.",
+          "capture_s": 0.08,
+          "plan_s": 1.26,
+          "planner_tokens": {
+            "prompt_tokens": 868,
+            "completion_tokens": 29
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              361,
+              318
+            ],
+            "infer_ms": 968.6,
+            "wall_ms": 978.2,
+            "raw": "</s><s>(<loc_282>,<loc_397>)</s>"
+          },
+          "click_s": 0.12,
+          "type_s": 0.06,
+          "result": "executed"
+        },
+        {
+          "step": 3,
+          "action": "click",
+          "target": "the Search button",
+          "text": null,
+          "reason": "With One-way selected and Japan entered as destination, clicking Search performs the flight search.",
+          "capture_s": 0.08,
+          "plan_s": 1.13,
+          "planner_tokens": {
+            "prompt_tokens": 879,
+            "completion_tokens": 31
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              1169,
+              320
+            ],
+            "infer_ms": 1278.8,
+            "wall_ms": 1286.0,
+            "raw": "</s><s>(<loc_913>,<loc_400>)</s>"
+          },
+          "click_s": 0.13,
+          "result": "executed"
+        },
+        {
+          "step": 4,
+          "action": "done",
+          "target": null,
+          "text": null,
+          "reason": "One-way is selected, destination Japan is entered, and search has been executed with results ready.",
+          "capture_s": 0.08,
+          "plan_s": 1.57,
+          "planner_tokens": {
+            "prompt_tokens": 888,
+            "completion_tokens": 27
+          },
+          "result": "done"
+        }
+      ],
+      "final_state": {
+        "seq": 11,
+        "session": "da35krxvngk",
+        "from": "London (all airports)",
+        "to": "Japan",
+        "depart": "",
+        "return": "",
+        "travellers": "1 adult, Economy",
+        "trip": "one-way",
+        "direct": true,
+        "nearby": false,
+        "hotel": false,
+        "status": "results",
+        "submitted": {
+          "from": "London (all airports)",
+          "to": "Japan",
+          "depart": ""
+        },
+        "focus": "search"
+      },
+      "total_s": 17.01,
+      "n_steps": 4,
+      "task_id": "T2",
+      "run": 1,
+      "success": true,
+      "ground_hits": [
+        "One-way radio",
+        "To field",
+        "Search button",
+        null
+      ],
+      "ground_in_element": 3,
+      "ground_calls": 3
+    },
+    {
+      "task": "Switch the trip type to one-way, then search for flights to Japan.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "click",
+          "target": "the One-way radio button",
+          "text": null,
+          "reason": "Switch the trip type to one-way as requested.",
+          "capture_s": 0.08,
+          "plan_s": 6.82,
+          "planner_tokens": {
+            "prompt_tokens": 861,
+            "completion_tokens": 26
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              201,
+              271
+            ],
+            "infer_ms": 1612.0,
+            "wall_ms": 1625.7,
+            "raw": "</s><s>(<loc_157>,<loc_339>)</s>"
+          },
+          "click_s": 0.11,
+          "result": "executed"
+        },
+        {
+          "step": 2,
+          "action": "type",
+          "target": "the To destination input field",
+          "text": "Japan",
+          "reason": "Enter Japan as the destination for the one-way flight search.",
+          "capture_s": 0.08,
+          "plan_s": 1.61,
+          "planner_tokens": {
+            "prompt_tokens": 868,
+            "completion_tokens": 32
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              357,
+              318
+            ],
+            "infer_ms": 873.6,
+            "wall_ms": 882.3,
+            "raw": "</s><s>(<loc_279>,<loc_397>)</s>"
+          },
+          "click_s": 0.12,
+          "type_s": 0.06,
+          "result": "executed"
+        },
+        {
+          "step": 3,
+          "action": "click",
+          "target": "the Search button",
+          "text": null,
+          "reason": "One-way is selected and destination Japan is entered; clicking Search finds the flights.",
+          "capture_s": 0.08,
+          "plan_s": 1.09,
+          "planner_tokens": {
+            "prompt_tokens": 879,
+            "completion_tokens": 30
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              1169,
+              320
+            ],
+            "infer_ms": 864.6,
+            "wall_ms": 872.7,
+            "raw": "</s><s>(<loc_913>,<loc_400>)</s>"
+          },
+          "click_s": 0.12,
+          "result": "executed"
+        },
+        {
+          "step": 4,
+          "action": "done",
+          "target": null,
+          "text": null,
+          "reason": "One-way is selected, Japan is set as the destination, and the search was executed with results ready.",
+          "capture_s": 0.09,
+          "plan_s": 1.25,
+          "planner_tokens": {
+            "prompt_tokens": 888,
+            "completion_tokens": 29
+          },
+          "result": "done"
+        }
+      ],
+      "final_state": {
+        "seq": 11,
+        "session": "x5qvv5dw0co",
+        "from": "London (all airports)",
+        "to": "Japan",
+        "depart": "",
+        "return": "",
+        "travellers": "1 adult, Economy",
+        "trip": "one-way",
+        "direct": true,
+        "nearby": false,
+        "hotel": false,
+        "status": "results",
+        "submitted": {
+          "from": "London (all airports)",
+          "to": "Japan",
+          "depart": ""
+        },
+        "focus": "search"
+      },
+      "total_s": 17.33,
+      "n_steps": 4,
+      "task_id": "T2",
+      "run": 2,
+      "success": true,
+      "ground_hits": [
+        "One-way radio",
+        "To field",
+        "Search button",
+        null
+      ],
+      "ground_in_element": 3,
+      "ground_calls": 3
+    },
+    {
+      "task": "Switch the trip type to one-way, then search for flights to Japan.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "click",
+          "target": "the One-way radio button",
+          "text": null,
+          "reason": "Switching trip type to one-way as the first step.",
+          "capture_s": 0.08,
+          "plan_s": 7.08,
+          "planner_tokens": {
+            "prompt_tokens": 861,
+            "completion_tokens": 28
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              201,
+              271
+            ],
+            "infer_ms": 1418.5,
+            "wall_ms": 1436.7,
+            "raw": "</s><s>(<loc_157>,<loc_339>)</s>"
+          },
+          "click_s": 0.12,
+          "result": "executed"
+        },
+        {
+          "step": 2,
+          "action": "type",
+          "target": "the To destination input field",
+          "text": "Japan",
+          "reason": "Enter Japan as the destination before searching for one-way flights.",
+          "capture_s": 0.06,
+          "plan_s": 1.16,
+          "planner_tokens": {
+            "prompt_tokens": 868,
+            "completion_tokens": 32
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              357,
+              318
+            ],
+            "infer_ms": 872.9,
+            "wall_ms": 882.0,
+            "raw": "</s><s>(<loc_279>,<loc_397>)</s>"
+          },
+          "click_s": 0.11,
+          "type_s": 0.05,
+          "result": "executed"
+        },
+        {
+          "step": 3,
+          "action": "click",
+          "target": "the Search button",
+          "text": null,
+          "reason": "Trip type is One-way and destination is Japan; clicking Search runs the flight search.",
+          "capture_s": 0.08,
+          "plan_s": 1.54,
+          "planner_tokens": {
+            "prompt_tokens": 879,
+            "completion_tokens": 31
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              1169,
+              320
+            ],
+            "infer_ms": 861.2,
+            "wall_ms": 870.6,
+            "raw": "</s><s>(<loc_913>,<loc_400>)</s>"
+          },
+          "click_s": 0.12,
+          "result": "executed"
+        },
+        {
+          "step": 4,
+          "action": "done",
+          "target": null,
+          "text": null,
+          "reason": "The One-way trip type is selected, the To destination is set to Japan, and the search was executed \u2014 the page shows 'RESULTS READY \u2014 flights from London (all airports) to Japan'.",
+          "capture_s": 0.07,
+          "plan_s": 1.52,
+          "planner_tokens": {
+            "prompt_tokens": 888,
+            "completion_tokens": 49
+          },
+          "result": "done"
+        }
+      ],
+      "final_state": {
+        "seq": 11,
+        "session": "85iurr4rceu",
+        "from": "London (all airports)",
+        "to": "Japan",
+        "depart": "",
+        "return": "",
+        "travellers": "1 adult, Economy",
+        "trip": "one-way",
+        "direct": true,
+        "nearby": false,
+        "hotel": false,
+        "status": "results",
+        "submitted": {
+          "from": "London (all airports)",
+          "to": "Japan",
+          "depart": ""
+        },
+        "focus": "search"
+      },
+      "total_s": 17.61,
+      "n_steps": 4,
+      "task_id": "T2",
+      "run": 3,
+      "success": true,
+      "ground_hits": [
+        "One-way radio",
+        "To field",
+        "Search button",
+        null
+      ],
+      "ground_in_element": 3,
+      "ground_calls": 3
+    },
+    {
+      "task": "Tick 'Add nearby airports', set the departure date to 2026-12-01, then search for flights to Italy.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "click",
+          "target": "the Add nearby airports checkbox",
+          "text": null,
+          "reason": "Tick the 'Add nearby airports' option as the first step of the task.",
+          "capture_s": 0.08,
+          "plan_s": 6.83,
+          "planner_tokens": {
+            "prompt_tokens": 872,
+            "completion_tokens": 32
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              136,
+              367
+            ],
+            "infer_ms": 1018.0,
+            "wall_ms": 1028.6,
+            "raw": "</s><s>(<loc_106>,<loc_459>)</s>"
+          },
+          "click_s": 0.12,
+          "result": "executed"
+        },
+        {
+          "step": 2,
+          "action": "fail",
+          "target": null,
+          "text": null,
+          "reason": "bad json: {\"action\":\"click\",\"target\":\"the To destination input field\",\"reason\":\"Set destin",
+          "capture_s": 0.08,
+          "plan_s": 1.78,
+          "planner_tokens": {
+            "prompt_tokens": 879,
+            "completion_tokens": 160
+          },
+          "result": "invalid_action"
+        },
+        {
+          "step": 3,
+          "action": "click",
+          "target": "the Depart date input field",
+          "text": null,
+          "reason": "Set the departure date to 2026-12-01 next.",
+          "capture_s": 0.09,
+          "plan_s": 1.28,
+          "planner_tokens": {
+            "prompt_tokens": 887,
+            "completion_tokens": 30
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              570,
+              318
+            ],
+            "infer_ms": 948.0,
+            "wall_ms": 957.3,
+            "raw": "</s><s>(<loc_445>,<loc_397>)</s>"
+          },
+          "click_s": 0.12,
+          "result": "executed"
+        },
+        {
+          "step": 4,
+          "action": "type",
+          "target": "the Depart date input field",
+          "text": "2026-12-01",
+          "reason": "Set the departure date to 2026-12-01 in the Depart date field.",
+          "capture_s": 0.08,
+          "plan_s": 1.46,
+          "planner_tokens": {
+            "prompt_tokens": 898,
+            "completion_tokens": 43
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              570,
+              318
+            ],
+            "infer_ms": 1029.0,
+            "wall_ms": 1040.7,
+            "raw": "</s><s>(<loc_445>,<loc_397>)</s>"
+          },
+          "click_s": 0.12,
+          "type_s": 0.1,
+          "result": "executed"
+        },
+        {
+          "step": 5,
+          "action": "click",
+          "target": "the To destination input field",
+          "text": null,
+          "reason": "Departure date is set and nearby airports is ticked; now enter the destination to search flights to Italy.",
+          "capture_s": 0.09,
+          "plan_s": 1.27,
+          "planner_tokens": {
+            "prompt_tokens": 909,
+            "completion_tokens": 38
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              357,
+              318
+            ],
+            "infer_ms": 880.8,
+            "wall_ms": 891.0,
+            "raw": "</s><s>(<loc_279>,<loc_397>)</s>"
+          },
+          "click_s": 0.11,
+          "result": "executed"
+        },
+        {
+          "step": 6,
+          "action": "type",
+          "target": "the To destination input field with placeholder 'Country, city or airport'",
+          "text": "Italy",
+          "reason": "Enter Italy as the flight destination.",
+          "capture_s": 0.07,
+          "plan_s": 2.19,
+          "planner_tokens": {
+            "prompt_tokens": 920,
+            "completion_tokens": 36
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              357,
+              318
+            ],
+            "infer_ms": 867.8,
+            "wall_ms": 876.0,
+            "raw": "</s><s>(<loc_279>,<loc_397>)</s>"
+          },
+          "click_s": 0.12,
+          "type_s": 0.06,
+          "result": "executed"
+        }
+      ],
+      "final_state": {
+        "seq": 19,
+        "session": "8lodnnc3cti",
+        "from": "London (all airports)",
+        "to": "Italy",
+        "depart": "2026-12-01",
+        "return": "",
+        "travellers": "1 adult, Economy",
+        "trip": "round-trip",
+        "direct": true,
+        "nearby": true,
+        "hotel": false,
+        "status": "idle",
+        "submitted": null,
+        "focus": "to"
+      },
+      "total_s": 24.89,
+      "n_steps": 6,
+      "task_id": "T3",
+      "run": 1,
+      "success": false,
+      "ground_hits": [
+        "Nearby checkbox",
+        null,
+        "Depart field",
+        "Depart field",
+        "To field",
+        "To field"
+      ],
+      "ground_in_element": 5,
+      "ground_calls": 5
+    },
+    {
+      "task": "Tick 'Add nearby airports', set the departure date to 2026-12-01, then search for flights to Italy.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "click",
+          "target": "the Add nearby airports checkbox",
+          "text": null,
+          "reason": "Tick the 'Add nearby airports' option as required by the task.",
+          "capture_s": 0.07,
+          "plan_s": 6.75,
+          "planner_tokens": {
+            "prompt_tokens": 872,
+            "completion_tokens": 30
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              136,
+              367
+            ],
+            "infer_ms": 916.0,
+            "wall_ms": 927.5,
+            "raw": "</s><s>(<loc_106>,<loc_459>)</s>"
+          },
+          "click_s": 0.12,
+          "result": "executed"
+        },
+        {
+          "step": 2,
+          "action": "click",
+          "target": "the Depart date input field",
+          "text": null,
+          "reason": "To set the departure date to 2026-12-01, I need to focus the Depart date field.",
+          "capture_s": 0.08,
+          "plan_s": 1.31,
+          "planner_tokens": {
+            "prompt_tokens": 879,
+            "completion_tokens": 39
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              570,
+              318
+            ],
+            "infer_ms": 890.7,
+            "wall_ms": 900.3,
+            "raw": "</s><s>(<loc_445>,<loc_397>)</s>"
+          },
+          "click_s": 0.12,
+          "result": "executed"
+        },
+        {
+          "step": 3,
+          "action": "type",
+          "target": "the Depart date input field showing 'Add date'",
+          "text": "2026-12-01",
+          "reason": "Setting the departure date to 2026-12-01.",
+          "capture_s": 0.07,
+          "plan_s": 1.25,
+          "planner_tokens": {
+            "prompt_tokens": 890,
+            "completion_tokens": 43
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              568,
+              318
+            ],
+            "infer_ms": 944.0,
+            "wall_ms": 951.5,
+            "raw": "</s><s>(<loc_444>,<loc_397>)</s>"
+          },
+          "click_s": 0.12,
+          "type_s": 0.11,
+          "result": "executed"
+        },
+        {
+          "step": 4,
+          "action": "click",
+          "target": "the To destination input field showing 'Country, city or airport'",
+          "text": null,
+          "reason": "Set the destination to Italy before searching for flights.",
+          "capture_s": 0.07,
+          "plan_s": 1.48,
+          "planner_tokens": {
+            "prompt_tokens": 906,
+            "completion_tokens": 34
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              358,
+              318
+            ],
+            "infer_ms": 853.2,
+            "wall_ms": 861.9,
+            "raw": "</s><s>(<loc_280>,<loc_397>)</s>"
+          },
+          "click_s": 0.12,
+          "result": "executed"
+        },
+        {
+          "step": 5,
+          "action": "type",
+          "target": "the To destination input field showing 'Country, city or airport'",
+          "text": "Italy",
+          "reason": "Enter Italy as the destination in the To field to search for flights to Italy.",
+          "capture_s": 0.09,
+          "plan_s": 1.46,
+          "planner_tokens": {
+            "prompt_tokens": 925,
+            "completion_tokens": 44
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              357,
+              318
+            ],
+            "infer_ms": 863.8,
+            "wall_ms": 873.5,
+            "raw": "</s><s>(<loc_279>,<loc_397>)</s>"
+          },
+          "click_s": 0.12,
+          "type_s": 0.06,
+          "result": "executed"
+        },
+        {
+          "step": 6,
+          "action": "click",
+          "target": "the blue Search button",
+          "text": null,
+          "reason": "All criteria (nearby airports ticked, date 2026-12-01, destination Italy) are set, so submit the search.",
+          "capture_s": 0.08,
+          "plan_s": 1.6,
+          "planner_tokens": {
+            "prompt_tokens": 944,
+            "completion_tokens": 44
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              1169,
+              320
+            ],
+            "infer_ms": 866.7,
+            "wall_ms": 876.5,
+            "raw": "</s><s>(<loc_913>,<loc_400>)</s>"
+          },
+          "click_s": 0.12,
+          "result": "executed"
+        }
+      ],
+      "final_state": {
+        "seq": 22,
+        "session": "1neh34pmr3j",
+        "from": "London (all airports)",
+        "to": "Italy",
+        "depart": "2026-12-01",
+        "return": "",
+        "travellers": "1 adult, Economy",
+        "trip": "round-trip",
+        "direct": true,
+        "nearby": true,
+        "hotel": false,
+        "status": "results",
+        "submitted": {
+          "from": "London (all airports)",
+          "to": "Italy",
+          "depart": "2026-12-01"
+        },
+        "focus": "search"
+      },
+      "total_s": 25.44,
+      "n_steps": 6,
+      "task_id": "T3",
+      "run": 2,
+      "success": true,
+      "ground_hits": [
+        "Nearby checkbox",
+        "Depart field",
+        "Depart field",
+        "To field",
+        "To field",
+        "Search button"
+      ],
+      "ground_in_element": 6,
+      "ground_calls": 6
+    },
+    {
+      "task": "Tick 'Add nearby airports', set the departure date to 2026-12-01, then search for flights to Italy.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "click",
+          "target": "the 'Add nearby airports' checkbox",
+          "text": null,
+          "reason": "Tick the 'Add nearby airports' option as requested.",
+          "capture_s": 0.09,
+          "plan_s": 6.5,
+          "planner_tokens": {
+            "prompt_tokens": 872,
+            "completion_tokens": 29
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              136,
+              367
+            ],
+            "infer_ms": 972.5,
+            "wall_ms": 982.8,
+            "raw": "</s><s>(<loc_106>,<loc_459>)</s>"
+          },
+          "click_s": 0.12,
+          "result": "executed"
+        },
+        {
+          "step": 2,
+          "action": "click",
+          "target": "the Depart date input field",
+          "text": null,
+          "reason": "Open the departure date picker to set the date.",
+          "capture_s": 0.08,
+          "plan_s": 1.17,
+          "planner_tokens": {
+            "prompt_tokens": 881,
+            "completion_tokens": 27
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              570,
+              318
+            ],
+            "infer_ms": 861.5,
+            "wall_ms": 869.9,
+            "raw": "</s><s>(<loc_445>,<loc_397>)</s>"
+          },
+          "click_s": 0.12,
+          "result": "executed"
+        },
+        {
+          "step": 3,
+          "action": "type",
+          "target": "the Depart date input field",
+          "text": "2026-12-01",
+          "reason": "Set the departure date to 2026-12-01 in the Depart field.",
+          "capture_s": 0.07,
+          "plan_s": 1.23,
+          "planner_tokens": {
+            "prompt_tokens": 892,
+            "completion_tokens": 42
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              570,
+              318
+            ],
+            "infer_ms": 900.8,
+            "wall_ms": 909.6,
+            "raw": "</s><s>(<loc_445>,<loc_397>)</s>"
+          },
+          "click_s": 0.12,
+          "type_s": 0.1,
+          "result": "executed"
+        },
+        {
+          "step": 4,
+          "action": "click",
+          "target": "Italy country card",
+          "text": null,
+          "reason": "Selecting Italy as the destination before searching for flights.",
+          "capture_s": 0.08,
+          "plan_s": 2.04,
+          "planner_tokens": {
+            "prompt_tokens": 903,
+            "completion_tokens": 25
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              1100,
+              525
+            ],
+            "infer_ms": 875.0,
+            "wall_ms": 884.7,
+            "raw": "</s><s>(<loc_859>,<loc_656>)</s>"
+          },
+          "click_s": 0.11,
+          "result": "executed"
+        },
+        {
+          "step": 5,
+          "action": "click",
+          "target": "the Search button",
+          "text": null,
+          "reason": "All fields are set (Add nearby airports ticked, departure 2026-12-01, destination Italy); clicking Search runs the flight search.",
+          "capture_s": 0.06,
+          "plan_s": 1.53,
+          "planner_tokens": {
+            "prompt_tokens": 912,
+            "completion_tokens": 44
+          },
+          "ground": {
+            "ok": true,
+            "point": [
+              1169,
+              320
+            ],
+            "infer_ms": 1050.8,
+            "wall_ms": 1057.3,
+            "raw": "</s><s>(<loc_913>,<loc_400>)</s>"
+          },
+          "click_s": 0.12,
+          "result": "executed"
+        },
+        {
+          "step": 6,
+          "action": "done",
+          "target": null,
+          "text": null,
+          "reason": "The 'Add nearby airports' checkbox is ticked, the departure date shows 2026-12-01, Italy is set as destination, and the search ran successfully showing results.",
+          "capture_s": 0.08,
+          "plan_s": 1.39,
+          "planner_tokens": {
+            "prompt_tokens": 921,
+            "completion_tokens": 45
+          },
+          "result": "done"
+        }
+      ],
+      "final_state": {
+        "seq": 17,
+        "session": "f9xqqd2l41n",
+        "from": "London (all airports)",
+        "to": "Italy",
+        "depart": "2026-12-01",
+        "return": "",
+        "travellers": "1 adult, Economy",
+        "trip": "round-trip",
+        "direct": true,
+        "nearby": true,
+        "hotel": false,
+        "status": "results",
+        "submitted": {
+          "from": "London (all airports)",
+          "to": "Italy",
+          "depart": "2026-12-01"
+        },
+        "focus": "search"
+      },
+      "total_s": 23.76,
+      "n_steps": 6,
+      "task_id": "T3",
+      "run": 3,
+      "success": true,
+      "ground_hits": [
+        "Nearby checkbox",
+        "Depart field",
+        "Depart field",
+        "Italy card",
+        "Search button",
+        null
+      ],
+      "ground_in_element": 5,
+      "ground_calls": 5
+    }
+  ]
+}

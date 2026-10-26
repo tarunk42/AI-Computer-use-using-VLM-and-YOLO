@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SkyHook - Compare cheap flights and book tickets</title>
+<style>
+  :root { --navy:#003580; --blue:#0071c2; --green:#16a34a; --red:#dc2626;
+          --ink:#1a1a1a; --muted:#6b6b6b; --line:#d9d9d9; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:"DejaVu Sans","Noto Sans",Helvetica,Arial,sans-serif; color:var(--ink); background:#fff; }
+  .topbar { background:var(--navy); color:#fff; padding:10px 28px; display:flex; align-items:center; gap:26px; }
+  .brand { font-size:26px; font-weight:700; }
+  .nav { display:flex; gap:8px; }
+  .tab { padding:10px 18px; border-radius:6px; font-size:15px; font-weight:600;
+         color:#fff; border:1px solid rgba(255,255,255,.35); }
+  .tab.active { background:#1a4f8f; border-color:#1a4f8f; }
+  .right { margin-left:auto; display:flex; gap:14px; }
+  .btn-ghost { background:#fff; color:var(--navy); border:1px solid #fff; border-radius:6px;
+               padding:9px 16px; font-weight:700; font-size:14px; }
+  .hero { background:var(--navy); color:#fff; padding:30px 28px 118px; }
+  .hero h1 { margin:0 0 8px; font-size:40px; line-height:1.15; }
+  .hero p { margin:0; font-size:17px; color:#d6e2f2; }
+  .searchwrap { padding:0 28px; margin-top:-84px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:10px;
+          box-shadow:0 4px 18px rgba(0,0,0,.12); padding:16px; }
+  .row1 { display:flex; gap:22px; align-items:center; font-size:14px; margin-bottom:12px; }
+  .radio { display:flex; align-items:center; gap:7px; }
+  .dot { width:16px; height:16px; border-radius:50%; border:2px solid var(--blue);
+         display:inline-block; background:#fff; }
+  .dot.on { border:5px solid var(--blue); }
+  .row2 { display:flex; gap:8px; align-items:stretch; }
+  .field { flex:1; border:1px solid var(--line); border-radius:8px; padding:9px 12px; min-width:0; }
+  .field .lbl { font-size:11px; color:var(--muted); margin-bottom:3px; }
+  .field input { border:none; outline:none; width:100%; font-size:15px; font-weight:600;
+                 font-family:inherit; color:var(--ink); padding:0; }
+  .field input::placeholder { color:#9a9a9a; font-weight:400; }
+  .search { background:var(--blue); color:#fff; border:none; border-radius:8px;
+            font-size:17px; font-weight:700; padding:0 30px; min-width:132px; cursor:pointer; }
+  .row3 { display:flex; gap:26px; margin-top:12px; font-size:14px; }
+  .check { display:flex; align-items:center; gap:8px; }
+  .box { width:16px; height:16px; border:1px solid #767676; border-radius:3px;
+         background:#fff; display:inline-block; }
+  .box.on { background:var(--blue); border-color:var(--blue); }
+  .section { padding:26px 28px 10px; }
+  .section h2 { font-size:22px; margin:0 0 16px; }
+  .grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .dest { background:var(--navy); color:#fff; border-radius:10px; padding:16px;
+          height:120px; display:flex; flex-direction:column; justify-content:flex-end; cursor:pointer; }
+  .dest .icon { width:26px; height:26px; border:2px solid #fff; border-radius:5px; margin-bottom:auto; }
+  .dest .name { font-size:17px; font-weight:700; }
+  .dest .sub { font-size:12px; color:#c9d8ee; }
+  #banner { margin:0 28px; padding:14px 18px; border-radius:8px; font-size:17px;
+            font-weight:700; display:none; }
+  #banner.ok { display:block; background:#16a34a; color:#fff; }
+  #banner.err { display:block; background:#dc2626; color:#fff; }
+  footer { padding:18px 28px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); margin-top:18px; }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">SkyHook</div>
+    <div class="nav">
+      <div class="tab active" id="tab-flights">Flights</div>
+      <div class="tab" id="tab-hotels">Hotels</div>
+      <div class="tab" id="tab-car">Car hire</div>
+      <div class="tab" id="tab-packages">Packages</div>
+    </div>
+    <div class="right">
+      <div class="btn-ghost" id="register">Register</div>
+      <div class="btn-ghost" id="signin">Sign in</div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Compare cheap flights and<br>book tickets with ease</h1>
+    <p>Millions of cheap flights. One simple search.</p>
+  </div>
+
+  <div class="searchwrap">
+    <div class="card">
+      <div class="row1">
+        <div class="radio" id="rt"><span class="dot on"></span> Round-trip</div>
+        <div class="radio" id="ow"><span class="dot"></span> One-way</div>
+        <div class="radio" id="mc"><span class="dot"></span> Multi-city</div>
+        <div class="radio" style="margin-left:auto;" id="econ"><span class="dot"></span> Economy</div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <div class="lbl">From</div>
+          <input id="from" value="London (all airports)" autocomplete="off">
+        </div>
+        <div class="field">
+          <div class="lbl">To</div>
+          <input id="to" placeholder="Country, city or airport" autocomplete="off">
+        </div>
+        <div class="field">
+          <div class="lbl">Depart</div>
+          <input id="depart" placeholder="Add date" autocomplete="off">
+        </div>
+        <div class="field">
+          <div class="lbl">Return</div>
+          <input id="return" placeholder="Add date" autocomplete="off">
+        </div>
+        <div class="field">
+          <div class="lbl">Travellers and cabin class</div>
+          <input id="travellers" value="1 adult, Economy" autocomplete="off">
+        </div>
+        <button class="search" id="search">Search</button>
+      </div>
+      <div class="row3">
+        <div class="check" id="nearby"><span class="box"></span> Add nearby airports</div>
+        <div class="check" id="direct"><span class="box on"></span> Direct flights only</div>
+        <div class="check" id="hotel"><span class="box"></span> Add a hotel</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="banner"></div>
+
+  <div class="section">
+    <h2>Explore by country</h2>
+    <div class="grid">
+      <div class="dest" data-country="India"><div class="icon"></div><div class="name">India</div><div class="sub">From £412</div></div>
+      <div class="dest" data-country="Japan"><div class="icon"></div><div class="name">Japan</div><div class="sub">From £688</div></div>
+      <div class="dest" data-country="Spain"><div class="icon"></div><div class="name">Spain</div><div class="sub">From £58</div></div>
+      <div class="dest" data-country="Italy"><div class="icon"></div><div class="name">Italy</div><div class="sub">From £71</div></div>
+    </div>
+  </div>
+
+  <footer>SkyHook is a local mock page built for the UI-detection experiment. No real bookings are made.</footer>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let seq = 0;
+const SESSION = Math.random().toString(36).slice(2);
+const state = { seq: 0, session: SESSION, from: "", to: "", depart: "", return: "", travellers: "",
+                trip: "round-trip", direct: true, nearby: false, hotel: false,
+                status: "idle", submitted: null };
+
+function sync() {
+  state.seq = ++seq;
+  state.session = SESSION;
+  state.from = $("from").value;
+  state.to = $("to").value;
+  state.depart = $("depart").value;
+  state["return"] = $("return").value;
+  state.travellers = $("travellers").value;
+  state.direct = $("direct").querySelector(".box").classList.contains("on");
+  state.nearby = $("nearby").querySelector(".box").classList.contains("on");
+  state.hotel = $("hotel").querySelector(".box").classList.contains("on");
+  fetch("/state", {method: "POST", headers: {"Content-Type": "application/json"},
+                   body: JSON.stringify(state)});
+}
+["from","to","depart","return","travellers"].forEach(id => $(id).addEventListener("input", sync));
+
+// clicking anywhere in a field focuses its input, like a real labelled control
+document.querySelectorAll(".field").forEach(f => f.addEventListener("mousedown", (e) => {
+  const inp = f.querySelector("input");
+  if (inp) { e.preventDefault(); inp.focus(); }
+}));
+
+// debug hook: report which element has keyboard focus (used by the harness)
+document.addEventListener("focusin", (e) => {
+  state.focus = e.target.id || e.target.tagName;
+  sync();
+});
+
+function toggle(el) {
+  el.querySelector(".box").classList.toggle("on");
+  sync();
+}
+$("nearby").onclick = () => toggle($("nearby"));
+$("direct").onclick = () => toggle($("direct"));
+$("hotel").onclick = () => toggle($("hotel"));
+
+function pick(ids, chosen) {
+  ids.forEach(id => { const d = $(id).querySelector(".dot"); d.classList.toggle("on", id === chosen); });
+  state.trip = chosen === "rt" ? "round-trip" : chosen === "ow" ? "one-way" : "multi-city";
+  sync();
+}
+$("rt").onclick = () => pick(["rt","ow","mc"], "rt");
+$("ow").onclick = () => pick(["rt","ow","mc"], "ow");
+$("mc").onclick = () => pick(["rt","ow","mc"], "mc");
+
+document.querySelectorAll(".dest").forEach(d => d.onclick = () => {
+  $("to").value = d.dataset.country;
+  sync();
+});
+
+$("search").onclick = () => {
+  sync();
+  const b = $("banner");
+  if (!$("to").value.trim()) {
+    b.className = "err";
+    b.textContent = "Please enter a destination before searching.";
+    state.status = "error";
+  } else {
+    b.className = "ok";
+    b.textContent = "RESULTS READY — flights from " + ($("from").value || "anywhere") +
+                    " to " + $("to").value + (state.depart ? " departing " + state.depart : "");
+    state.status = "results";
+    state.submitted = { from: $("from").value, to: $("to").value, depart: $("depart").value };
+  }
+  sync();
+};
+
+sync();
+</script>
+</body>
+</html>
