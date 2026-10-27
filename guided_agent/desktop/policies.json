@@ -1,0 +1,25 @@
+{
+  "policies": {
+    "DisableTelemetry": true,
+    "DisableFirefoxStudies": true,
+    "DisablePocket": true,
+    "DisableAppUpdate": true,
+    "DontCheckDefaultBrowser": true,
+    "OverrideFirstRunPage": "",
+    "OverridePostUpdatePage": "",
+    "NoDefaultBookmarks": true,
+    "PasswordManagerEnabled": false,
+    "OfferToSaveLogins": false,
+    "DisableFormHistory": true,
+    "UserMessaging": {"WhatsNew": false, "ExtensionRecommendations": false,
+                      "FeatureRecommendations": false, "SkipOnboarding": true, "MoreFromMozilla": false},
+    "FirefoxHome": {"Search": true, "TopSites": false, "SponsoredTopSites": false,
+                    "Highlights": false, "Pocket": false, "SponsoredPocket": false, "Snippets": false},
+    "Cookies": {"Behavior": "reject-tracker-and-partition-foreign"},
+    "Preferences": {
+      "browser.tabs.warnOnClose": {"Value": false, "Status": "locked"},
+      "browser.sessionstore.resume_from_crash": {"Value": false, "Status": "locked"},
+      "datareporting.policy.dataSubmissionPolicyBypassNotification": {"Value": true, "Status": "locked"}
+    }
+  }
+}
