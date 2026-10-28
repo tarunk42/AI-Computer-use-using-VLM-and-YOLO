@@ -1,0 +1,148 @@
+[
+ {
+  "kind": "batch6",
+  "call": 0,
+  "cold": false,
+  "gpu": "NVIDIA A10",
+  "load_s": 7.57,
+  "rtt_ms": 12776.8,
+  "gpu_ms": 441.4,
+  "per_target_ms": [
+   82.4,
+   72.2,
+   70.6,
+   72.6,
+   72.4,
+   71.2
+  ],
+  "network_ms": 12331.3,
+  "correct": 6
+ },
+ {
+  "kind": "batch6",
+  "call": 1,
+  "cold": false,
+  "gpu": "NVIDIA A10",
+  "load_s": 7.57,
+  "rtt_ms": 1217.4,
+  "gpu_ms": 543.6,
+  "per_target_ms": [
+   192.1,
+   72.1,
+   70.1,
+   70.1,
+   69.5,
+   69.6
+  ],
+  "network_ms": 670.2,
+  "correct": 6
+ },
+ {
+  "kind": "batch6",
+  "call": 2,
+  "cold": false,
+  "gpu": "NVIDIA A10",
+  "load_s": 7.57,
+  "rtt_ms": 932.0,
+  "gpu_ms": 443.9,
+  "per_target_ms": [
+   80.3,
+   72.5,
+   72.2,
+   73.2,
+   73.1,
+   72.5
+  ],
+  "network_ms": 483.7,
+  "correct": 6
+ },
+ {
+  "kind": "batch6",
+  "call": 3,
+  "cold": false,
+  "gpu": "NVIDIA A10",
+  "load_s": 7.57,
+  "rtt_ms": 937.8,
+  "gpu_ms": 437.8,
+  "per_target_ms": [
+   80.9,
+   71.6,
+   70.6,
+   70.5,
+   72.6,
+   71.6
+  ],
+  "network_ms": 496.0,
+  "correct": 6
+ },
+ {
+  "kind": "single",
+  "call": 0,
+  "rtt_ms": 789.1,
+  "gpu_ms": 84.4,
+  "network_ms": 700.5
+ },
+ {
+  "kind": "single",
+  "call": 1,
+  "rtt_ms": 579.1,
+  "gpu_ms": 82.1,
+  "network_ms": 492.7
+ },
+ {
+  "kind": "single",
+  "call": 2,
+  "rtt_ms": 565.9,
+  "gpu_ms": 81.2,
+  "network_ms": 480.4
+ },
+ {
+  "kind": "single",
+  "call": 3,
+  "rtt_ms": 654.1,
+  "gpu_ms": 80.8,
+  "network_ms": 568.9
+ },
+ {
+  "kind": "single",
+  "call": 4,
+  "rtt_ms": 561.1,
+  "gpu_ms": 83.2,
+  "network_ms": 473.3
+ },
+ {
+  "kind": "single",
+  "call": 5,
+  "rtt_ms": 572.0,
+  "gpu_ms": 79.4,
+  "network_ms": 488.5
+ },
+ {
+  "kind": "single",
+  "call": 6,
+  "rtt_ms": 577.4,
+  "gpu_ms": 82.7,
+  "network_ms": 490.6
+ },
+ {
+  "kind": "single",
+  "call": 7,
+  "rtt_ms": 570.4,
+  "gpu_ms": 83.7,
+  "network_ms": 482.7
+ },
+ {
+  "kind": "single",
+  "call": 8,
+  "rtt_ms": 576.7,
+  "gpu_ms": 81.1,
+  "network_ms": 491.5
+ },
+ {
+  "kind": "single",
+  "call": 9,
+  "rtt_ms": 589.6,
+  "gpu_ms": 83.0,
+  "network_ms": 502.5
+ }
+]
