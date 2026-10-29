@@ -1,0 +1,73 @@
+{
+ "task": "Using Wikipedia's search box, find the year the Eiffel Tower was completed.",
+ "status": "done",
+ "result": "The Eiffel Tower article states it was constructed from 1887 to 1889, so it was completed in 1889 (opened 31 March 1889 for the 1889 World's Fair).",
+ "elapsed_s": 28.5,
+ "usage": {
+  "prompt": 2236,
+  "completion": 103,
+  "calls": 2,
+  "retries": 0
+ },
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "type",
+    "target": "the 'Search Wikipedia' input field at the top of the page",
+    "text": "Eiffel Tower",
+    "submit": true,
+    "reason": "Search Wikipedia for the Eiffel Tower article to find its completion year."
+   },
+   "plan_ms": 1938,
+   "ground": {
+    "rtt_ms": 1695.7,
+    "gpu_ms": 83.7,
+    "network_ms": 1606.5,
+    "cold": false,
+    "gpu": "NVIDIA A10",
+    "raw": "</s><s>(<loc_375>,<loc_176>)</s>"
+   },
+   "point": [
+    480,
+    141
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.2,
+    "local": 0.0037,
+    "visible": true
+   },
+   "exec_ms": 18067.1,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "done",
+    "summary": "The Eiffel Tower article states it was constructed from 1887 to 1889, so it was completed in 1889 (opened 31 March 1889 for the 1889 World's Fair)."
+   },
+   "plan_ms": 2452,
+   "ground": null,
+   "point": null,
+   "decision": "done",
+   "note": null,
+   "outcome": "done",
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "19:32:35  task: Using Wikipedia's search box, find the year the Eiffel Tower was completed.",
+  "19:32:59  step 1: type the 'Search Wikipedia' input field at the top of the page -> executed, changed (plan 1938 ms, ground 1695.7 ms)",
+  "19:33:01  done: The Eiffel Tower article states it was constructed from 1887 to 1889, so it was completed in 1889 (opened 31 March 1889 for the 1889 World's Fair)."
+ ]
+}

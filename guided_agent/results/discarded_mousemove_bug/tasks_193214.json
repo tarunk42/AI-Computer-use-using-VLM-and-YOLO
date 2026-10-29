@@ -1,0 +1,74 @@
+[
+ {
+  "id": "wiki_eiffel",
+  "task": "Using Wikipedia's search box, find the year the Eiffel Tower was completed.",
+  "success": true,
+  "status": "done",
+  "answer": "The Eiffel Tower article states it was constructed from 1887 to 1889 and was the centerpiece of the 1889 World's Fair, so it was completed in 1889.",
+  "steps": 2,
+  "elapsed_s": 24.0,
+  "usage": {
+   "prompt": 2236,
+   "completion": 99,
+   "calls": 2,
+   "retries": 0
+  },
+  "session": "20261031-193149",
+  "trace": [
+   {
+    "n": 1,
+    "action": {
+     "action": "type",
+     "target": "the 'Search Wikipedia' input field at the top of the page",
+     "text": "Eiffel Tower",
+     "submit": true,
+     "reason": "Search Wikipedia for the Eiffel Tower article to find its completion year."
+    },
+    "plan_ms": 2208,
+    "ground": {
+     "rtt_ms": 14332.4,
+     "gpu_ms": 984.9,
+     "network_ms": 13333.3,
+     "cold": true,
+     "gpu": "NVIDIA A10",
+     "raw": "</s><s>(<loc_375>,<loc_176>)</s>"
+    },
+    "point": [
+     480,
+     141
+    ],
+    "decision": "approved",
+    "note": null,
+    "outcome": "executed",
+    "change": {
+     "global": 0.1998,
+     "local": 0.0237,
+     "visible": true
+    },
+    "exec_ms": 400.5,
+    "tokens": {
+     "attempts": 1
+    }
+   },
+   {
+    "n": 2,
+    "action": {
+     "action": "done",
+     "summary": "The Eiffel Tower article states it was constructed from 1887 to 1889 and was the centerpiece of the 1889 World's Fair, so it was completed in 1889."
+    },
+    "plan_ms": 1944,
+    "ground": null,
+    "point": null,
+    "decision": "done",
+    "note": null,
+    "outcome": "done",
+    "change": null,
+    "exec_ms": 0,
+    "tokens": {
+     "attempts": 1
+    }
+   }
+  ],
+  "run": 1
+ }
+]
