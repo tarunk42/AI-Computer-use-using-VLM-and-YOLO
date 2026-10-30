@@ -1,0 +1,3 @@
+{"us-east (default)": {"gpu": "NVIDIA A10", "warm_rtt_ms_median": 572, "network_ms_median": 490, "gpu_ms_median": 82, "empty_401_rtt_ms": 476},
+ "region=ap": {"gpu": "Tesla T4", "warm_rtt_ms_median": 1001, "network_ms_median": 816, "gpu_ms_median": 175, "first_call_ms": 7785, "load_s": 26.4,
+               "note": "web endpoint ingress stays us-east, request is then forwarded to the ap worker"}}

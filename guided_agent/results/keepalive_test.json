@@ -1,0 +1,4 @@
+{"note": "network_ms per grounding call (rtt minus server time), 4 calls per cell, same frame, A10G, us-east",
+ "http1": {"gap_0s": [755, 386, 498, 531], "gap_2s": [572, 384, 465, 505], "gap_5s": [2020, 1891, 1876, 2204], "gap_10s": [2146, 2249, 1983, 1758]},
+ "http2": {"gap_0s": [588, 356, 634, 408], "gap_2s": [516, 457, 399, 385], "gap_5s": [1977, 2522, 1999, 1978], "gap_10s": [2105, 6395, 2216, 2058]},
+ "http1_with_2.5s_pinger": {"gap_5s": [652, 442, 343, 376], "gap_10s": [812, 1682, 685, 492]}}
