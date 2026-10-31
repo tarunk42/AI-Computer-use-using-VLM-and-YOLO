@@ -7,6 +7,11 @@
 ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-orange)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
+> **Update (Oct 2026):** the project has moved to a guided agent: a DeepSeek planner plus the GoClick
+> grounder on a Modal GPU, working on real websites. See [`guided_agent/`](guided_agent/) and its
+> [report](guided_agent/REPORT.md). How we got there: [`experiments/`](experiments/README.md). The YOLO + VLM
+> version below is kept as is (branch `legacy-bug-fix`, tag `v1-yolo-vlm`).
+
 ---
 
 ## 📋 Table of Contents
