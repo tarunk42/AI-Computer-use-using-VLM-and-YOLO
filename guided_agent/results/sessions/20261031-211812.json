@@ -1,0 +1,108 @@
+{
+ "task": "on skyscanner.com look for a one way  flight from delhi to london, on 5th of november, direct, 2 adults, 1 kid who is 10 years old",
+ "status": "stopped",
+ "result": "stopped by user",
+ "elapsed_s": 34.2,
+ "usage": {
+  "prompt": 5309,
+  "completion": 92,
+  "calls": 3,
+  "retries": 0
+ },
+ "mode": "manual",
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "navigate",
+    "url": "https://www.skyscanner.com",
+    "reason": "Open Skyscanner to start the flight search."
+   },
+   "plan_ms": 1212,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.6941,
+    "visible": true
+   },
+   "exec_ms": 353.5,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "click",
+    "target": "the 'Return' dropdown button above the From field",
+    "reason": "Switch the trip type to one way."
+   },
+   "plan_ms": 1479,
+   "ground": {
+    "rtt_ms": 1170.5,
+    "gpu_ms": 163.1,
+    "network_ms": 1002.2,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_76>,<loc_459>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    97,
+    367
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0371,
+    "local": 0.1998,
+    "visible": true
+   },
+   "exec_ms": 139.6,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 3,
+   "action": {
+    "action": "click",
+    "target": "the 'One way' option in the dropdown menu",
+    "reason": "Set the trip type to one way as required."
+   },
+   "plan_ms": 1376,
+   "ground": {
+    "rtt_ms": 674.9,
+    "gpu_ms": 162.3,
+    "network_ms": 507.5,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_169>,<loc_544>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    216,
+    435
+   ],
+   "decision": "stopped",
+   "note": null,
+   "outcome": null,
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "21:18:12  task: on skyscanner.com look for a one way  flight from delhi to london, on 5th of november, direct, 2 adults, 1 kid who is 10 years old",
+  "21:18:19  step 1: navigate https://www.skyscanner.com -> executed, changed (plan 1212 ms, ground - ms)",
+  "21:18:27  step 2: click the 'Return' dropdown button above the From field -> executed, changed (plan 1479 ms, ground 1170.5 ms)",
+  "21:18:47  stopped by user"
+ ]
+}

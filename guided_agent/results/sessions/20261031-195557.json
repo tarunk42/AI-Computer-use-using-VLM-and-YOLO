@@ -1,0 +1,157 @@
+{
+ "task": "Using Wikipedia's search box, find the year the Eiffel Tower was completed.",
+ "status": "done",
+ "result": "The Eiffel Tower was completed in 1889 (the infobox gives the completion date as 31 March 1889).",
+ "elapsed_s": 26.5,
+ "usage": {
+  "prompt": 6014,
+  "completion": 197,
+  "calls": 5,
+  "retries": 0
+ },
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "type",
+    "target": "the 'Search Wikipedia' input field at the top of the page",
+    "text": "Eiffel Tower",
+    "submit": true,
+    "reason": "Search Wikipedia for the Eiffel Tower article to find its completion year."
+   },
+   "plan_ms": 2549,
+   "ground": {
+    "rtt_ms": 1881.6,
+    "gpu_ms": 97.8,
+    "network_ms": 1779.3,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_375>,<loc_175>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    480,
+    140
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.2036,
+    "local": 0.0237,
+    "visible": true
+   },
+   "exec_ms": 442.3,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "scroll",
+    "direction": "down",
+    "amount": 3,
+    "reason": "Scroll to the article body to find the construction/completion dates in the infobox or text."
+   },
+   "plan_ms": 1798,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.2639,
+    "visible": true
+   },
+   "exec_ms": 137.2,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 3,
+   "action": {
+    "action": "scroll",
+    "direction": "up",
+    "amount": 3,
+    "reason": "Scroll up to the infobox/top of article to find the completion date (1889) in the infobox."
+   },
+   "plan_ms": 1616,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.2922,
+    "visible": true
+   },
+   "exec_ms": 138.3,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 4,
+   "action": {
+    "action": "click",
+    "target": "the 'History' section link in the Contents sidebar",
+    "reason": "Open the History section to find the completion year of the Eiffel Tower."
+   },
+   "plan_ms": 1939,
+   "ground": {
+    "rtt_ms": 3413.2,
+    "gpu_ms": 99.6,
+    "network_ms": 3308.3,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_106>,<loc_407>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    136,
+    326
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.2249,
+    "local": 0.1681,
+    "visible": true
+   },
+   "exec_ms": 157.9,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 5,
+   "action": {
+    "action": "done",
+    "summary": "The Eiffel Tower was completed in 1889 (the infobox gives the completion date as 31 March 1889)."
+   },
+   "plan_ms": 2996,
+   "ground": null,
+   "point": null,
+   "decision": "done",
+   "note": null,
+   "outcome": "done",
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "19:55:59  task: Using Wikipedia's search box, find the year the Eiffel Tower was completed.",
+  "19:56:06  step 1: type the 'Search Wikipedia' input field at the top of the page -> executed, changed (plan 2549 ms, ground 1881.6 ms)",
+  "19:56:10  step 2: scroll  -> executed, changed (plan 1798 ms, ground - ms)",
+  "19:56:14  step 3: scroll  -> executed, changed (plan 1616 ms, ground - ms)",
+  "19:56:20  step 4: click the 'History' section link in the Contents sidebar -> executed, changed (plan 1939 ms, ground 3413.2 ms)",
+  "19:56:23  done: The Eiffel Tower was completed in 1889 (the infobox gives the completion date as 31 March 1889)."
+ ]
+}

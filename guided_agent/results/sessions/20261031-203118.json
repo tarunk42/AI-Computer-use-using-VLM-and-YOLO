@@ -1,0 +1,74 @@
+{
+ "task": "Using Wikipedia's search box, find who wrote the 1936 paper 'On Computable Numbers'.",
+ "status": "done",
+ "result": "The 1936 paper 'On Computable Numbers' (full title 'On Computable Numbers, with an Application to the Entscheidungsproblem') was written by Alan Turing, submitted 12 November 1936 and published in 1937.",
+ "elapsed_s": 9.0,
+ "usage": {
+  "prompt": 2468,
+  "completion": 106,
+  "calls": 2,
+  "retries": 0
+ },
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "type",
+    "target": "the 'Search Wikipedia' input field at the top of the page",
+    "text": "On Computable Numbers",
+    "submit": true,
+    "reason": "Search Wikipedia for the 1936 paper to find its author."
+   },
+   "plan_ms": 1493,
+   "ground": {
+    "rtt_ms": 1446.8,
+    "gpu_ms": 161.6,
+    "network_ms": 1279.1,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_366>,<loc_175>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    468,
+    140
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1759,
+    "local": 0.0269,
+    "visible": true
+   },
+   "exec_ms": 505.4,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "done",
+    "summary": "The 1936 paper 'On Computable Numbers' (full title 'On Computable Numbers, with an Application to the Entscheidungsproblem') was written by Alan Turing, submitted 12 November 1936 and published in 1937."
+   },
+   "plan_ms": 1212,
+   "ground": null,
+   "point": null,
+   "decision": "done",
+   "note": null,
+   "outcome": "done",
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "20:31:21  task: Using Wikipedia's search box, find who wrote the 1936 paper 'On Computable Numbers'.",
+  "20:31:26  step 1: type the 'Search Wikipedia' input field at the top of the page -> executed, changed (plan 1493 ms, ground 1446.8 ms)",
+  "20:31:27  done: The 1936 paper 'On Computable Numbers' (full title 'On Computable Numbers, with an Application to the Entscheidungsproblem') was written by Alan Turing, submitted 12 November 1936 and published in 1937."
+ ]
+}

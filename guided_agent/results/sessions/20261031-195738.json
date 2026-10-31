@@ -1,0 +1,37 @@
+{
+ "task": "What licence is this repository released under?",
+ "status": "done",
+ "result": "The repository (github.com/ultralytics/ultralytics) is released under the AGPL-3.0 license, as shown by the 'AGPL-3.0 license' link in the repository's top bar.",
+ "elapsed_s": 4.7,
+ "usage": {
+  "prompt": 1154,
+  "completion": 55,
+  "calls": 1,
+  "retries": 0
+ },
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "done",
+    "summary": "The repository (github.com/ultralytics/ultralytics) is released under the AGPL-3.0 license, as shown by the 'AGPL-3.0 license' link in the repository's top bar."
+   },
+   "plan_ms": 2223,
+   "ground": null,
+   "point": null,
+   "decision": "done",
+   "note": null,
+   "outcome": "done",
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "19:57:40  task: What licence is this repository released under?",
+  "19:57:43  done: The repository (github.com/ultralytics/ultralytics) is released under the AGPL-3.0 license, as shown by the 'AGPL-3.0 license' link in the repository's top bar."
+ ]
+}

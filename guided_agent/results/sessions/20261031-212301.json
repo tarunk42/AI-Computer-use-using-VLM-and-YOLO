@@ -1,0 +1,233 @@
+{
+ "task": "continue",
+ "status": "done",
+ "result": "Search results are loaded on Skyscanner for New Delhi (DEL) \u2192 London (Any), Thu 5 Nov, 3 travellers (2 adults + 1 child age 10), Economy, Direct flights filter applied. 359 results found; cheapest direct fare shown is \u20b930,903 (Best \u20b934,327, Fastest \u20b937,214). Example direct option: Qatar Airways/British Airways 03:20 DEL \u2192 07:40 LHR, 9h50, from \u20b943,113.",
+ "elapsed_s": 41.3,
+ "usage": {
+  "prompt": 14255,
+  "completion": 372,
+  "calls": 8,
+  "retries": 0
+ },
+ "mode": "auto",
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "click",
+    "target": "the blue 'Apply' button in the travellers popup",
+    "reason": "Apply the 2 adults, 1 child (age 10) selection to continue the search."
+   },
+   "plan_ms": 1616,
+   "ground": {
+    "rtt_ms": 1365.8,
+    "gpu_ms": 162.8,
+    "network_ms": 1197.4,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_733>,<loc_644>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    938,
+    515
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1437,
+    "local": 0.9959,
+    "visible": true
+   },
+   "exec_ms": 129.0,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "scroll",
+    "direction": "up",
+    "amount": 5,
+    "reason": "Scroll back up to the flight search form to verify the travellers and search for the flight."
+   },
+   "plan_ms": 1605,
+   "ground": null,
+   "point": null,
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.545,
+    "visible": true
+   },
+   "exec_ms": 201.0,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 3,
+   "action": {
+    "action": "click",
+    "target": "the 'Direct flights' checkbox below the search fields",
+    "reason": "Enable direct-only flights as requested before searching."
+   },
+   "plan_ms": 1454,
+   "ground": {
+    "rtt_ms": 733.0,
+    "gpu_ms": 149.6,
+    "network_ms": 578.2,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_47>,<loc_654>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    60,
+    523
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0004,
+    "local": 0.0259,
+    "visible": true
+   },
+   "exec_ms": 119.8,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 4,
+   "action": {
+    "action": "click",
+    "target": "the 'Search' button on the right of the search form",
+    "reason": "All criteria (Delhi to London, 05/11/2026, direct, 3 travellers) are set; run the search."
+   },
+   "plan_ms": 1432,
+   "ground": {
+    "rtt_ms": 1777.1,
+    "gpu_ms": 157.7,
+    "network_ms": 1614.4,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_928>,<loc_535>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    1188,
+    428
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.6379,
+    "local": 0.9952,
+    "visible": true
+   },
+   "exec_ms": 121.3,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 5,
+   "action": {
+    "action": "wait",
+    "reason": "The results page is still loading ('Searching' with skeleton placeholders); wait for flight results to appear."
+   },
+   "plan_ms": 1402,
+   "ground": null,
+   "point": null,
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1732,
+    "visible": true
+   },
+   "exec_ms": 1503.9,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 6,
+   "action": {
+    "action": "wait",
+    "reason": "Results are still loading ('Searching Traveasy.co.in...'); wait for the direct-flight list to finish rendering before reading prices."
+   },
+   "plan_ms": 1256,
+   "ground": null,
+   "point": null,
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.2123,
+    "visible": true
+   },
+   "exec_ms": 1501.5,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 7,
+   "action": {
+    "action": "wait",
+    "reason": "Results are still loading ('Searching Wizfair...'); wait for the direct-flight list to finish rendering before reading prices."
+   },
+   "plan_ms": 1578,
+   "ground": null,
+   "point": null,
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1118,
+    "visible": true
+   },
+   "exec_ms": 1505.0,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 8,
+   "action": {
+    "action": "done",
+    "summary": "Search results are loaded on Skyscanner for New Delhi (DEL) \u2192 London (Any), Thu 5 Nov, 3 travellers (2 adults + 1 child age 10), Economy, Direct flights filter applied. 359 results found; cheapest direct fare shown is \u20b930,903 (Best \u20b934,327, Fastest \u20b937,214). Example direct option: Qatar Airways/British Airways 03:20 DEL \u2192 07:40 LHR, 9h50, from \u20b943,113."
+   },
+   "plan_ms": 1849,
+   "ground": null,
+   "point": null,
+   "decision": "done",
+   "note": null,
+   "outcome": "done",
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "21:23:01  task: continue",
+  "21:23:07  step 1: click the blue 'Apply' button in the travellers popup -> executed, changed (plan 1616 ms, ground 1365.8 ms)",
+  "21:23:11  step 2: scroll  -> executed, changed (plan 1605 ms, ground - ms)",
+  "21:23:15  step 3: click the 'Direct flights' checkbox below the search fields -> executed, changed (plan 1454 ms, ground 733.0 ms)",
+  "21:23:23  step 4: click the 'Search' button on the right of the search form -> executed, changed (plan 1432 ms, ground 1777.1 ms)",
+  "21:23:29  step 5: wait  -> executed, changed (plan 1402 ms, ground - ms)",
+  "21:23:35  step 6: wait  -> executed, changed (plan 1256 ms, ground - ms)",
+  "21:23:40  step 7: wait  -> executed, changed (plan 1578 ms, ground - ms)",
+  "21:23:42  done: Search results are loaded on Skyscanner for New Delhi (DEL) \u2192 London (Any), Thu 5 Nov, 3 travellers (2 adults + 1 child age 10), Economy, Direct flights filter applied. 359 results found; cheapest direct fare shown is \u20b930,903 (Best \u20b934,327, Fastest \u20b937,214). Example direct option: Qatar Airways/British Airways 03:20 DEL \u2192 07:40 LHR, 9h50, from \u20b943,113."
+ ]
+}

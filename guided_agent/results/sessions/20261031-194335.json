@@ -1,0 +1,118 @@
+{
+ "task": "What licence is this repository released under?",
+ "status": "done",
+ "result": "The repository ultralytics/ultralytics is released under the AGPL-3.0 license (shown in the About sidebar as 'AGPL-3.0 license' and in the LICENSE file commit 'Update LICENSE to AGPL-3.0').",
+ "elapsed_s": 17.0,
+ "usage": {
+  "prompt": 4501,
+  "completion": 177,
+  "calls": 4,
+  "retries": 0
+ },
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "navigate",
+    "url": "https://github.com/ultralytics/ultralytics",
+    "reason": "The current page shows unrelated Python docs content; navigate to the repository page to find the licence."
+   },
+   "plan_ms": 1406,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.3409,
+    "visible": true
+   },
+   "exec_ms": 582.0,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "click",
+    "target": "the 'License' link in the About sidebar on the right",
+    "reason": "The About section shows the license; clicking it opens the LICENSE file to confirm."
+   },
+   "plan_ms": 2116,
+   "ground": {
+    "rtt_ms": 2287.0,
+    "gpu_ms": 98.0,
+    "network_ms": 2184.5,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_979>,<loc_13>)</s>"
+   },
+   "point": [
+    1253,
+    10
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1216,
+    "local": 0.104,
+    "visible": true
+   },
+   "exec_ms": 126.9,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 3,
+   "action": {
+    "action": "scroll",
+    "direction": "down",
+    "amount": 3,
+    "reason": "The About sidebar's License link is below the visible area; scroll down to reveal it."
+   },
+   "plan_ms": 1392,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.2538,
+    "visible": true
+   },
+   "exec_ms": 144.5,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 4,
+   "action": {
+    "action": "done",
+    "summary": "The repository ultralytics/ultralytics is released under the AGPL-3.0 license (shown in the About sidebar as 'AGPL-3.0 license' and in the LICENSE file commit 'Update LICENSE to AGPL-3.0')."
+   },
+   "plan_ms": 1828,
+   "ground": null,
+   "point": null,
+   "decision": "done",
+   "note": null,
+   "outcome": "done",
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "19:43:38  task: What licence is this repository released under?",
+  "19:43:42  step 1: navigate https://github.com/ultralytics/ultralytics -> executed, changed (plan 1406 ms, ground - ms)",
+  "19:43:48  step 2: click the 'License' link in the About sidebar on the right -> executed, changed (plan 2116 ms, ground 2287.0 ms)",
+  "19:43:50  step 3: scroll  -> executed, changed (plan 1392 ms, ground - ms)",
+  "19:43:52  done: The repository ultralytics/ultralytics is released under the AGPL-3.0 license (shown in the About sidebar as 'AGPL-3.0 license' and in the LICENSE file commit 'Update LICENSE to AGPL-3.0')."
+ ]
+}

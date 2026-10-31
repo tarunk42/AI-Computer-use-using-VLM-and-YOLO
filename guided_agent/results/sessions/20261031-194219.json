@@ -1,0 +1,530 @@
+{
+ "task": "Using the search on this documentation site, find in which Python version str.casefold() was added.",
+ "status": "stopped",
+ "result": "step limit (15) reached",
+ "elapsed_s": 52.6,
+ "usage": {
+  "prompt": 20026,
+  "completion": 789,
+  "calls": 15,
+  "retries": 0
+ },
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "click",
+    "target": "the 'Quick search' input field at the top right of the page",
+    "reason": "Focus the documentation search box to search for casefold."
+   },
+   "plan_ms": 1673,
+   "ground": {
+    "rtt_ms": 1541.1,
+    "gpu_ms": 100.9,
+    "network_ms": 1434.5,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_799>,<loc_171>)</s>"
+   },
+   "point": [
+    1023,
+    137
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0086,
+    "local": 0.0408,
+    "visible": true
+   },
+   "exec_ms": 135.2,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "type",
+    "target": "the 'Quick search' input field at the top right of the page",
+    "text": "str.casefold",
+    "submit": true,
+    "reason": "Search the docs for str.casefold to find its version-added note."
+   },
+   "plan_ms": 1960,
+   "ground": {
+    "rtt_ms": 738.4,
+    "gpu_ms": 99.9,
+    "network_ms": 633.1,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_793>,<loc_171>)</s>"
+   },
+   "point": [
+    1015,
+    137
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0944,
+    "local": 0.1154,
+    "visible": true
+   },
+   "exec_ms": 444.1,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 3,
+   "action": {
+    "action": "click",
+    "target": "the link 'str.casefold (Python method, in Built-in Types)' in the first search result",
+    "reason": "Open the str.casefold documentation page to see the version it was added in."
+   },
+   "plan_ms": 1660,
+   "ground": {
+    "rtt_ms": 522.3,
+    "gpu_ms": 99.8,
+    "network_ms": 418.2,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_432>,<loc_543>)</s>"
+   },
+   "point": [
+    553,
+    434
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "local": 0.0,
+    "visible": false
+   },
+   "exec_ms": 131.6,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 4,
+   "action": {
+    "action": "click",
+    "target": "the link 'str.casefold (Python method, in Built-in Types)' in the first search result",
+    "reason": "Previous click had no visible effect; retry clicking the first result link to open the str.casefold documentation."
+   },
+   "plan_ms": 1191,
+   "ground": {
+    "rtt_ms": 444.7,
+    "gpu_ms": 98.9,
+    "network_ms": 342.0,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_432>,<loc_543>)</s>"
+   },
+   "point": [
+    553,
+    434
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "local": 0.0,
+    "visible": false
+   },
+   "exec_ms": 125.0,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 5,
+   "action": {
+    "action": "click",
+    "target": "the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list",
+    "reason": "Open the str.casefold documentation page to see the version-added note."
+   },
+   "plan_ms": 1575,
+   "ground": {
+    "rtt_ms": 455.6,
+    "gpu_ms": 108.9,
+    "network_ms": 341.6,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_432>,<loc_543>)</s>"
+   },
+   "point": [
+    553,
+    434
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "local": 0.0,
+    "visible": false
+   },
+   "exec_ms": 122.0,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 6,
+   "action": {
+    "action": "click",
+    "target": "the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list",
+    "reason": "Previous clicks had no effect; try clicking the result link again to open the str.casefold documentation page."
+   },
+   "plan_ms": 1287,
+   "ground": {
+    "rtt_ms": 455.1,
+    "gpu_ms": 98.1,
+    "network_ms": 353.2,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_432>,<loc_543>)</s>"
+   },
+   "point": [
+    553,
+    434
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "local": 0.0,
+    "visible": false
+   },
+   "exec_ms": 138.1,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 7,
+   "action": {
+    "action": "click",
+    "target": "the link 'str.casefold (Python method, in Built-in Types)' at the top of the Search Results list",
+    "reason": "Previous clicks didn't register; clicking the result link directly should open the str.casefold documentation page."
+   },
+   "plan_ms": 1162,
+   "ground": {
+    "rtt_ms": 481.8,
+    "gpu_ms": 101.7,
+    "network_ms": 375.9,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_432>,<loc_543>)</s>"
+   },
+   "point": [
+    553,
+    434
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "local": 0.0,
+    "visible": false
+   },
+   "exec_ms": 127.6,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 8,
+   "action": {
+    "action": "click",
+    "target": "the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list",
+    "reason": "Previous clicks had no effect; try clicking the result link again to open the str.casefold documentation page."
+   },
+   "plan_ms": 1919,
+   "ground": {
+    "rtt_ms": 583.0,
+    "gpu_ms": 98.1,
+    "network_ms": 480.7,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_432>,<loc_543>)</s>"
+   },
+   "point": [
+    553,
+    434
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "local": 0.0,
+    "visible": false
+   },
+   "exec_ms": 125.7,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 9,
+   "action": {
+    "action": "click",
+    "target": "the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list",
+    "reason": "Previous clicks had no effect; try clicking the result link again to open the str.casefold documentation page."
+   },
+   "plan_ms": 1281,
+   "ground": {
+    "rtt_ms": 586.7,
+    "gpu_ms": 98.7,
+    "network_ms": 484.2,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_432>,<loc_543>)</s>"
+   },
+   "point": [
+    553,
+    434
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "local": 0.0,
+    "visible": false
+   },
+   "exec_ms": 128.3,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 10,
+   "action": {
+    "action": "click",
+    "target": "the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list",
+    "reason": "Previous clicks had no effect; try clicking the result link again to open the str.casefold documentation page."
+   },
+   "plan_ms": 1208,
+   "ground": {
+    "rtt_ms": 497.4,
+    "gpu_ms": 98.2,
+    "network_ms": 394.9,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_432>,<loc_543>)</s>"
+   },
+   "point": [
+    553,
+    434
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "local": 0.0,
+    "visible": false
+   },
+   "exec_ms": 123.9,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 11,
+   "action": {
+    "action": "click",
+    "target": "the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list",
+    "reason": "Previous clicks had no effect; try clicking the result link again to open the str.casefold documentation page."
+   },
+   "plan_ms": 1128,
+   "ground": {
+    "rtt_ms": 481.8,
+    "gpu_ms": 98.9,
+    "network_ms": 377.7,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_432>,<loc_543>)</s>"
+   },
+   "point": [
+    553,
+    434
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "local": 0.0,
+    "visible": false
+   },
+   "exec_ms": 123.5,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 12,
+   "action": {
+    "action": "click",
+    "target": "the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list",
+    "reason": "Previous clicks had no effect; try clicking the result link again to open the str.casefold documentation page."
+   },
+   "plan_ms": 1664,
+   "ground": {
+    "rtt_ms": 481.5,
+    "gpu_ms": 98.6,
+    "network_ms": 378.8,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_432>,<loc_543>)</s>"
+   },
+   "point": [
+    553,
+    434
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "local": 0.0,
+    "visible": false
+   },
+   "exec_ms": 120.3,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 13,
+   "action": {
+    "action": "click",
+    "target": "the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list",
+    "reason": "Previous clicks had no effect; try clicking the result link again to open the str.casefold documentation page."
+   },
+   "plan_ms": 1598,
+   "ground": {
+    "rtt_ms": 586.1,
+    "gpu_ms": 99.0,
+    "network_ms": 481.9,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_432>,<loc_543>)</s>"
+   },
+   "point": [
+    553,
+    434
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "local": 0.0,
+    "visible": false
+   },
+   "exec_ms": 128.0,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 14,
+   "action": {
+    "action": "click",
+    "target": "the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list",
+    "reason": "Previous clicks had no effect; try clicking the result link again to open the str.casefold documentation page."
+   },
+   "plan_ms": 1156,
+   "ground": {
+    "rtt_ms": 489.4,
+    "gpu_ms": 107.2,
+    "network_ms": 377.5,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_432>,<loc_543>)</s>"
+   },
+   "point": [
+    553,
+    434
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "local": 0.0,
+    "visible": false
+   },
+   "exec_ms": 124.3,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 15,
+   "action": {
+    "action": "click",
+    "target": "the 'str.casefold' link in the first search result line 'str.casefold (Python method, in Built-in Types)'",
+    "reason": "Previous clicks had no effect; try clicking directly on the highlighted link text to open the str.casefold documentation page."
+   },
+   "plan_ms": 1291,
+   "ground": {
+    "rtt_ms": 600.1,
+    "gpu_ms": 108.2,
+    "network_ms": 486.5,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_433>,<loc_542>)</s>"
+   },
+   "point": [
+    554,
+    434
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "local": 0.0,
+    "visible": false
+   },
+   "exec_ms": 122.3,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "19:42:22  task: Using the search on this documentation site, find in which Python version str.casefold() was added.",
+  "19:42:26  step 1: click the 'Quick search' input field at the top right of the page -> executed, changed (plan 1673 ms, ground 1541.1 ms)",
+  "19:42:32  step 2: type the 'Quick search' input field at the top right of the page -> executed, changed (plan 1960 ms, ground 738.4 ms)",
+  "19:42:35  step 3: click the link 'str.casefold (Python method, in Built-in Types)' in the first search result -> executed, NO CHANGE (plan 1660 ms, ground 522.3 ms)",
+  "19:42:38  step 4: click the link 'str.casefold (Python method, in Built-in Types)' in the first search result -> executed, NO CHANGE (plan 1191 ms, ground 444.7 ms)",
+  "19:42:41  step 5: click the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list -> executed, NO CHANGE (plan 1575 ms, ground 455.6 ms)",
+  "19:42:44  step 6: click the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list -> executed, NO CHANGE (plan 1287 ms, ground 455.1 ms)",
+  "19:42:47  step 7: click the link 'str.casefold (Python method, in Built-in Types)' at the top of the Search Results list -> executed, NO CHANGE (plan 1162 ms, ground 481.8 ms)",
+  "19:42:51  step 8: click the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list -> executed, NO CHANGE (plan 1919 ms, ground 583.0 ms)",
+  "19:42:54  step 9: click the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list -> executed, NO CHANGE (plan 1281 ms, ground 586.7 ms)",
+  "19:42:57  step 10: click the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list -> executed, NO CHANGE (plan 1208 ms, ground 497.4 ms)",
+  "19:42:59  step 11: click the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list -> executed, NO CHANGE (plan 1128 ms, ground 481.8 ms)",
+  "19:43:03  step 12: click the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list -> executed, NO CHANGE (plan 1664 ms, ground 481.5 ms)",
+  "19:43:06  step 13: click the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list -> executed, NO CHANGE (plan 1598 ms, ground 586.1 ms)",
+  "19:43:09  step 14: click the link 'str.casefold (Python method, in Built-in Types)' in the Search Results list -> executed, NO CHANGE (plan 1156 ms, ground 489.4 ms)",
+  "19:43:12  step 15: click the 'str.casefold' link in the first search result line 'str.casefold (Python method, in Built-in Types)' -> executed, NO CHANGE (plan 1291 ms, ground 600.1 ms)"
+ ]
+}

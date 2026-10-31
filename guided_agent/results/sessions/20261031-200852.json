@@ -1,0 +1,76 @@
+{
+ "task": "open google.com, then search for thermodynamic computing, go to the wikipedia link",
+ "status": "stopped",
+ "result": "stopped by user",
+ "elapsed_s": 12.1,
+ "usage": {
+  "prompt": 2350,
+  "completion": 73,
+  "calls": 2,
+  "retries": 0
+ },
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "type",
+    "target": "the Google search input field at the top of the page",
+    "text": "thermodynamic computing",
+    "submit": true,
+    "reason": "Search Google for thermodynamic computing as requested."
+   },
+   "plan_ms": 1581,
+   "ground": {
+    "rtt_ms": 447.0,
+    "gpu_ms": 100.6,
+    "network_ms": 342.1,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_453>,<loc_109>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    580,
+    87
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1295,
+    "local": 0.0483,
+    "visible": true
+   },
+   "exec_ms": 524.3,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "scroll",
+    "direction": "down",
+    "amount": 4,
+    "reason": "The Wikipedia result is likely below the AI overview; scroll down to find it."
+   },
+   "plan_ms": 1269,
+   "ground": null,
+   "point": null,
+   "decision": "stopped",
+   "note": null,
+   "outcome": null,
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "20:08:54  task: open google.com, then search for thermodynamic computing, go to the wikipedia link",
+  "20:09:01  step 1: type the Google search input field at the top of the page -> executed, changed (plan 1581 ms, ground 447.0 ms)",
+  "20:09:04  stopped by user"
+ ]
+}

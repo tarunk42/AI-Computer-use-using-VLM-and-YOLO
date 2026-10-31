@@ -1,0 +1,74 @@
+{
+ "task": "Using Wikipedia's search box, find the year the Eiffel Tower was completed.",
+ "status": "done",
+ "result": "The Eiffel Tower article states it was constructed from 1887 to 1889, so it was completed in 1889 (opened at the 1889 World's Fair).",
+ "elapsed_s": 14.4,
+ "usage": {
+  "prompt": 2354,
+  "completion": 97,
+  "calls": 2,
+  "retries": 0
+ },
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "type",
+    "target": "the 'Search Wikipedia' input field at the top of the page",
+    "text": "Eiffel Tower",
+    "submit": true,
+    "reason": "Search Wikipedia for the Eiffel Tower article to find its completion year."
+   },
+   "plan_ms": 2229,
+   "ground": {
+    "rtt_ms": 5514.9,
+    "gpu_ms": 98.4,
+    "network_ms": 5412.0,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_375>,<loc_175>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    480,
+    140
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.2037,
+    "local": 0.0237,
+    "visible": true
+   },
+   "exec_ms": 426.4,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "done",
+    "summary": "The Eiffel Tower article states it was constructed from 1887 to 1889, so it was completed in 1889 (opened at the 1889 World's Fair)."
+   },
+   "plan_ms": 1852,
+   "ground": null,
+   "point": null,
+   "decision": "done",
+   "note": null,
+   "outcome": "done",
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "19:47:07  task: Using Wikipedia's search box, find the year the Eiffel Tower was completed.",
+  "19:47:17  step 1: type the 'Search Wikipedia' input field at the top of the page -> executed, changed (plan 2229 ms, ground 5514.9 ms)",
+  "19:47:19  done: The Eiffel Tower article states it was constructed from 1887 to 1889, so it was completed in 1889 (opened at the 1889 World's Fair)."
+ ]
+}

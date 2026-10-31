@@ -1,0 +1,74 @@
+{
+ "task": "Using Wikipedia's search box, find who wrote the 1936 paper 'On Computable Numbers'.",
+ "status": "done",
+ "result": "The 1936 paper 'On Computable Numbers, with an Application to the Entscheidungsproblem' was written by Alan Turing (submitted 12 November 1936, published 1937). The search redirected to the 'Turing's proof' article, which states this.",
+ "elapsed_s": 9.8,
+ "usage": {
+  "prompt": 2360,
+  "completion": 111,
+  "calls": 2,
+  "retries": 0
+ },
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "type",
+    "target": "the 'Search Wikipedia' input field at the top of the page",
+    "text": "On Computable Numbers",
+    "submit": true,
+    "reason": "Search Wikipedia for the paper to find its author."
+   },
+   "plan_ms": 1733,
+   "ground": {
+    "rtt_ms": 924.9,
+    "gpu_ms": 99.6,
+    "network_ms": 820.3,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_375>,<loc_175>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    480,
+    140
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1759,
+    "local": 0.0269,
+    "visible": true
+   },
+   "exec_ms": 496.7,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "done",
+    "summary": "The 1936 paper 'On Computable Numbers, with an Application to the Entscheidungsproblem' was written by Alan Turing (submitted 12 November 1936, published 1937). The search redirected to the 'Turing's proof' article, which states this."
+   },
+   "plan_ms": 2377,
+   "ground": null,
+   "point": null,
+   "decision": "done",
+   "note": null,
+   "outcome": "done",
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "19:56:27  task: Using Wikipedia's search box, find who wrote the 1936 paper 'On Computable Numbers'.",
+  "19:56:32  step 1: type the 'Search Wikipedia' input field at the top of the page -> executed, changed (plan 1733 ms, ground 924.9 ms)",
+  "19:56:34  done: The 1936 paper 'On Computable Numbers, with an Application to the Entscheidungsproblem' was written by Alan Turing (submitted 12 November 1936, published 1937). The search redirected to the 'Turing's proof' article, which states this."
+ ]
+}

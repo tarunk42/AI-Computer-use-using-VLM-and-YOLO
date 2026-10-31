@@ -1,0 +1,82 @@
+{
+ "task": "open wikipedia.com",
+ "status": "done",
+ "result": "Wikipedia is open in Firefox (redirected to www.wikipedia.org), showing the multilingual portal page with the search box and language links.",
+ "elapsed_s": 29.3,
+ "usage": {
+  "prompt": 3485,
+  "completion": 90,
+  "calls": 3,
+  "retries": 0
+ },
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "navigate",
+    "url": "https://www.wikipedia.com",
+    "reason": "Open wikipedia.com as requested."
+   },
+   "plan_ms": 1936,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0048,
+    "visible": true
+   },
+   "exec_ms": 422.1,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "wait",
+    "reason": "The URL bar shows www.wikipedia.com was entered but the MDN page is still displayed; waiting for the navigation to load."
+   },
+   "plan_ms": 1752,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1924,
+    "visible": true
+   },
+   "exec_ms": 1505.0,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 3,
+   "action": {
+    "action": "done",
+    "summary": "Wikipedia is open in Firefox (redirected to www.wikipedia.org), showing the multilingual portal page with the search box and language links."
+   },
+   "plan_ms": 1506,
+   "ground": null,
+   "point": null,
+   "decision": "done",
+   "note": null,
+   "outcome": "done",
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "20:01:43  task: open wikipedia.com",
+  "20:02:03  step 1: navigate https://www.wikipedia.com -> executed, changed (plan 1936 ms, ground - ms)",
+  "20:02:10  step 2: wait  -> executed, changed (plan 1752 ms, ground - ms)",
+  "20:02:12  done: Wikipedia is open in Firefox (redirected to www.wikipedia.org), showing the multilingual portal page with the search box and language links."
+ ]
+}

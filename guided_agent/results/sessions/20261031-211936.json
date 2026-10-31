@@ -1,0 +1,813 @@
+{
+ "task": "on skyscanner.com look for a flight from delhi to london, on 5th of november, direct, 2 adults, 1 kid who is 10 years old",
+ "status": "stopped",
+ "result": "step limit (25) reached",
+ "elapsed_s": 181.0,
+ "usage": {
+  "prompt": 48183,
+  "completion": 1233,
+  "calls": 29,
+  "retries": 4
+ },
+ "mode": "auto",
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "navigate",
+    "url": "https://www.skyscanner.com",
+    "reason": "Reopen Skyscanner to start the flight search fresh."
+   },
+   "plan_ms": 1350,
+   "ground": null,
+   "point": null,
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.6941,
+    "visible": true
+   },
+   "exec_ms": 363.0,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "click",
+    "target": "the 'Return' dropdown button above the From field",
+    "reason": "Open trip type dropdown to select one way"
+   },
+   "plan_ms": 1629,
+   "ground": {
+    "rtt_ms": 1322.7,
+    "gpu_ms": 163.6,
+    "network_ms": 1154.3,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_76>,<loc_459>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    97,
+    367
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0371,
+    "local": 0.1998,
+    "visible": true
+   },
+   "exec_ms": 129.7,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 3,
+   "action": {
+    "action": "click",
+    "target": "the 'One way' option in the dropdown menu",
+    "reason": "Select one-way trip type as required by the task."
+   },
+   "plan_ms": 1638,
+   "ground": {
+    "rtt_ms": 678.3,
+    "gpu_ms": 142.6,
+    "network_ms": 531.0,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_169>,<loc_544>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    216,
+    435
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0407,
+    "local": 0.2602,
+    "visible": true
+   },
+   "exec_ms": 147.8,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 4,
+   "action": {
+    "action": "click",
+    "target": "the 'From' field showing 'Bengaluru (BLR)'",
+    "reason": "Set the origin airport to Delhi."
+   },
+   "plan_ms": 1400,
+   "ground": {
+    "rtt_ms": 1953.3,
+    "gpu_ms": 162.1,
+    "network_ms": 1786.5,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_165>,<loc_533>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    211,
+    426
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0851,
+    "local": 0.2082,
+    "visible": true
+   },
+   "exec_ms": 131.5,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 5,
+   "action": {
+    "action": "type",
+    "target": "the 'From' input field showing 'Bengaluru (BLR)'",
+    "text": "Delhi",
+    "submit": false,
+    "reason": "Set the origin airport to Delhi."
+   },
+   "plan_ms": 1343,
+   "ground": {
+    "rtt_ms": 473.9,
+    "gpu_ms": 164.1,
+    "network_ms": 304.9,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_175>,<loc_533>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    224,
+    426
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0355,
+    "local": 0.0395,
+    "visible": true
+   },
+   "exec_ms": 354.5,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 6,
+   "action": {
+    "action": "click",
+    "target": "the 'Delhi Indira Gandhi International (DEL)' option in the dropdown",
+    "reason": "Select Delhi as the origin airport"
+   },
+   "plan_ms": 1274,
+   "ground": {
+    "rtt_ms": 465.9,
+    "gpu_ms": 165.2,
+    "network_ms": 295.6,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_220>,<loc_640>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    282,
+    512
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0929,
+    "local": 0.9246,
+    "visible": true
+   },
+   "exec_ms": 175.4,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 7,
+   "action": {
+    "action": "type",
+    "target": "the 'To' input field showing 'Country, city or airport'",
+    "text": "London",
+    "submit": false,
+    "reason": "Set the destination to London"
+   },
+   "plan_ms": 1236,
+   "ground": {
+    "rtt_ms": 474.5,
+    "gpu_ms": 162.8,
+    "network_ms": 306.5,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_436>,<loc_533>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    558,
+    426
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0723,
+    "local": 0.0682,
+    "visible": true
+   },
+   "exec_ms": 408.5,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 8,
+   "action": {
+    "action": "click",
+    "target": "the 'London (Any)' option at the top of the dropdown",
+    "reason": "Select London as destination"
+   },
+   "plan_ms": 2470,
+   "ground": {
+    "rtt_ms": 606.7,
+    "gpu_ms": 144.0,
+    "network_ms": 457.8,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_500>,<loc_626>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    640,
+    501
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1375,
+    "local": 0.4456,
+    "visible": true
+   },
+   "exec_ms": 127.5,
+   "tokens": {
+    "attempts": 2
+   }
+  },
+  {
+   "n": 9,
+   "action": {
+    "action": "click",
+    "target": "the '5' date in the November calendar",
+    "reason": "Select 5th November as the departure date."
+   },
+   "plan_ms": 1104,
+   "ground": {
+    "rtt_ms": 2003.7,
+    "gpu_ms": 162.4,
+    "network_ms": 1835.7,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_789>,<loc_832>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    1010,
+    666
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0019,
+    "local": 0.0604,
+    "visible": true
+   },
+   "exec_ms": 128.1,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 10,
+   "action": {
+    "action": "click",
+    "target": "the '5' date in the November calendar",
+    "reason": "Select 5 November as the departure date (currently shows 05/12/2026)"
+   },
+   "plan_ms": 1474,
+   "ground": {
+    "rtt_ms": 723.1,
+    "gpu_ms": 143.2,
+    "network_ms": 574.5,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_358>,<loc_887>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    458,
+    710
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0023,
+    "local": 0.0614,
+    "visible": true
+   },
+   "exec_ms": 126.4,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 11,
+   "action": {
+    "action": "click",
+    "target": "the 'Travellers and cabin class' field showing '1 Adult, Economy'",
+    "reason": "Open the travellers selector to set 2 adults and 1 child aged 10."
+   },
+   "plan_ms": 1506,
+   "ground": {
+    "rtt_ms": 503.6,
+    "gpu_ms": 143.0,
+    "network_ms": 355.1,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_803>,<loc_533>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    1028,
+    426
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1704,
+    "local": 0.1009,
+    "visible": true
+   },
+   "exec_ms": 125.5,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 12,
+   "action": {
+    "action": "click",
+    "target": "the '+' button next to 'Adults' in the travellers panel",
+    "reason": "Increase adults from 1 to 2 as required."
+   },
+   "plan_ms": 1308,
+   "ground": {
+    "rtt_ms": 2019.3,
+    "gpu_ms": 147.4,
+    "network_ms": 1867.0,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_854>,<loc_785>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    1093,
+    628
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0049,
+    "local": 0.0802,
+    "visible": true
+   },
+   "exec_ms": 118.2,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 13,
+   "action": {
+    "action": "click",
+    "target": "the '+' button next to 'Children' in the travellers panel",
+    "reason": "Add one child (age 10) to the travellers"
+   },
+   "plan_ms": 2377,
+   "ground": {
+    "rtt_ms": 466.2,
+    "gpu_ms": 143.9,
+    "network_ms": 317.1,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_853>,<loc_886>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    1092,
+    709
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0157,
+    "local": 0.1051,
+    "visible": true
+   },
+   "exec_ms": 146.0,
+   "tokens": {
+    "attempts": 2
+   }
+  },
+  {
+   "n": 14,
+   "action": {
+    "action": "click",
+    "target": "the 'Age of child 1' dropdown below the Children row",
+    "reason": "Set the child's age to 10 so the fare is correct."
+   },
+   "plan_ms": 1432,
+   "ground": {
+    "rtt_ms": 468.7,
+    "gpu_ms": 166.3,
+    "network_ms": 297.4,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_704>,<loc_960>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    901,
+    768
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.5913,
+    "local": 0.8642,
+    "visible": true
+   },
+   "exec_ms": 122.5,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 15,
+   "action": {
+    "action": "click",
+    "target": "the 'Select age' dropdown below 'Age of child 1'",
+    "reason": "Open the child age dropdown to set the child's age to 10."
+   },
+   "plan_ms": 1555,
+   "ground": {
+    "rtt_ms": 455.0,
+    "gpu_ms": 161.2,
+    "network_ms": 288.6,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_733>,<loc_565>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    938,
+    452
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0966,
+    "local": 0.23,
+    "visible": true
+   },
+   "exec_ms": 128.2,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 16,
+   "action": {
+    "action": "click",
+    "target": "the '10' option in the age dropdown list",
+    "reason": "Set the child's age to 10 as requested."
+   },
+   "plan_ms": 1692,
+   "ground": {
+    "rtt_ms": 493.4,
+    "gpu_ms": 163.9,
+    "network_ms": 324.2,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_730>,<loc_694>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    934,
+    555
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0976,
+    "local": 0.7526,
+    "visible": true
+   },
+   "exec_ms": 120.7,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 17,
+   "action": {
+    "action": "click",
+    "target": "the 'Age of child 1' dropdown showing '1'",
+    "reason": "The age dropdown still shows 1; the previous selection didn't register, so reopen it to pick 10."
+   },
+   "plan_ms": 1732,
+   "ground": {
+    "rtt_ms": 494.0,
+    "gpu_ms": 150.3,
+    "network_ms": 338.5,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_730>,<loc_564>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    934,
+    451
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1005,
+    "local": 0.11,
+    "visible": true
+   },
+   "exec_ms": 120.2,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 18,
+   "action": {
+    "action": "scroll",
+    "direction": "down",
+    "amount": 3,
+    "reason": "Scroll the age dropdown list to reveal the '10' option"
+   },
+   "plan_ms": 3242,
+   "ground": null,
+   "point": null,
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0009,
+    "visible": false
+   },
+   "exec_ms": 162.7,
+   "tokens": {
+    "attempts": 2
+   }
+  },
+  {
+   "n": 19,
+   "action": {
+    "action": "scroll",
+    "direction": "down",
+    "amount": 3,
+    "reason": "The age dropdown list is open but only shows ages 0-8; scroll down inside the list to reveal age 10."
+   },
+   "plan_ms": 1466,
+   "ground": null,
+   "point": null,
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "visible": false
+   },
+   "exec_ms": 141.4,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 20,
+   "action": {
+    "action": "click",
+    "target": "the '10' option in the age dropdown list",
+    "reason": "Select age 10 for the child in the travellers panel."
+   },
+   "plan_ms": 1531,
+   "ground": {
+    "rtt_ms": 1722.5,
+    "gpu_ms": 144.2,
+    "network_ms": 1573.0,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_733>,<loc_689>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    938,
+    551
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0999,
+    "local": 0.9604,
+    "visible": true
+   },
+   "exec_ms": 136.0,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 21,
+   "action": {
+    "action": "click",
+    "target": "the 'Age of child 1' dropdown showing '1'",
+    "reason": "Open the age dropdown to select 10 for the child"
+   },
+   "plan_ms": 1365,
+   "ground": {
+    "rtt_ms": 461.7,
+    "gpu_ms": 163.5,
+    "network_ms": 292.9,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_730>,<loc_564>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    934,
+    451
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1005,
+    "local": 0.11,
+    "visible": true
+   },
+   "exec_ms": 117.2,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 22,
+   "action": {
+    "action": "scroll",
+    "direction": "down",
+    "amount": 3,
+    "reason": "Scroll the age dropdown list to reveal the '10' option"
+   },
+   "plan_ms": 2629,
+   "ground": null,
+   "point": null,
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0009,
+    "visible": false
+   },
+   "exec_ms": 140.0,
+   "tokens": {
+    "attempts": 2
+   }
+  },
+  {
+   "n": 23,
+   "action": {
+    "action": "ask_user",
+    "question": "I've tried to click 'the 10 option in the age dropdown list' 2 times already without getting further. The site may be blocking automated browsers. Should I try something else, or stop?",
+    "reason": "loop guard"
+   },
+   "plan_ms": 1766,
+   "ground": null,
+   "point": null,
+   "decision": "rejected",
+   "note": "The user took over and acted by hand (screen has changed); look at the new screenshot and continue from there.",
+   "outcome": null,
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 24,
+   "action": {
+    "action": "ask_user",
+    "question": "I've tried to click 'the 10 option in the age dropdown list' 2 times already without getting further. The site may be blocking automated browsers. Should I try something else, or stop?",
+    "reason": "loop guard"
+   },
+   "plan_ms": 1264,
+   "ground": null,
+   "point": null,
+   "decision": "answered",
+   "note": "click now",
+   "outcome": "answered",
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 25,
+   "action": {
+    "action": "ask_user",
+    "question": "I've tried to click 'the 10 option in the age dropdown list' 2 times already without getting further. The site may be blocking automated browsers. Should I try something else, or stop?",
+    "reason": "loop guard"
+   },
+   "plan_ms": 1545,
+   "ground": null,
+   "point": null,
+   "decision": "rejected",
+   "note": "The user took over and acted by hand (screen has changed); look at the new screenshot and continue from there.",
+   "outcome": null,
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "21:19:36  task: on skyscanner.com look for a flight from delhi to london, on 5th of november, direct, 2 adults, 1 kid who is 10 years old",
+  "21:19:42  step 1: navigate https://www.skyscanner.com -> executed, changed (plan 1350 ms, ground - ms)",
+  "21:19:48  step 2: click the 'Return' dropdown button above the From field -> executed, changed (plan 1629 ms, ground 1322.7 ms)",
+  "21:19:53  step 3: click the 'One way' option in the dropdown menu -> executed, changed (plan 1638 ms, ground 678.3 ms)",
+  "21:19:59  step 4: click the 'From' field showing 'Bengaluru (BLR)' -> executed, changed (plan 1400 ms, ground 1953.3 ms)",
+  "21:20:03  step 5: type the 'From' input field showing 'Bengaluru (BLR)' -> executed, changed (plan 1343 ms, ground 473.9 ms)",
+  "21:20:08  step 6: click the 'Delhi Indira Gandhi International (DEL)' option in the dropdown -> executed, changed (plan 1274 ms, ground 465.9 ms)",
+  "21:20:12  step 7: type the 'To' input field showing 'Country, city or airport' -> executed, changed (plan 1236 ms, ground 474.5 ms)",
+  "21:20:18  step 8: click the 'London (Any)' option at the top of the dropdown -> executed, changed (plan 2470 ms, ground 606.7 ms)",
+  "21:20:23  step 9: click the '5' date in the November calendar -> executed, changed (plan 1104 ms, ground 2003.7 ms)",
+  "21:20:28  step 10: click the '5' date in the November calendar -> executed, changed (plan 1474 ms, ground 723.1 ms)",
+  "21:20:32  step 11: click the 'Travellers and cabin class' field showing '1 Adult, Economy' -> executed, changed (plan 1506 ms, ground 503.6 ms)",
+  "21:20:38  step 12: click the '+' button next to 'Adults' in the travellers panel -> executed, changed (plan 1308 ms, ground 2019.3 ms)",
+  "21:20:43  step 13: click the '+' button next to 'Children' in the travellers panel -> executed, changed (plan 2377 ms, ground 466.2 ms)",
+  "21:20:48  step 14: click the 'Age of child 1' dropdown below the Children row -> executed, changed (plan 1432 ms, ground 468.7 ms)",
+  "21:20:52  step 15: click the 'Select age' dropdown below 'Age of child 1' -> executed, changed (plan 1555 ms, ground 455.0 ms)",
+  "21:20:57  step 16: click the '10' option in the age dropdown list -> executed, changed (plan 1692 ms, ground 493.4 ms)",
+  "21:21:02  step 17: click the 'Age of child 1' dropdown showing '1' -> executed, changed (plan 1732 ms, ground 494.0 ms)",
+  "21:21:07  step 18: scroll  -> executed, NO CHANGE (plan 3242 ms, ground - ms)",
+  "21:21:11  step 19: scroll  -> executed, NO CHANGE (plan 1466 ms, ground - ms)",
+  "21:21:17  step 20: click the '10' option in the age dropdown list -> executed, changed (plan 1531 ms, ground 1722.5 ms)",
+  "21:21:21  step 21: click the 'Age of child 1' dropdown showing '1' -> executed, changed (plan 1365 ms, ground 461.7 ms)",
+  "21:21:26  step 22: scroll  -> executed, NO CHANGE (plan 2629 ms, ground - ms)",
+  "21:21:28  step 23: loop guard - click 'the 10 option in the age dropdown list' proposed 3 times",
+  "21:22:16  user (manual): scroll  @[832, 700]",
+  "21:22:16  step 23: rejected (The user took over and acted by hand (screen has changed); look at the new screenshot and continue from there.)",
+  "21:22:18  step 24: loop guard - click 'the 10 option in the age dropdown list' proposed 3 times",
+  "21:22:29  step 24: user answered: click now",
+  "21:22:31  step 25: loop guard - click 'the 10 option in the age dropdown list' proposed 3 times",
+  "21:22:37  user (manual): click  @[825, 565]",
+  "21:22:37  step 25: rejected (The user took over and acted by hand (screen has changed); look at the new screenshot and continue from there.)"
+ ]
+}

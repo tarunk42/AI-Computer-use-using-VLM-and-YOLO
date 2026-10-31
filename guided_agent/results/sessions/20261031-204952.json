@@ -1,0 +1,131 @@
+{
+ "task": "How tall is it?",
+ "status": "done",
+ "result": "The Eiffel Tower is 330 m (1,083 ft) tall as of 2022 (with the digital radio antenna added March 15, 2022). Originally 300 m (980 ft) in 1889; it was 312.27 m with the 1889 flagpole, 320.75 m after the 1957 antenna, and 324 m from 2000\u20132022.",
+ "elapsed_s": 11.8,
+ "usage": {
+  "prompt": 5843,
+  "completion": 197,
+  "calls": 4,
+  "retries": 0
+ },
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "click",
+    "target": "the 'Design' section link in the Contents sidebar",
+    "reason": "The Design section contains the tower's dimensions, including its height."
+   },
+   "plan_ms": 1305,
+   "ground": {
+    "rtt_ms": 1154.5,
+    "gpu_ms": 167.4,
+    "network_ms": 980.6,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_62>,<loc_446>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    79,
+    357
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.2206,
+    "local": 0.1178,
+    "visible": true
+   },
+   "exec_ms": 123.6,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "click",
+    "target": "the 'Dimensions' section link in the Contents sidebar",
+    "reason": "The Dimensions section should state the tower's height."
+   },
+   "plan_ms": 1985,
+   "ground": {
+    "rtt_ms": 917.7,
+    "gpu_ms": 166.6,
+    "network_ms": 744.6,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_109>,<loc_834>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    140,
+    667
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1809,
+    "local": 0.0824,
+    "visible": true
+   },
+   "exec_ms": 120.1,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 3,
+   "action": {
+    "action": "scroll",
+    "direction": "down",
+    "amount": 3,
+    "reason": "See the rest of the height changes table to find the current height of the Eiffel Tower."
+   },
+   "plan_ms": 1363,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.2508,
+    "visible": true
+   },
+   "exec_ms": 139.7,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 4,
+   "action": {
+    "action": "done",
+    "summary": "The Eiffel Tower is 330 m (1,083 ft) tall as of 2022 (with the digital radio antenna added March 15, 2022). Originally 300 m (980 ft) in 1889; it was 312.27 m with the 1889 flagpole, 320.75 m after the 1957 antenna, and 324 m from 2000\u20132022."
+   },
+   "plan_ms": 1542,
+   "ground": null,
+   "point": null,
+   "decision": "done",
+   "note": null,
+   "outcome": "done",
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "20:49:52  task: How tall is it?",
+  "20:49:56  step 1: click the 'Design' section link in the Contents sidebar -> executed, changed (plan 1305 ms, ground 1154.5 ms)",
+  "20:50:00  step 2: click the 'Dimensions' section link in the Contents sidebar -> executed, changed (plan 1985 ms, ground 917.7 ms)",
+  "20:50:02  step 3: scroll  -> executed, changed (plan 1363 ms, ground - ms)",
+  "20:50:04  done: The Eiffel Tower is 330 m (1,083 ft) tall as of 2022 (with the digital radio antenna added March 15, 2022). Originally 300 m (980 ft) in 1889; it was 312.27 m with the 1889 flagpole, 320.75 m after the 1957 antenna, and 324 m from 2000\u20132022."
+ ]
+}

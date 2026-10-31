@@ -1,0 +1,49 @@
+{
+ "task": "scroll up and down and select the cheapest option",
+ "status": "stopped",
+ "result": "stopped by user",
+ "elapsed_s": 9.7,
+ "usage": {
+  "prompt": 1210,
+  "completion": 43,
+  "calls": 1,
+  "retries": 0
+ },
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "click",
+    "target": "the 'London Hotel Deals on Sk' browser tab",
+    "reason": "The task is about hotel deals; switch to the hotel deals tab to find and select the cheapest option."
+   },
+   "plan_ms": 1421,
+   "ground": {
+    "rtt_ms": 1296.8,
+    "gpu_ms": 151.1,
+    "network_ms": 1139.7,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_119>,<loc_54>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    152,
+    43
+   ],
+   "decision": "stopped",
+   "note": null,
+   "outcome": null,
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "20:47:16  task: scroll up and down and select the cheapest option",
+  "20:47:24  stopped by user"
+ ]
+}

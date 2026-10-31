@@ -1,0 +1,214 @@
+{
+ "task": "Using the search on this documentation site, find in which Python version str.casefold() was added.",
+ "status": "done",
+ "result": "The docs page for str.casefold() states 'Added in version 3.3.', so str.casefold() was added in Python 3.3.",
+ "elapsed_s": 30.8,
+ "usage": {
+  "prompt": 8807,
+  "completion": 336,
+  "calls": 7,
+  "retries": 1
+ },
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "click",
+    "target": "the 'Quick search' input field at the top right",
+    "reason": "Use the site search to look up str.casefold()"
+   },
+   "plan_ms": 3605,
+   "ground": {
+    "rtt_ms": 1417.2,
+    "gpu_ms": 99.0,
+    "network_ms": 1313.7,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_796>,<loc_169>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    1019,
+    135
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0015,
+    "local": 0.0442,
+    "visible": true
+   },
+   "exec_ms": 145.6,
+   "tokens": {
+    "attempts": 2
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "type",
+    "target": "the 'Quick search' input field at the top right",
+    "text": "str.casefold",
+    "submit": true,
+    "reason": "Search the docs for str.casefold to find its version-added note"
+   },
+   "plan_ms": 1425,
+   "ground": {
+    "rtt_ms": 1738.5,
+    "gpu_ms": 99.0,
+    "network_ms": 1634.9,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_796>,<loc_169>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    1019,
+    135
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0961,
+    "local": 0.1187,
+    "visible": true
+   },
+   "exec_ms": 436.6,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 3,
+   "action": {
+    "action": "click",
+    "target": "the 'str.casefold (Python method, in Built-in Types)' search result link",
+    "reason": "Open the str.casefold documentation page to see the version-added note."
+   },
+   "plan_ms": 2044,
+   "ground": {
+    "rtt_ms": 2344.8,
+    "gpu_ms": 98.5,
+    "network_ms": 2242.5,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_432>,<loc_542>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    553,
+    434
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "local": 0.0,
+    "visible": false
+   },
+   "exec_ms": 135.1,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 4,
+   "action": {
+    "action": "click",
+    "target": "the 'str.casefold' link in the first search result",
+    "reason": "Open the str.casefold documentation page to see the version-added note."
+   },
+   "plan_ms": 1851,
+   "ground": {
+    "rtt_ms": 1519.3,
+    "gpu_ms": 97.5,
+    "network_ms": 1418.2,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_344>,<loc_542>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    440,
+    434
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0063,
+    "local": 0.0344,
+    "visible": true
+   },
+   "exec_ms": 119.9,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 5,
+   "action": {
+    "action": "click",
+    "target": "the 'str.casefold' link in the first search result",
+    "reason": "Open the str.casefold documentation page to see the version-added note."
+   },
+   "plan_ms": 1674,
+   "ground": {
+    "rtt_ms": 1424.9,
+    "gpu_ms": 97.9,
+    "network_ms": 1322.7,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_343>,<loc_542>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    439,
+    434
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1578,
+    "local": 0.3127,
+    "visible": true
+   },
+   "exec_ms": 142.2,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 6,
+   "action": {
+    "action": "done",
+    "summary": "The docs page for str.casefold() states 'Added in version 3.3.', so str.casefold() was added in Python 3.3."
+   },
+   "plan_ms": 1626,
+   "ground": null,
+   "point": null,
+   "decision": "done",
+   "note": null,
+   "outcome": "done",
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "19:48:27  task: Using the search on this documentation site, find in which Python version str.casefold() was added.",
+  "19:48:33  step 1: click the 'Quick search' input field at the top right -> executed, changed (plan 3605 ms, ground 1417.2 ms)",
+  "19:48:39  step 2: type the 'Quick search' input field at the top right -> executed, changed (plan 1425 ms, ground 1738.5 ms)",
+  "19:48:44  step 3: click the 'str.casefold (Python method, in Built-in Types)' search result link -> executed, NO CHANGE (plan 2044 ms, ground 2344.8 ms)",
+  "19:48:49  step 4: click the 'str.casefold' link in the first search result -> executed, changed (plan 1851 ms, ground 1519.3 ms)",
+  "19:48:53  step 5: click the 'str.casefold' link in the first search result -> executed, changed (plan 1674 ms, ground 1424.9 ms)",
+  "19:48:55  done: The docs page for str.casefold() states 'Added in version 3.3.', so str.casefold() was added in Python 3.3."
+ ]
+}

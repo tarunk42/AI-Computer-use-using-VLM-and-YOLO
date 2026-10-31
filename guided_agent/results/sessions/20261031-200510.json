@@ -1,0 +1,699 @@
+{
+ "task": "open google.com, then search for thermodynamic computing, go to the wikipedia link",
+ "status": "stopped",
+ "result": "stopped by user",
+ "elapsed_s": 219.6,
+ "usage": {
+  "prompt": 31831,
+  "completion": 883,
+  "calls": 23,
+  "retries": 0
+ },
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "navigate",
+    "url": "https://www.google.com",
+    "reason": "Open Google as the task requires, then search for thermodynamic computing."
+   },
+   "plan_ms": 1653,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0689,
+    "visible": true
+   },
+   "exec_ms": 336.3,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "type",
+    "target": "the search input field in the middle of the page",
+    "text": "thermodynamic computing",
+    "submit": true,
+    "reason": "Search Google for thermodynamic computing"
+   },
+   "plan_ms": 1575,
+   "ground": {
+    "rtt_ms": 9984.6,
+    "gpu_ms": 112.3,
+    "network_ms": 9863.8,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_437>,<loc_532>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    559,
+    426
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.026,
+    "local": 0.054,
+    "visible": true
+   },
+   "exec_ms": 530.2,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 3,
+   "action": {
+    "action": "click",
+    "target": "the 'Google Search' button below the search box",
+    "reason": "The typed query did not submit; clicking the search button runs the search."
+   },
+   "plan_ms": 1439,
+   "ground": {
+    "rtt_ms": 1014.8,
+    "gpu_ms": 111.2,
+    "network_ms": 898.6,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_437>,<loc_533>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    559,
+    426
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "local": 0.0,
+    "visible": false
+   },
+   "exec_ms": 131.9,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 4,
+   "action": {
+    "action": "type",
+    "target": "the search input field in the middle of the page",
+    "text": "thermodynamic computing",
+    "submit": true,
+    "reason": "The search box appears empty; typing the query and pressing Enter submits it."
+   },
+   "plan_ms": 1609,
+   "ground": {
+    "rtt_ms": 761.8,
+    "gpu_ms": 99.4,
+    "network_ms": 657.9,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_437>,<loc_532>)</s>",
+    "repeat_of_dead_spot": true
+   },
+   "point": [
+    559,
+    426
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "local": 0.0,
+    "visible": false
+   },
+   "exec_ms": 548.7,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 5,
+   "action": {
+    "action": "click",
+    "target": "the search box with the plus icon and 'AI Mode' label",
+    "reason": "Focus the search input so typing works, since previous clicks on the button had no effect."
+   },
+   "plan_ms": 1496,
+   "ground": {
+    "rtt_ms": 414.9,
+    "gpu_ms": 100.8,
+    "network_ms": 309.7,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_452>,<loc_441>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    579,
+    353
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0409,
+    "local": 0.01,
+    "visible": true
+   },
+   "exec_ms": 130.1,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 6,
+   "action": {
+    "action": "type",
+    "target": "the search input field at the top of the search box (cursor visible)",
+    "text": "thermodynamic computing",
+    "submit": true,
+    "reason": "Type the query into the focused search box and press Enter to run the search."
+   },
+   "plan_ms": 1869,
+   "ground": {
+    "rtt_ms": 478.7,
+    "gpu_ms": 98.8,
+    "network_ms": 375.8,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_103>,<loc_53>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    132,
+    42
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.161,
+    "local": 0.1321,
+    "visible": true
+   },
+   "exec_ms": 527.9,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 7,
+   "action": {
+    "action": "scroll",
+    "direction": "down",
+    "amount": 4,
+    "reason": "Scroll past the AI Overview to reach the organic results, where the Wikipedia link should appear."
+   },
+   "plan_ms": 1446,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.2139,
+    "visible": true
+   },
+   "exec_ms": 160.1,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 8,
+   "action": {
+    "action": "scroll",
+    "direction": "up",
+    "amount": 6,
+    "reason": "Scroll up to reach the top of the results where the Wikipedia link likely appears."
+   },
+   "plan_ms": 1449,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1876,
+    "visible": true
+   },
+   "exec_ms": 223.0,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 9,
+   "action": {
+    "action": "click",
+    "target": "the 'More' button in the filter bar below the search box",
+    "reason": "Open the More menu to find a Wikipedia result link, since no Wikipedia link is visible on this page."
+   },
+   "plan_ms": 1685,
+   "ground": {
+    "rtt_ms": 726.5,
+    "gpu_ms": 105.4,
+    "network_ms": 615.3,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_473>,<loc_278>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    605,
+    222
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0059,
+    "local": 0.0235,
+    "visible": true
+   },
+   "exec_ms": 122.7,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 10,
+   "action": {
+    "action": "click",
+    "target": "the 'Web' option in the More dropdown menu",
+    "reason": "Open the Web results filter to find the Wikipedia link for thermodynamic computing."
+   },
+   "plan_ms": 1718,
+   "ground": {
+    "rtt_ms": 469.2,
+    "gpu_ms": 105.4,
+    "network_ms": 357.9,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_486>,<loc_465>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    622,
+    372
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1449,
+    "local": 0.2408,
+    "visible": true
+   },
+   "exec_ms": 122.7,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 11,
+   "action": {
+    "action": "scroll",
+    "direction": "down",
+    "amount": 4,
+    "reason": "No Wikipedia result visible yet; scroll down to find the Wikipedia link for thermodynamic computing."
+   },
+   "plan_ms": 1579,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1079,
+    "visible": true
+   },
+   "exec_ms": 160.9,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 12,
+   "action": {
+    "action": "scroll",
+    "direction": "down",
+    "amount": 3,
+    "reason": "Looking for the Wikipedia result further down the search results page."
+   },
+   "plan_ms": 1465,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0792,
+    "visible": true
+   },
+   "exec_ms": 140.3,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 13,
+   "action": {
+    "action": "scroll",
+    "direction": "down",
+    "amount": 3,
+    "reason": "No Wikipedia result visible yet; scroll further to find the Wikipedia link for thermodynamic computing."
+   },
+   "plan_ms": 1577,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0649,
+    "visible": true
+   },
+   "exec_ms": 133.2,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 14,
+   "action": {
+    "action": "scroll",
+    "direction": "down",
+    "amount": 3,
+    "reason": "Look further down the results for the Wikipedia link on thermodynamic computing."
+   },
+   "plan_ms": 1213,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "visible": false
+   },
+   "exec_ms": 133.7,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 15,
+   "action": {
+    "action": "scroll",
+    "direction": "down",
+    "amount": 3,
+    "reason": "No Wikipedia result visible yet; scroll further down the results to find the Wikipedia link."
+   },
+   "plan_ms": 1231,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": "cannot scroll further, end of page",
+   "outcome": "executed",
+   "change": {
+    "global": 0.0,
+    "visible": false
+   },
+   "exec_ms": 137.3,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 16,
+   "action": {
+    "action": "click",
+    "target": "the 'Next' link at the bottom of the results page",
+    "reason": "Wikipedia result not on this page; go to next page of results to find it"
+   },
+   "plan_ms": 1826,
+   "ground": {
+    "rtt_ms": 448.4,
+    "gpu_ms": 100.6,
+    "network_ms": 342.7,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_446>,<loc_819>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    571,
+    655
+   ],
+   "decision": "approved",
+   "note": "search for thermodynamic computing wikipedia",
+   "outcome": "executed",
+   "change": {
+    "global": 0.0907,
+    "local": 0.0998,
+    "visible": true
+   },
+   "exec_ms": 129.6,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 17,
+   "action": {
+    "action": "navigate",
+    "url": "https://en.wikipedia.org/wiki/Thermodynamic_computing",
+    "reason": "Go directly to the Wikipedia article for thermodynamic computing instead of hunting through results pages."
+   },
+   "plan_ms": 1619,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0066,
+    "visible": true
+   },
+   "exec_ms": 496.3,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 18,
+   "action": {
+    "action": "wait",
+    "reason": "The Wikipedia URL was entered in the address bar; waiting for the page to load before verifying."
+   },
+   "plan_ms": 1219,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1105,
+    "visible": true
+   },
+   "exec_ms": 1505.0,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 19,
+   "action": {
+    "action": "click",
+    "target": "the 'Thermodynamic computing' link in the 'search for' sentence",
+    "reason": "The exact-title page doesn't exist; this link runs a Wikipedia search for the term to find the actual article."
+   },
+   "plan_ms": 1745,
+   "ground": {
+    "rtt_ms": 520.6,
+    "gpu_ms": 101.4,
+    "network_ms": 413.5,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_216>,<loc_626>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    276,
+    501
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.0061,
+    "local": 0.0262,
+    "visible": true
+   },
+   "exec_ms": 129.3,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 20,
+   "action": {
+    "action": "click",
+    "target": "the 'Thermodynamic computing' link in the 'Search for' line of the notice",
+    "reason": "Open the Wikipedia search results for the exact title to find the article."
+   },
+   "plan_ms": 1621,
+   "ground": {
+    "rtt_ms": 585.5,
+    "gpu_ms": 100.5,
+    "network_ms": 479.9,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_216>,<loc_626>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    276,
+    501
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1018,
+    "local": 0.27,
+    "visible": true
+   },
+   "exec_ms": 134.3,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 21,
+   "action": {
+    "action": "click",
+    "target": "the 'Thermodynamics' link in the first search result",
+    "reason": "The exact 'Thermodynamic computing' page doesn't exist; the closest Wikipedia article is Thermodynamics, which is the first result."
+   },
+   "plan_ms": 1876,
+   "ground": {
+    "rtt_ms": 507.8,
+    "gpu_ms": 102.2,
+    "network_ms": 400.0,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_167>,<loc_757>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    214,
+    606
+   ],
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.1685,
+    "local": 0.2168,
+    "visible": true
+   },
+   "exec_ms": 129.4,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 22,
+   "action": {
+    "action": "navigate",
+    "url": "https://en.wikipedia.org/wiki/Thermodynamic_computing",
+    "reason": "We landed on the general Thermodynamics article; navigate directly to the Thermodynamic computing Wikipedia page."
+   },
+   "plan_ms": 1736,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.174,
+    "visible": true
+   },
+   "exec_ms": 486.3,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 23,
+   "action": {
+    "action": "click",
+    "target": "the 'search for' link in the notice text",
+    "reason": "The exact-title page doesn't exist; use Wikipedia's search to find the correct article."
+   },
+   "plan_ms": 1507,
+   "ground": {
+    "rtt_ms": 477.9,
+    "gpu_ms": 101.7,
+    "network_ms": 370.6,
+    "cold": false,
+    "gpu": "NVIDIA A10G",
+    "raw": "</s><s>(<loc_479>,<loc_424>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    613,
+    339
+   ],
+   "decision": "stopped",
+   "note": null,
+   "outcome": null,
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "20:05:11  task: open google.com, then search for thermodynamic computing, go to the wikipedia link",
+  "20:05:18  step 1: navigate https://www.google.com -> executed, changed (plan 1653 ms, ground - ms)",
+  "20:05:40  step 2: type the search input field in the middle of the page -> executed, changed (plan 1575 ms, ground 9984.6 ms)",
+  "20:05:50  step 3: click the 'Google Search' button below the search box -> executed, NO CHANGE (plan 1439 ms, ground 1014.8 ms)",
+  "20:05:56  step 4: type the search input field in the middle of the page -> executed, NO CHANGE (plan 1609 ms, ground 761.8 ms)",
+  "20:06:02  step 5: click the search box with the plus icon and 'AI Mode' label -> executed, changed (plan 1496 ms, ground 414.9 ms)",
+  "20:06:09  step 6: type the search input field at the top of the search box (cursor visible) -> executed, changed (plan 1869 ms, ground 478.7 ms)",
+  "20:06:13  step 7: scroll  -> executed, changed (plan 1446 ms, ground - ms)",
+  "20:06:16  step 8: scroll  -> executed, changed (plan 1449 ms, ground - ms)",
+  "20:06:21  step 9: click the 'More' button in the filter bar below the search box -> executed, changed (plan 1685 ms, ground 726.5 ms)",
+  "20:06:27  step 10: click the 'Web' option in the More dropdown menu -> executed, changed (plan 1718 ms, ground 469.2 ms)",
+  "20:06:31  step 11: scroll  -> executed, changed (plan 1579 ms, ground - ms)",
+  "20:06:34  step 12: scroll  -> executed, changed (plan 1465 ms, ground - ms)",
+  "20:06:38  step 13: scroll  -> executed, changed (plan 1577 ms, ground - ms)",
+  "20:06:41  step 14: scroll  -> executed, NO CHANGE (plan 1213 ms, ground - ms)",
+  "20:06:59  step 15: scroll  -> executed, NO CHANGE (plan 1231 ms, ground - ms)",
+  "20:07:20  step 16: click the 'Next' link at the bottom of the results page -> executed, changed (plan 1826 ms, ground 448.4 ms)",
+  "20:07:24  step 17: navigate https://en.wikipedia.org/wiki/Thermodynamic_computing -> executed, changed (plan 1619 ms, ground - ms)",
+  "20:07:30  step 18: wait  -> executed, changed (plan 1219 ms, ground - ms)",
+  "20:07:36  step 19: click the 'Thermodynamic computing' link in the 'search for' sentence -> executed, changed (plan 1745 ms, ground 520.6 ms)",
+  "20:07:43  step 20: click the 'Thermodynamic computing' link in the 'Search for' line of the notice -> executed, changed (plan 1621 ms, ground 585.5 ms)",
+  "20:08:07  step 21: click the 'Thermodynamics' link in the first search result -> executed, changed (plan 1876 ms, ground 507.8 ms)",
+  "20:08:15  step 22: navigate https://en.wikipedia.org/wiki/Thermodynamic_computing -> executed, changed (plan 1736 ms, ground - ms)",
+  "20:08:50  stopped by user"
+ ]
+}

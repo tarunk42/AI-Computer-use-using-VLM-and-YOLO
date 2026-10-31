@@ -1,0 +1,61 @@
+{
+ "task": "What licence is this repository released under?",
+ "status": "done",
+ "result": "The repository is released under the AGPL-3.0 license, as shown by the 'AGPL-3.0 license' link in the repository's About sidebar.",
+ "elapsed_s": 7.2,
+ "usage": {
+  "prompt": 2317,
+  "completion": 77,
+  "calls": 2,
+  "retries": 0
+ },
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "scroll",
+    "direction": "down",
+    "amount": 5,
+    "reason": "Scroll to the bottom of the repository page where the licence information is shown in the sidebar."
+   },
+   "plan_ms": 1673,
+   "ground": null,
+   "point": null,
+   "decision": "approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.222,
+    "visible": true
+   },
+   "exec_ms": 193.2,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "done",
+    "summary": "The repository is released under the AGPL-3.0 license, as shown by the 'AGPL-3.0 license' link in the repository's About sidebar."
+   },
+   "plan_ms": 1807,
+   "ground": null,
+   "point": null,
+   "decision": "done",
+   "note": null,
+   "outcome": "done",
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "19:57:32  task: What licence is this repository released under?",
+  "19:57:35  step 1: scroll  -> executed, changed (plan 1673 ms, ground - ms)",
+  "19:57:37  done: The repository is released under the AGPL-3.0 license, as shown by the 'AGPL-3.0 license' link in the repository's About sidebar."
+ ]
+}

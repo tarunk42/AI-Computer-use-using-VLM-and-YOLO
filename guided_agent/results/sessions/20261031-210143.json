@@ -1,0 +1,75 @@
+{
+ "task": "Find the capital of Australia using Wikipedia's search.",
+ "status": "done",
+ "result": "Wikipedia's Canberra article states: \"Canberra is the capital city of Australia.\" So the capital of Australia is Canberra.",
+ "elapsed_s": 11.0,
+ "usage": {
+  "prompt": 2544,
+  "completion": 73,
+  "calls": 2,
+  "retries": 0
+ },
+ "mode": "auto",
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "type",
+    "target": "the 'Search Wikipedia' input field at the top of the page",
+    "text": "Canberra",
+    "submit": true,
+    "reason": "Search Wikipedia for the capital of Australia"
+   },
+   "plan_ms": 1451,
+   "ground": {
+    "rtt_ms": 755.9,
+    "gpu_ms": 159.1,
+    "network_ms": 590.6,
+    "cold": false,
+    "gpu": "Tesla T4",
+    "raw": "</s><s>(<loc_375>,<loc_176>)</s>",
+    "repeat_of_dead_spot": false
+   },
+   "point": [
+    480,
+    141
+   ],
+   "decision": "auto-approved",
+   "note": null,
+   "outcome": "executed",
+   "change": {
+    "global": 0.216,
+    "local": 0.0046,
+    "visible": true
+   },
+   "exec_ms": 390.2,
+   "tokens": {
+    "attempts": 1
+   }
+  },
+  {
+   "n": 2,
+   "action": {
+    "action": "done",
+    "summary": "Wikipedia's Canberra article states: \"Canberra is the capital city of Australia.\" So the capital of Australia is Canberra."
+   },
+   "plan_ms": 1245,
+   "ground": null,
+   "point": null,
+   "decision": "done",
+   "note": null,
+   "outcome": "done",
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "21:01:45  task: Find the capital of Australia using Wikipedia's search.",
+  "21:01:53  step 1: type the 'Search Wikipedia' input field at the top of the page -> executed, changed (plan 1451 ms, ground 755.9 ms)",
+  "21:01:54  done: Wikipedia's Canberra article states: \"Canberra is the capital city of Australia.\" So the capital of Australia is Canberra."
+ ]
+}

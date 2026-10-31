@@ -1,0 +1,37 @@
+{
+ "task": "What licence is this repository released under?",
+ "status": "done",
+ "result": "The repository ultralytics/ultralytics is released under the AGPL-3.0 license (shown in the sidebar as 'AGPL-3.0 license' and in the LICENSE file entry, which was updated to AGPL-3.0).",
+ "elapsed_s": 4.8,
+ "usage": {
+  "prompt": 1095,
+  "completion": 61,
+  "calls": 1,
+  "retries": 0
+ },
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "done",
+    "summary": "The repository ultralytics/ultralytics is released under the AGPL-3.0 license (shown in the sidebar as 'AGPL-3.0 license' and in the LICENSE file entry, which was updated to AGPL-3.0)."
+   },
+   "plan_ms": 2298,
+   "ground": null,
+   "point": null,
+   "decision": "done",
+   "note": null,
+   "outcome": "done",
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "19:43:56  task: What licence is this repository released under?",
+  "19:43:58  done: The repository ultralytics/ultralytics is released under the AGPL-3.0 license (shown in the sidebar as 'AGPL-3.0 license' and in the LICENSE file entry, which was updated to AGPL-3.0)."
+ ]
+}

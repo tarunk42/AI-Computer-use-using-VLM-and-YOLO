@@ -1,0 +1,18 @@
+{
+ "task": "Find the population of Tokyo on Wikipedia.",
+ "status": "stopped",
+ "result": "stopped by user",
+ "elapsed_s": 1.8,
+ "usage": {
+  "prompt": 1154,
+  "completion": 34,
+  "calls": 1,
+  "retries": 0
+ },
+ "pending": null,
+ "steps": [],
+ "events": [
+  "20:14:13  task: Find the population of Tokyo on Wikipedia.",
+  "20:14:15  stopped by user"
+ ]
+}

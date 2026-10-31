@@ -1,0 +1,38 @@
+{
+ "task": "on skyscanner.com look for a one way  flight from delhi to london, on 5th of november, direct, 2 adults, 1 kid",
+ "status": "done",
+ "result": "The Skyscanner results page already shows exactly the requested search: one-way New Delhi (DEL) \u2192 London (Any), Thu 5 Nov, 2 travellers (2 adults + 1 child), Economy, with the 'Direct' filter checked. 34 of 914 results are direct; cheapest direct fare \u20b9174,737 (9h 13m average). Example: Qatar Airways DEL 03:20 \u2192 LHR 07:40, 9h 50m, direct.",
+ "elapsed_s": 2.0,
+ "usage": {
+  "prompt": 1725,
+  "completion": 110,
+  "calls": 1,
+  "retries": 0
+ },
+ "mode": "manual",
+ "pending": null,
+ "steps": [
+  {
+   "n": 1,
+   "action": {
+    "action": "done",
+    "summary": "The Skyscanner results page already shows exactly the requested search: one-way New Delhi (DEL) \u2192 London (Any), Thu 5 Nov, 2 travellers (2 adults + 1 child), Economy, with the 'Direct' filter checked. 34 of 914 results are direct; cheapest direct fare \u20b9174,737 (9h 13m average). Example: Qatar Airways DEL 03:20 \u2192 LHR 07:40, 9h 50m, direct."
+   },
+   "plan_ms": 2001,
+   "ground": null,
+   "point": null,
+   "decision": "done",
+   "note": null,
+   "outcome": "done",
+   "change": null,
+   "exec_ms": 0,
+   "tokens": {
+    "attempts": 1
+   }
+  }
+ ],
+ "events": [
+  "21:15:30  task: on skyscanner.com look for a one way  flight from delhi to london, on 5th of november, direct, 2 adults, 1 kid",
+  "21:15:32  done: The Skyscanner results page already shows exactly the requested search: one-way New Delhi (DEL) \u2192 London (Any), Thu 5 Nov, 2 travellers (2 adults + 1 child), Economy, with the 'Direct' filter checked. 34 of 914 results are direct; cheapest direct fare \u20b9174,737 (9h 13m average). Example: Qatar Airways DEL 03:20 \u2192 LHR 07:40, 9h 50m, direct."
+ ]
+}
