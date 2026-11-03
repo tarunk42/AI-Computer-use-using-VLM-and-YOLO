@@ -3,7 +3,7 @@
 # and piped over SSH into the program's memory; it is never written on the VM.
 VM=${VM:?set VM=ubuntu@<vm-ip>}
 KEY=${KEY:-~/.ssh/aws-guided.pem}
-PORT=${1:-8000}   # 8000 = Firefox desktop container, 8001 = headless Chromium
+PORT=${1:-8000}   # 8000 = Firefox desktop container, 8001 = headless Chromium, 8002 = full Chromium
 
 zsh -ic 'printf "%s\n" "$DEEPSEEK_API_KEY"' 2>/dev/null | ssh -i $KEY $VM '
   fuser -k 8770/tcp 2>/dev/null; sleep 1

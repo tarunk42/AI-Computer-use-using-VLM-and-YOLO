@@ -1,0 +1,11 @@
+# Host side of the guided agent (web UI, planner client, grounder client, benchmarks).
+# The GoClick grounder's own dependencies are pinned in grounder_modal.py (Modal image).
+fastapi==0.162.0
+uvicorn==0.54.0
+httpx==0.28.1
+openai==3.42.1
+pillow==13.0.0
+numpy==2.5.4
+modal==1.6.3
+playwright==1.64.1     # bench_grounding.py and the optional Chromium backends
+matplotlib==3.11.2     # render_scorecard.py, experiments/04_cloud_deployment/render_charts.py

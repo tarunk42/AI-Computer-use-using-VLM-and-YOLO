@@ -1,514 +1,438 @@
-# 🎯 AI Computer Use - UI Detection & Automation Platform
+<div align="center">
 
-> A foundational system for AI-driven computer interaction using YOLOv8 object detection and Vision-Language Models (VLMs) to understand and interact with screen elements.
+# Guided Computer Use
 
-![Python](https://img.shields.io/badge/python-3.13-blue)
-![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-green)
-![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-orange)
-![License](https://img.shields.io/badge/license-MIT-blue)
+**A human-approved browser agent: a DeepSeek planner decides the next step, the GoClick grounder
+finds where to click, and you approve every action on a live view of a real browser.**
 
-> **Update (Oct 2026):** the project has moved to a guided agent: a DeepSeek planner plus the GoClick
-> grounder on a Modal GPU, working on real websites. See [`guided_agent/`](guided_agent/) and its
-> [report](guided_agent/REPORT.md). How we got there: [`experiments/`](experiments/README.md). The YOLO + VLM
-> version below is kept as is (branch `legacy-bug-fix`, tag `v1-yolo-vlm`).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Status](https://img.shields.io/badge/status-research%20prototype-blue)
+![Tasks](https://img.shields.io/badge/real--site%20tasks-12%2F12-brightgreen)
+![Grounding](https://img.shields.io/badge/grounding%20hit%20rate-90.7%25-brightgreen)
+![Step latency](https://img.shields.io/badge/step%20latency-~2.8%20s-informational)
 
----
+</div>
 
-## 📋 Table of Contents
-
-- [🎯 Overview](#-overview)
-- [🚀 Project Goals](#-project-goals)
-- [🏗️ Architecture](#️-architecture)
-- [🛠️ Tech Stack](#️-tech-stack)
-- [📁 Project Structure](#-project-structure)
-- [🔬 Approaches Tested](#-approaches-tested)
-- [🎨 Features](#-features)
-- [⚡ Quick Start](#-quick-start)
-- [📊 Results & Achievements](#-results--achievements)
-- [🔧 Configuration](#-configuration)
-- [📈 Performance](#-performance)
-- [🛣️ Roadmap](#️-roadmap)
-- [🤝 Contributing](#-contributing)
-- [👤 Author](#-author)
+![The web UI on a cloud VM: a proposed step with its click point on the live screen](experiments/04_cloud_deployment/screenshots/web_ui_proposal.png)
 
 ---
 
-## 🎯 Overview
+## Contents
 
-This project is the **first phase** of building an AI computer use system that can autonomously interact with user interfaces. The system captures screen content, detects UI elements using fine-tuned YOLO models, and leverages Vision-Language Models (VLMs) to understand context and suggest actions.
-
-**The Vision**: Enable AI agents to "see" and "act" on screens like humans do - identifying buttons, forms, links, and other UI components to perform complex automation tasks.
-
----
-
-## 🚀 Project Goals
-
-### Primary Objectives
-- **🔍 UI Element Detection**: Accurately identify and localize UI components (buttons, fields, links, etc.)
-- **📍 Coordinate Extraction**: Provide precise bounding boxes for clickable/interactable elements
-- **🧠 Contextual Understanding**: Use VLMs to interpret UI functionality and suggest user actions
-- **⚡ Real-time Processing**: Achieve low-latency detection suitable for live automation
-- **🔗 VLM Integration**: Bridge visual detection with language understanding for intelligent action planning
-
-### Long-term Vision
-- **🤖 Agent Framework**: Build tool-calling agents that can execute actions based on screen analysis
-- **🔄 Feedback Loop**: Implement closed-loop automation with success/failure detection
-- **🌐 Multi-platform Support**: Extend beyond web UIs to desktop and mobile applications
+- [Overview](#overview)
+- [How the project evolved](#how-the-project-evolved)
+- [Architecture](#architecture)
+- [Tech stack](#tech-stack)
+- [Repository layout](#repository-layout)
+- [Getting started](#getting-started)
+- [Running](#running)
+- [Deploying to a cloud VM](#deploying-to-a-cloud-vm)
+- [Results](#results)
+- [Security notes](#security-notes)
+- [Documentation](#documentation)
+- [License](#license)
+- [Author](#author)
 
 ---
 
-## 🏗️ Architecture
+## Overview
+
+The agent works on real websites in a real browser running inside a container. Each step goes
+through the same loop:
+
+1. **See.** Take a screenshot of the browser.
+2. **Plan.** DeepSeek reads the screenshot and the step history and returns one JSON action:
+   `click`, `type`, `key`, `scroll`, `navigate`, `wait`, `ask_user` or `done`.
+3. **Ground.** For a click or typing action, GoClick (a 0.2 B Florence-2 model) running on a Modal
+   GPU turns the target description, such as "the 'Log in' link", into a pixel position.
+4. **Approve.** The web UI shows the action and its click point on the live screen. You can
+   approve it, move the point, reject it with a note the planner will read, answer its questions,
+   or stop.
+5. **Act and check.** The action runs, the agent waits for the screen to settle, then measures what
+   changed. "No visible change" goes back into the history so the planner tries something else.
+
+The agent is **guided, not autonomous**: nothing runs without your approval. Passwords and payment
+details are always handed back to you.
+
+## How the project evolved
+
+The project started in 2025 as **YOLOv8 UI detection plus a vision-language model** reading a
+set-of-mark screenshot (tag `v1-yolo-vlm`; its original README is kept in
+[`docs/legacy/README_v1.md`](docs/legacy/README_v1.md)).
+
+Fixing a bug where the VLM was sent the raw frame instead of the annotated one (experiment 01) and
+moving detection to a serverless GPU (02) showed where that design ran out of room. Experiment 03
+replaced detection with a **planner + grounder** split, DeepSeek deciding what to do and GoClick
+deciding where, and proved it on a mock page. The guided agent in [`guided_agent/`](guided_agent/)
+took that pattern to real websites, with GoClick on a Modal GPU and a human approving every step.
+
+Experiment 04 then ran the same agent on a small **AWS VM** and made its live view usable from
+another continent: streaming, a lighter Firefox, and headless and full Chromium backends. Each step
+is recorded in [`experiments/`](experiments/README.md), and the design decisions are in
+[`docs/adr/`](docs/adr/).
+
+## Architecture
 
 ```mermaid
-graph TD
-    A[Screen Capture<br/>VNC/Screenshot] --> B[YOLO Detection<br/>UI Element Localization]
-    B --> C[Coordinate Extraction<br/>Bounding Boxes]
-    B --> D[Annotated Frame<br/>Visual Output]
-    C --> E[VLM Analysis<br/>GPT-4o Context Understanding]
-    D --> E
-    E --> F[Action Suggestions<br/>Natural Language]
-    F --> G[Future: Agent Framework<br/>Tool Execution]
-    
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style E fill:#fff3e0
-    style G fill:#e8f5e8
+flowchart LR
+    subgraph OP["Operator"]
+        UI["Web UI<br/>live view · approve · reject · stop"]
+    end
+
+    subgraph HOST["Host: Mac or cloud VM"]
+        direction TB
+        WEB["webdemo.py<br/>FastAPI + Uvicorn :8770"]
+        AG["agent.py<br/>guided loop · change check"]
+        WEB <--> AG
+    end
+
+    subgraph DESK["Desktop backend: container"]
+        direction TB
+        CTL["control.py :8000<br/>screenshot · act"]
+        FF["Firefox on Xvfb + Openbox<br/>driven by xdotool"]
+        CTL --> FF
+    end
+
+    subgraph CLOUD["Cloud services"]
+        direction TB
+        DS["DeepSeek API<br/>planner, thinking off"]
+        MG["Modal GPU (T4, L4/A10G fallback)<br/>GoClick-Base fp16"]
+    end
+
+    UI -- "HTTPS + password<br/>(Caddy) or SSH tunnel" --> WEB
+    WEB -- "MJPEG / WebP stream" --> UI
+    AG -- "HTTP /screenshot, /act" --> CTL
+    AG -- "screenshot + history → JSON action" --> DS
+    AG -- "image + target → x, y" --> MG
+    FF -- "real internet" --> NET(("Websites"))
 ```
 
----
-
-## 🛠️ Tech Stack
-
-### Core Technologies
-| Technology | Purpose | Version |
-|------------|---------|---------|
-| ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) | Primary Language | 3.13 |
-| ![YOLOv8](https://img.shields.io/badge/YOLOv8-00FFFF?style=flat&logo=python&logoColor=black) | Object Detection | Ultralytics 8.3+ |
-| ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white) | Vision-Language Model | GPT-4o |
-| ![OpenCV](https://img.shields.io/badge/OpenCV-27338e?style=flat&logo=OpenCV&logoColor=white) | Computer Vision | 4.11+ |
-| ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white) | Deep Learning Backend | 2.6+ |
-
-### Supporting Libraries
-- **VNC Control**: `vncdotool` for remote screen capture
-- **Image Processing**: `PIL`, `matplotlib` for visualization
-- **Data Handling**: `numpy`, `pathlib` for efficient processing
-- **API Integration**: `openai` for GPT-4o communication
-
----
-
-## 📁 Project Structure
-
-```
-📦 annotate/
-├── 📁 agents/                 # Future: Tool-calling agents
-├── 📁 annenv/                 # Python virtual environment
-├── 📁 models/                 # Trained YOLO models & configs
-│   ├── 🎯 yolov8_ui_model.pt  # Web UI detection model
-│   ├── 🎯 chunk01_best.pt     # RICO mobile UI model
-│   ├── 🎯 chunk02_best.pt     # RICO mobile UI model (v2)
-│   └── 📄 *.yaml             # Dataset configurations
-├── 📁 notebooks/              # Jupyter training & testing
-│   └── 📘 train.ipynb         # Model training & evaluation
-├── 📁 resources/              # Images & outputs
-│   ├── 📁 input/              # Test images
-│   ├── 📁 output/             # Annotated results
-│   └── 📁 temp/               # Temporary files
-├── 📁 tests/                  # Testing scripts
-│   ├── 🔄 vnc_vlm_loop.py     # Main: VNC+YOLO+VLM pipeline
-│   ├── 📹 screen_grab.py      # Real-time detection demo
-│   ├── 🖼️ single_frame.py     # Single frame analysis
-│   └── 🧠 test_models.py      # VLM testing
-└── 📁 rico_break/             # Dataset preparation tools
+```mermaid
+sequenceDiagram
+    autonumber
+    participant U as You (web UI)
+    participant A as agent.py
+    participant D as Desktop (control.py)
+    participant P as DeepSeek
+    participant G as GoClick (Modal)
+    A->>D: GET /screenshot
+    A->>P: screenshot + step history
+    P-->>A: {"action": "click", "target": "the Search button"}
+    A->>G: screenshot + target
+    G-->>A: (x, y)
+    A-->>U: proposed step, click point on the live view
+    U->>A: approve / move point / reject with note / stop
+    A->>D: POST /act
+    A->>D: screenshot until the screen settles
+    A->>A: measure change (whole screen and around the point)
 ```
 
----
+The desktop backend is replaceable: anything that serves the same `/health`, `/screenshot` and
+`/act` API works. Three are included. The **Firefox desktop** container is the default. Two
+**Chromium** backends (headless, and a full window on a virtual screen) use Playwright and push
+frames with Chromium's screencast. The agent picks one with `DESKTOP_URL`. More detail:
+[`guided_agent/ARCHITECTURE.md`](guided_agent/ARCHITECTURE.md).
 
-## 🔬 Approaches Tested
+## Tech stack
 
-### Approach 1: RICO Dataset (Mobile UI Focus)
-- **Dataset**: [RICO](http://interactionmining.org/rico) - 66k+ mobile app screenshots
-- **Classes**: Button, CheckBox, EditText, ImageButton, RadioButton, ToggleButton, Spinner, Switch, SeekBar, Misc
-- **Models**: `chunk01_best.pt`, `chunk02_best.pt`
-- **Performance**: ~120ms inference, good for mobile interfaces
+**Agent and models**
 
-### Approach 2: Web UI Dataset (Roboflow)
-- **Dataset**: [Website Screenshots](https://universe.roboflow.com/roboflow-gw7yv/website-screenshots/dataset/1)
-- **Classes**: button, field, heading, iframe, image, label, link, text
-- **Models**: `yolov8_ui_model.pt`, `yolov8_ui_100.pt`
-- **Performance**: ~125ms inference, optimized for web interfaces
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
+![DeepSeek](https://img.shields.io/badge/DeepSeek-deepseek--flash-4D6BFE?logo=deepseek&logoColor=white)
+![GoClick](https://img.shields.io/badge/GoClick--Base-Florence--2%200.2B-FFD21E?logo=huggingface&logoColor=black)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.5.1-EE4C2C?logo=pytorch&logoColor=white)
+![Transformers](https://img.shields.io/badge/Transformers-4.45.0-FFD21E?logo=huggingface&logoColor=black)
+![OpenAI SDK](https://img.shields.io/badge/OpenAI%20SDK-3.42-412991)
+![NumPy](https://img.shields.io/badge/NumPy-2.5.4-013243?logo=numpy&logoColor=white)
+![Pillow](https://img.shields.io/badge/Pillow-13.0.0-3776AB?logo=python&logoColor=white)
 
-### Key Findings
-- ✅ **Low Latency**: Both approaches achieve real-time performance (~120-130ms)
-- ⚠️ **Accuracy Challenges**: Generic UI detection remains challenging due to diverse layouts
-- ✅ **Viable Foundation**: Despite accuracy limitations, provides sufficient localization for VLM integration
-- 🎯 **VLM Enhancement**: GPT-4o significantly improves context understanding and action planning
+**Serving and web UI**
 
----
+![Modal](https://img.shields.io/badge/Modal-1.6.3-7FEE64?logo=modal&logoColor=black)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.162.0-009688?logo=fastapi&logoColor=white)
+![Uvicorn](https://img.shields.io/badge/Uvicorn-0.54.0-499848?logo=gunicorn&logoColor=white)
+![HTTPX](https://img.shields.io/badge/HTTPX-0.28.1-0A0A0A?logo=python&logoColor=white)
 
-## 🎨 Features
+**Browsers and desktop**
 
-### 🔍 Real-time UI Detection
-- Live VNC screen capture every 2-20 seconds
-- YOLOv8-based object detection with confidence filtering
-- Colored bounding box visualization with labels
+![Firefox](https://img.shields.io/badge/Firefox-142.0-FF7139?logo=firefoxbrowser&logoColor=white)
+![Chromium](https://img.shields.io/badge/Chromium-156.0-4285F4?logo=googlechrome&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-1.64.1-2EAD33)
+![Alpine](https://img.shields.io/badge/Alpine%20Linux-3.22-0D597F?logo=alpinelinux&logoColor=white)
+![X.Org](https://img.shields.io/badge/Xvfb%20%2B%20Openbox-X11-F28834?logo=xdotorg&logoColor=white)
+![xdotool](https://img.shields.io/badge/xdotool-3.2021-555555?logo=linux&logoColor=white)
 
-### 🧠 AI-Powered Analysis
-- GPT-4o integration for contextual UI understanding
-- Automatic correlation between detected elements and their functions
-- Natural language action suggestions
+**Containers and infrastructure**
 
-### 📊 Comprehensive Output
-- **Visual**: Annotated screenshots with detection boxes
-- **Textual**: Detailed descriptions and action recommendations
-- **Structured**: Confidence scores and coordinate data
+![Apple container](https://img.shields.io/badge/Apple%20container-1.4.1-000000?logo=apple&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-29.1-2496ED?logo=docker&logoColor=white)
+![AWS EC2](https://img.shields.io/badge/AWS%20EC2-m7i--flex.large-FF9900)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04%20LTS-E95420?logo=ubuntu&logoColor=white)
+![Caddy](https://img.shields.io/badge/Caddy-2.6.2-1F88C0?logo=caddy&logoColor=white)
+![Let's Encrypt](https://img.shields.io/badge/Let's%20Encrypt-TLS-003A70?logo=letsencrypt&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-3.11.2-11557C?logo=python&logoColor=white)
 
-### ⚡ Performance Optimized
-- Efficient inference pipeline (~120ms per frame)
-- Configurable confidence thresholds
-- Background processing for continuous monitoring
+| Layer | Component | Version | Where it is set |
+|---|---|---|---|
+| Planner | DeepSeek `deepseek-flash`, thinking off, temperature 0 | API | `guided_agent/agent.py` |
+| Grounder | GoClick-Base (Florence-2, 0.2 B), fp16 | — | `guided_agent/grounder_modal.py` |
+| Grounder runtime | PyTorch / torchvision / Transformers / timm, Python 3.12 on Debian slim | 2.5.1 / 0.20.1 / 4.45.0 / 1.0.15 | `guided_agent/grounder_modal.py` |
+| GPU serving | Modal, T4 first, L4 and A10G as fallbacks, 120 s idle shutdown | 1.6.3 | `guided_agent/grounder_modal.py` |
+| Host app | FastAPI, Uvicorn, HTTPX, OpenAI SDK, Pillow, NumPy | see file | `guided_agent/requirements.txt` |
+| Desktop | Alpine 3.22, Xvfb, Openbox, Firefox 142, xdotool | 3.22 / 142.0 | `guided_agent/desktop/Dockerfile` |
+| Chromium backends | Playwright with its Chromium build | 1.64.1 / 156.0 | `experiments/04_cloud_deployment/deploy/` |
+| Cloud VM | AWS EC2 `m7i-flex.large`, Ubuntu 24.04, Docker, Caddy | 29.1 / 2.6.2 | `experiments/04_cloud_deployment/REPORT.md` |
 
----
+## Repository layout
 
-## ⚡ Quick Start
+```
+.
+├── guided_agent/                 # the current system
+│   ├── agent.py                  # guided loop, planner prompt, change detection
+│   ├── webdemo.py, webdemo.html  # web UI on 127.0.0.1:8770
+│   ├── grounder_modal.py         # GoClick on a Modal GPU
+│   ├── grounder_client.py        # kept-alive client for the grounder
+│   ├── ipv4_only.py, modal_cli.py# IPv4-only workaround for Modal on some networks
+│   ├── desktop/                  # Firefox desktop container (Dockerfile, control.py, policies.json)
+│   ├── bench_grounding.py        # grounding benchmark against DOM ground truth
+│   ├── run_tasks.py              # end-to-end real-site tasks with known answers
+│   ├── render_scorecard.py       # benchmark/scorecard.png
+│   ├── requirements.txt
+│   ├── ARCHITECTURE.md, REPORT.md
+│   └── benchmark/, results/
+├── experiments/                  # how the project got here, 01–04, each with its report
+│   └── 04_cloud_deployment/      # AWS VM: deploy files, Chromium backends, charts, report
+├── docs/
+│   ├── adr/                      # architecture decision records
+│   └── legacy/README_v1.md       # README of the YOLOv8 + VLM version
+├── models/, notebooks/, tests/, resources/, rico_break/   # v1 (YOLOv8 + VLM) code and data
+├── CHANGELOG.md
+└── LICENSE
+```
+
+## Getting started
 
 ### Prerequisites
-```bash
-# Python 3.13+ required
-python --version
 
-# Clone repository
+| Need | Why |
+|---|---|
+| macOS with [Apple `container`](https://github.com/apple/container), or any machine with Docker | runs the browser desktop |
+| Python 3.12 | host app and benchmarks |
+| A [Modal](https://modal.com) account | GPU for the GoClick grounder |
+| A [DeepSeek](https://platform.deepseek.com) API key | the planner |
+
+### 1. Install
+
+```bash
 git clone https://github.com/tarunk42/AI-Computer-use-using-VLM-and-YOLO.git
-cd annotate
+cd AI-Computer-use-using-VLM-and-YOLO
+git checkout goclick-agent
+cd guided_agent
+python3.12 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/playwright install chromium     # only for bench_grounding.py and the Chromium backends
 ```
 
-### Environment Setup
+### 2. Deploy the grounder to Modal
+
 ```bash
-# Create virtual environment
-python -m venv venv
-
-# Activate virtual environment
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
+.venv/bin/modal setup                                                  # log in once
+python3 -c "import secrets; print(secrets.token_urlsafe(32))" > .grounder_token
+chmod 600 .grounder_token                                              # git-ignored
+.venv/bin/modal secret create guided-cua-auth GROUNDER_TOKEN="$(cat .grounder_token)"
+.venv/bin/python modal_cli.py deploy grounder_modal.py
 ```
 
-### Configuration
+The deploy prints the endpoint URL. Set it for the agent:
+
 ```bash
-# Set OpenAI API key
-echo "OPENAI_API_KEY=your_key_here" > .env
-
-# Configure VNC settings in test files
-VNC_HOST = "localhost"
-VNC_PORT = 5900
-VNC_PASSWORD = "1234"
+export GROUNDER_URL=https://<workspace>--guided-cua-goclick-grounder-ground.us-east.modal.run
 ```
 
-### Run Examples
+`modal_cli.py` is the normal `modal` CLI with IPv4 forced. It is needed only on networks with
+broken IPv6; plain `modal deploy grounder_modal.py` works elsewhere.
 
-#### 1. Single Frame Analysis
+### 3. Build the desktop
+
+With Apple `container` (macOS):
+
 ```bash
-python tests/single_frame.py
+container build --tag guided-desktop:2 --file desktop/Dockerfile desktop
+container run -d --name guided-desktop -c 2 -m 3G guided-desktop:2
 ```
 
-#### 2. Real-time Detection Demo
+The agent finds the container's address by itself.
+
+With Docker:
+
 ```bash
-python tests/screen_grab.py
+docker build -t guided-desktop desktop
+docker run -d --name guided-desktop --restart unless-stopped --shm-size 1g \
+  -p 127.0.0.1:8000:8000 guided-desktop
+export DESKTOP_URL=http://127.0.0.1:8000
 ```
 
-#### 3. Full VLM Pipeline (Recommended)
+## Running
+
 ```bash
-python tests/vnc_vlm_loop.py
+export DEEPSEEK_API_KEY=...          # keep it in your shell; never write it to a file
+.venv/bin/python webdemo.py          # open http://127.0.0.1:8770
 ```
 
-#### 4. Batch Processing
+Type a task, for example *"Open the 'show' section of Hacker News and tell me the title of its
+first post"*, then approve, adjust or reject each proposed step.
+
+**Configuration**
+
+| Variable | Default | Meaning |
+|---|---|---|
+| `DEEPSEEK_API_KEY` | required | planner key |
+| `GROUNDER_URL` | the author's Modal endpoint | your deployed grounder |
+| `DESKTOP_URL` | Apple container's address | desktop backend: `:8000` Firefox, `:8001` headless Chromium, `:8002` full Chromium |
+
+**Benchmarks**
+
 ```bash
-# Place images in resources/input/
-jupyter notebook notebooks/train.ipynb
-# Run cells 6-7 for batch processing
+.venv/bin/python bench_grounding.py 20     # GoClick vs DOM ground truth, 20 targets per site
+.venv/bin/python run_tasks.py 2            # 6 real-site tasks × 2 runs (web UI must be running)
+.venv/bin/python render_scorecard.py       # writes benchmark/scorecard.png
 ```
 
----
+## Deploying to a cloud VM
 
-## 📊 Results & Achievements
+This is the setup measured in experiment 04. Everything is copied over SSH; nothing goes through a
+remote repository. Files are in
+[`experiments/04_cloud_deployment/deploy/`](experiments/04_cloud_deployment/deploy/).
 
-### ✅ Successfully Implemented
-- **Multi-Model Training**: 2 different approaches with distinct datasets
-- **Real-time Pipeline**: VNC capture → YOLO detection → VLM analysis
-- **VLM Integration**: GPT-4o providing contextual understanding
-- **Coordinate Extraction**: Precise bounding boxes for automation
-- **Visualization**: Professional annotation system with confidence scores
+**1. Create the VM.** Ubuntu 24.04, 2 vCPU / 8 GB (for example EC2 `m7i-flex.large`), 20 GB disk.
+Open only port 22 (SSH) and 443 (HTTPS) in its firewall or security group.
 
-### 📈 Performance Metrics
-| Metric | Value | Notes |
-|--------|--------|-------|
-| **Inference Speed** | ~120ms | Per frame, includes pre/post-processing |
-| **Detection Classes** | 8-10 | Covering major UI element types |
-| **Confidence Threshold** | 0.4-0.6 | Adjustable based on use case |
-| **VLM Response Time** | ~10-30s | GPT-4o analysis per frame |
-| **Resolution** | 480x640 | VNC capture resolution |
+**2. Install the basics on the VM.**
 
-### 🎯 Sample Output
-```
-Detections: Button (conf: 0.79), RadioButton (conf: 0.58), Misc (conf: 0.66)
-
-VLM Analysis:
-The blue bounding box (#1) identifies a Search button that initiates flight searches.
-The green bounding box (#2) marks a RadioButton for "Direct flights only" option.
-Suggested action sequence: Fill departure/destination → Select dates → Click Search.
+```bash
+sudo apt update && sudo apt install -y docker.io python3-venv caddy
+sudo usermod -aG docker ubuntu                                     # log out and back in
+sudo fallocate -l 2G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
 ```
 
----
+**3. Copy the code from your machine.**
 
-## 🔧 Configuration
-
-### Model Selection
-```python
-# Web UI optimized
-MODEL_PATH = "./models/yolov8_ui_model.pt"
-
-# Mobile UI optimized  
-MODEL_PATH = "./models/chunk02_best.pt"
+```bash
+git archive goclick-agent guided_agent | ssh -i <key.pem> ubuntu@<vm-ip> "tar -x"
+scp -i <key.pem> guided_agent/.grounder_token ubuntu@<vm-ip>:guided_agent/
+ssh -i <key.pem> ubuntu@<vm-ip> "chmod 600 guided_agent/.grounder_token"
 ```
 
-### Detection Parameters
-```python
-CONF_THRESHOLD = 0.5    # Confidence threshold
-INTERVAL = 20           # Seconds between captures
-ALLOWED_CLASSES = {"button", "field", "link"}  # Filter classes
+Then copy the VM versions of `webdemo.py`, `webdemo.html` and the `desktop/` files from
+`experiments/04_cloud_deployment/deploy/` over the ones in `guided_agent/`. They add streaming,
+WebP frames and the lighter Firefox.
+
+**4. Set up and start on the VM.**
+
+```bash
+cd ~/guided_agent
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+docker build -t guided-desktop desktop
+docker run -d --name guided-desktop --restart unless-stopped --shm-size 1g \
+  -p 127.0.0.1:8000:8000 guided-desktop
 ```
 
-### VLM Settings
-```python
-model="gpt-4o"         # or "gpt-4o-mini" for faster/cheaper
-max_tokens=800         # Response length limit
+**5. Start the web UI** from your machine with `deploy/start_webui.sh`. It sends the DeepSeek key
+from your shell over SSH into the program's memory, so the key is never written on the VM:
+
+```bash
+VM=ubuntu@<vm-ip> KEY=<key.pem> zsh experiments/04_cloud_deployment/deploy/start_webui.sh
 ```
 
----
+**6. Public HTTPS with a password.** Fill in [`deploy/Caddyfile`](experiments/04_cloud_deployment/deploy/Caddyfile)
+with your host name (a `<ip-with-dashes>.sslip.io` name works without owning a domain) and a bcrypt
+hash from `caddy hash-password`, copy it to `/etc/caddy/Caddyfile`, and run
+`sudo systemctl restart caddy`. Caddy gets a Let's Encrypt certificate by itself.
 
-## 📈 Performance
+Without a public address, an SSH tunnel works too:
+`ssh -i <key.pem> -L 8770:127.0.0.1:8770 ubuntu@<vm-ip>`, then open `http://127.0.0.1:8770`.
 
-### Latency Breakdown
-- **VNC Capture**: ~50ms
-- **YOLO Inference**: ~120ms
-- **Post-processing**: ~5ms
-- **VLM Analysis**: ~15-30s (when enabled)
+**Optional Chromium backends.** `deploy/headless/control.py` (port 8001) and
+`deploy/chromium/control.py` with `deploy/chromium/start.sh` (port 8002) need
+`.venv/bin/playwright install --with-deps chromium`. Start the web UI with port `8001` or `8002` as
+the script's argument to use one.
 
-### Accuracy Considerations
-- **Strength**: Excellent for common UI patterns (buttons, forms)
-- **Challenge**: Complex layouts and custom UI elements
-- **Mitigation**: VLM provides context even for missed detections
+> A stopped and restarted EC2 instance gets a new public IP unless it has an Elastic IP. After a
+> restart, update the host name in the Caddyfile and restart the web UI and any Chromium backend.
 
----
+## Results
 
-## 🛣️ Roadmap
+Full numbers, method and caveats are in the two reports:
+[`guided_agent/REPORT.md`](guided_agent/REPORT.md) (local) and
+[`experiments/04_cloud_deployment/REPORT.md`](experiments/04_cloud_deployment/REPORT.md) (cloud VM).
 
-### Phase 2: Agent Framework
-- [ ] Tool-calling implementation
-- [ ] Action execution (clicks, form filling)
-- [ ] Success/failure detection
+### Guided agent, local Mac
 
-### Phase 3: Enhanced Intelligence
-- [ ] Multi-modal reasoning
-- [ ] Dynamic confidence adjustment
-- [ ] Learning from interaction patterns
+| Measure | Result |
+|---|---|
+| GoClick on live websites (DOM ground truth, 12 sites) | **196/216 elements hit (90.7 %)**, 92.1 % within 10 px |
+| Real-site tasks with known answers | **12/12** (6 tasks × 2), median 11.2 s, mean 3.0 steps |
+| One guided step before approval (median) | **~2.8 s**: 1.8 s DeepSeek, 0.75 s network to Modal, 0.1 s GPU |
+| Planner cost | **$0.0148** for 12 tasks (~$0.0012 per task) |
 
-### Phase 4: Production Ready
-- [ ] Multi-platform support (Windows, macOS, Linux)
-- [ ] API service architecture
-- [ ] Performance optimization
-- [ ] Security hardening
+![Local scorecard](guided_agent/benchmark/scorecard.png)
 
----
+### Local Mac vs AWS VM, by browser backend
 
-## 🤝 Contributing
+| Setup | Tasks correct | Median time per task | Live view | VM CPU | VM RAM |
+|---|---|---|---|---|---|
+| Local Mac, Firefox | 12/12 | 9.2 s | — | — | — |
+| VM, Firefox desktop (lighter, uBlock) | 12/12 | 11.6 s | 6.0 fps | 61 % | 1.66 GB |
+| VM, headless Chromium, screenshots | 12/12 | 13.4 s | 2.2 fps | 75 % | 1.41 GB |
+| VM, headless Chromium, screencast | 11/12 | 10.4 s | 11.8 fps | 25 % | 1.12 GB |
+| VM, full Chromium, screencast | 11/12 | 12.9 s | 11.7 fps | 34 % | 1.21 GB |
 
-This is a research project demonstrating the foundational components for AI computer use. Key areas for improvement:
+Task times include Modal cold starts. Both misses were Hacker News rate-limiting the VM's address.
+The live view was measured scrolling BBC News, median of 3 runs. GoClick from the VM hit
+182/198 elements (91.9 %).
 
-1. **Model Accuracy**: Better training data and augmentation techniques
-2. **Speed Optimization**: Model quantization and inference acceleration
-3. **Agent Integration**: Implementing actual automation capabilities
-4. **Dataset Expansion**: More diverse UI patterns and contexts
+![Browser backends on the VM](experiments/04_cloud_deployment/charts/backends.png)
 
----
+![End-to-end tasks, local vs VM](experiments/04_cloud_deployment/charts/tasks.png)
 
-## 🎯 Sample Outputs
+**What the comparison shows**
 
-Below are real examples of the system's output from running `vnc_vlm_loop.py` on a flight booking website. Each frame shows YOLO detections (colored bounding boxes) overlaid on the captured screen, followed by GPT-4o analysis.
+- The agent gives the same answers on the VM as on the Mac. The extra time comes from the network
+  path to the Modal GPU.
+- Chromium's screencast doubles the live-view frame rate of the Firefox desktop at about half the
+  CPU.
+- Some sites treat a cloud address differently. Hacker News rate-limited it, and US News served
+  headless Chromium an empty page but loaded in Firefox and full Chromium. Sites that check for
+  automated browsers, including Google sign-in, refuse the Playwright-driven Chromium backends.
+  They accept the Firefox desktop, which receives ordinary mouse and keyboard input.
 
-### Frame 001: Flight Search Interface
-![Frame 001](https://github.com/tarunk42/AI-Computer-use-using-VLM-and-YOLO/blob/main/resources/output/frame_001.png?raw=true)
+## Security notes
 
-**Detections:** Misc (conf: 0.79), Misc (conf: 0.66), Misc (conf: 0.64), Misc (conf: 0.62), Misc (conf: 0.60), RadioButton (conf: 0.58), Misc (conf: 0.53), Misc (conf: 0.53)
+- The DeepSeek key is read from the environment and never written to disk, locally or on the VM.
+- The grounder token lives in `guided_agent/.grounder_token` (mode 600, git-ignored) and in the
+  Modal secret `guided-cua-auth`. The endpoint rejects requests without it.
+- The web UI binds to `127.0.0.1` only. On a VM it is reached through Caddy with HTTPS and a
+  password, or through an SSH tunnel.
+- Anyone with the web UI password controls the browser and any accounts signed in to it. Share it
+  only with people you trust, and approve steps on account pages with care.
 
-**VLM Analysis:**
-Based on the image provided, here is an analysis of the UI elements and potential user interactions:
+## Documentation
 
-1. **Colored Bounding Box Analysis:**
+| Document | Contents |
+|---|---|
+| [`guided_agent/ARCHITECTURE.md`](guided_agent/ARCHITECTURE.md) | diagram and file map |
+| [`guided_agent/REPORT.md`](guided_agent/REPORT.md) | the guided agent's technical report |
+| [`experiments/README.md`](experiments/README.md) | experiments 01–04 and their reports |
+| [`experiments/04_cloud_deployment/REPORT.md`](experiments/04_cloud_deployment/REPORT.md) | latest report: cloud VM, live view, browser backends |
+| [`docs/adr/`](docs/adr/) | why planner + grounder, why Modal, why guided |
+| [`docs/legacy/README_v1.md`](docs/legacy/README_v1.md) | the YOLOv8 + VLM version |
+| [`CHANGELOG.md`](CHANGELOG.md) | release notes |
 
-   - **Bounding Box 6 (RadioButton, conf: 0.58):**
-     - **Element:** RadioButton options for "Add nearby airports" and "Direct flights."
-     - **Function:** Allow users to refine their search by including nearby airports and opting for direct flights only.
-     - **User Actions:** Users can check/uncheck options to include nearby airports or restrict results to direct flights.
+## License
 
-   - **Likely Bounding Boxes for other UI elements:**
+Released under the [MIT License](LICENSE). GoClick, DeepSeek and the other third-party models and
+services keep their own licences and terms.
 
-     - **Top Navigation Tabs ("Flights," "Hotels," "Car hire"):**
-       - **Function:** Switch between different search modes (flights, hotels, car rentals).
-       - **User Actions:** Click to select the type of search they want to perform.
-   
-     - **Input Fields: ("From," "To," "Depart," "Return," "Travelers and cabin class"):**
-       - **Function:** Enter search details such as departure/arrival locations, dates, and cabin preferences.
-       - **User Actions:** Enter or select information to specify search parameters.
+## Author
 
-     - **Search Button:**
-       - **Function:** Execute the search based on the entered parameters.
-       - **User Actions:** Click to initiate the search process.
-
-2. **User Actions and Logical Sequence:**
-
-   - **Select Mode of Transport:**
-     - Click on the relevant tab ("Flights," "Hotels," "Car hire") to choose the search type.
-
-   - **Enter Search Details:**
-     - Fill in the "From" and "To" locations.
-     - Select departure and return dates.
-     - Specify the number of travelers and cabin class.
-
-   - **Refine Search:**
-     - Use checkboxes (RadioButtons) to include/exclude nearby airports and direct flights if searching for flights.
-
-   - **Initiate Search:**
-     - Click the "Search" button to find and display results based on the criteria.
-
-This sequence ensures users specify their travel details before executing a comprehensive search.
-
-### Frame 004: Travel Booking Form
-![Frame 004](https://github.com/tarunk42/AI-Computer-use-using-VLM-and-YOLO/blob/main/resources/output/frame_004.png?raw=true)
-
-**Detections:** Misc (conf: 0.77), Misc (conf: 0.75), Misc (conf: 0.75), Misc (conf: 0.70), Misc (conf: 0.66), Misc (conf: 0.58), Misc (conf: 0.54)
-
-**VLM Analysis:**
-Based on the image, I can provide an analysis of the UI elements within the colored bounding boxes:
-
-1. **UI Element Identification and Function:**
-
-   - **Bounding Box 1 (Top Row Options, e.g., Round-trip, One-way):** 
-     - **Element Type:** Radio Buttons
-     - **Function:** Allows the user to select the type of trip, such as Round-trip, One-way, or Multi-city.
-
-   - **Bounding Box 2 (Economy/Flight Class Dropdown):**
-     - **Element Type:** Dropdown Menu
-     - **Function:** Allows the user to select the flight class, such as Economy, Business, or First Class.
-
-   - **Bounding Box 3 (Leaving From Input):**
-     - **Element Type:** Input Field
-     - **Function:** Allows the user to specify the departure airport or location.
-
-   - **Bounding Box 4 (Going To Input):**
-     - **Element Type:** Input Field
-     - **Function:** Allows the user to specify the destination airport or location.
-
-   - **Bounding Box 5 (Travel Dates Selection):**
-     - **Element Type:** Date Picker
-     - **Function:** Allows the user to select the travel start and end dates.
-
-   - **Bounding Box 6 (Travelers Selection):**
-     - **Element Type:** Dropdown/Spinner
-     - **Function:** Allows the user to select the number of travelers, including adults and children.
-
-   - **Bounding Box 7 (Explore Button):**
-     - **Element Type:** Button
-     - **Function:** Initiates the search for flights based on the specified criteria.
-
-2. **Actions a User Could Take:**
-
-   - **Radio Buttons:** Select the trip type according to travel plans.
-   - **Economy Dropdown:** Choose the preferred class for travel.
-   - **Leaving From Input:** Enter or select the starting location.
-   - **Going To Input:** Enter or select the destination.
-   - **Travel Dates Picker:** Set the desired travel dates.
-   - **Travelers Spinner:** Specify the number of people traveling.
-   - **Explore Button:** Click to execute the search for available flights.
-
-3. **Logical Sequence of Actions:**
-
-   - Choose the trip type (Round-trip, One-way, Multi-city).
-   - Select the flight class (e.g., Economy).
-   - Enter departure and destination locations.
-
-### Frame 005: Flight Search Interface
-![Frame 005](https://github.com/tarunk42/AI-Computer-use-using-VLM-and-YOLO/blob/main/resources/output/frame_005.png?raw=true)
-
-**Detections:** Misc (conf: 0.77), Misc (conf: 0.75), Misc (conf: 0.75), Misc (conf: 0.70), Misc (conf: 0.66), Misc (conf: 0.58), Misc (conf: 0.54)
-
-**VLM Analysis:**
-Based on the image provided, here's an analysis of the UI elements and their functions:
-
-1. **UI Element Identification:**
-   - **Box #1: Travel Type Selection**
-     - Function: Allows users to choose between round-trip, one-way, multi-city, and economy options.
-     - Actions: Users select the type of flight they wish to book.
-   
-   - **Box #2: Departure Location Field ("Leaving from")**
-     - Function: Input field for users to specify their departure airport.
-     - Actions: Users enter or select their departure airport, e.g., "London All airports."
-   
-   - **Box #3: Arrival Location Field ("Going to")**
-     - Function: Input field for users to specify their destination airport.
-     - Actions: Users enter or select their destination.
-   
-   - **Box #4: Travel Dates Field**
-     - Function: Date picker for users to select their travel dates.
-     - Actions: Users choose departure and return dates for their trip.
-   
-   - **Box #5: Number of Travelers Field**
-     - Function: Dropdown to specify the number of travelers.
-     - Actions: Users select the number of adults, children, and infants traveling.
-   
-   - **Box #6: Direct Flights Only Checkbox**
-     - Function: Option to filter search results to show only direct flights.
-     - Actions: Users check or uncheck to include/exclude direct flights.
-   
-   - **Box #7: Explore Button**
-     - Function: Submit button to search for flights based on input criteria.
-     - Actions: Users click to initiate the search based on the specified parameters.
-
-2. **Logical Sequence of Actions:**
-   - Select the type of trip (e.g., round-trip) in the Travel Type Selection.
-   - Input the departure airport in the Departure Location Field.
-   - Specify the destination airport in the Arrival Location Field.
-   - Choose the desired travel dates in the Travel Dates Field.
-   - Indicate the number of travelers in the Number of Travelers Field.
-   - Check the Direct Flights Only option if applicable.
-   - Click the Explore Button to search for available flights.
-
-This sequence ensures that the user specifies all necessary information to perform a flight search effectively.
-
----
-
-## � Author
-
-**Tarun Kashyap**
-
-- **GitHub**: [@tarunk42](https://github.com/tarunk42)
-- **LinkedIn**: [tarun-kashyap](https://linkedin.com/in/tarun-kashyap)
-- **Website**: [tarunk42.github.io](https://tarunk42.github.io)
-
----
-
-## �📄 License
-
-MIT License
-
----
-
-## 🙏 Acknowledgments
-
-- **Datasets**: RICO dataset team, Roboflow community
-- **Frameworks**: Ultralytics YOLOv8, OpenAI GPT-4o
-- **Tools**: vncdotool for VNC integration
-
----
-
-
+**tarun kashyap** · [tarunsinghkashyap@gmail.com](mailto:tarunsinghkashyap@gmail.com)
