@@ -74,37 +74,52 @@ is recorded in [`experiments/`](experiments/README.md), and the design decisions
 ## Architecture
 
 ```mermaid
-flowchart LR
-    subgraph OP["Operator"]
-        UI["Web UI<br/>live view · approve · reject · stop"]
-    end
+%%{init: {"flowchart": {"curve": "basis", "nodeSpacing": 40, "rankSpacing": 55}} }%%
+flowchart TB
+    UI["🧑 <b>You</b> · web UI<br/>live view · approve · reject · stop"]
 
-    subgraph HOST["Host: Mac or cloud VM"]
-        direction TB
-        WEB["webdemo.py<br/>FastAPI + Uvicorn :8770"]
-        AG["agent.py<br/>guided loop · change check"]
+    subgraph HOST["🖥️ Host · Mac or cloud VM"]
+        direction LR
+        WEB["<b>webdemo.py</b><br/>FastAPI + Uvicorn · :8770"]
+        AG["<b>agent.py</b><br/>guided loop · change check"]
         WEB <--> AG
     end
 
-    subgraph DESK["Desktop backend: container"]
-        direction TB
-        CTL["control.py :8000<br/>screenshot · act"]
-        FF["Firefox on Xvfb + Openbox<br/>driven by xdotool"]
+
+    subgraph DESK["📦 Desktop backend · container"]
+        direction LR
+        CTL["<b>control.py</b> · :8000<br/>screenshot · act"]
+        FF["<b>Firefox</b><br/>Xvfb + Openbox · xdotool"]
         CTL --> FF
     end
 
-    subgraph CLOUD["Cloud services"]
+    subgraph CLOUD["☁️ Cloud services"]
         direction TB
-        DS["DeepSeek API<br/>planner, thinking off"]
-        MG["Modal GPU (T4, L4/A10G fallback)<br/>GoClick-Base fp16"]
+        DS["<b>DeepSeek API</b><br/>planner · thinking off"]
+        MG["<b>Modal GPU</b> · T4<br/>GoClick-Base fp16"]
     end
 
-    UI -- "HTTPS + password<br/>(Caddy) or SSH tunnel" --> WEB
-    WEB -- "MJPEG / WebP stream" --> UI
-    AG -- "HTTP /screenshot, /act" --> CTL
-    AG -- "screenshot + history → JSON action" --> DS
-    AG -- "image + target → x, y" --> MG
-    FF -- "real internet" --> NET(("Websites"))
+    NET(("🌐 Real<br/>websites"))
+
+    UI <==>|"HTTPS + password · live stream"| WEB
+    AG <-->|"① plan<br/>screenshot → JSON action"| DS
+    AG <-->|"② ground<br/>target → x, y"| MG
+    AG <-->|"③ act<br/>/screenshot · /act"| CTL
+    FF -->|"real internet"| NET
+
+    classDef you fill:#fff4d6,stroke:#eda100,stroke-width:2px,color:#1f1f1e
+    classDef host fill:#e6f0fc,stroke:#2a78d6,stroke-width:1.5px,color:#1f1f1e
+    classDef cloud fill:#f1ebfe,stroke:#8b5cf6,stroke-width:1.5px,color:#1f1f1e
+    classDef desk fill:#e3f6ee,stroke:#1baf7a,stroke-width:1.5px,color:#1f1f1e
+    classDef net fill:#fdeee6,stroke:#eb6834,stroke-width:1.5px,color:#1f1f1e
+    class UI you
+    class WEB,AG host
+    class DS,MG cloud
+    class CTL,FF desk
+    class NET net
+    style HOST fill:#f5f9fe,stroke:#2a78d6,stroke-dasharray:4 3
+    style CLOUD fill:#faf7ff,stroke:#8b5cf6,stroke-dasharray:4 3
+    style DESK fill:#f3fbf7,stroke:#1baf7a,stroke-dasharray:4 3
 ```
 
 ```mermaid
