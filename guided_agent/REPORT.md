@@ -4,6 +4,7 @@
 **Planner:** DeepSeek `deepseek-flash`, thinking **off**, temperature 0
 **Grounder:** GoClick-Base (Florence-2, 0.2 B) on Modal, fp16, `us-east`. Benchmarks ran on A10/A10G; now deployed **T4 first** (§4b)
 **Desktop:** Apple container `guided-desktop` (Alpine, Xvfb 1280×800, Firefox) on the real internet
+**On a cloud VM:** the same benchmarks run on AWS, and the live-view and browser-backend changes made there, are in [experiments/04_cloud_deployment/REPORT.md](../experiments/04_cloud_deployment/REPORT.md)
 
 ![scorecard](benchmark/scorecard.png)
 

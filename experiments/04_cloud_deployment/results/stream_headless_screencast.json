@@ -1,0 +1,19 @@
+{
+ "label": "headless_screencast",
+ "runs": [
+  {
+   "fps": 12.0,
+   "cpu_pct": 25
+  },
+  {
+   "fps": 11.8,
+   "cpu_pct": 24
+  },
+  {
+   "fps": 11.8,
+   "cpu_pct": 25
+  }
+ ],
+ "median_fps": 11.8,
+ "median_cpu_pct": 25
+}

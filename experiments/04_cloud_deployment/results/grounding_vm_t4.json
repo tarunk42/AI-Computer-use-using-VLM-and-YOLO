@@ -1,0 +1,4139 @@
+{
+ "summary": {
+  "overall": {
+   "n": 198,
+   "hit": 0.919,
+   "near10": 0.929
+  },
+  "by_kind": {
+   "button": {
+    "n": 25,
+    "hit": 0.96,
+    "near10": 0.96
+   },
+   "dropdown": {
+    "n": 1,
+    "hit": 1.0,
+    "near10": 1.0
+   },
+   "input field": {
+    "n": 5,
+    "hit": 1.0,
+    "near10": 1.0
+   },
+   "link": {
+    "n": 165,
+    "hit": 0.909,
+    "near10": 0.921
+   },
+   "tab": {
+    "n": 2,
+    "hit": 1.0,
+    "near10": 1.0
+   }
+  },
+  "by_size": {
+   "small (<600 px\u00b2)": {
+    "n": 11,
+    "hit": 0.727,
+    "near10": 0.727
+   },
+   "medium (600\u20134000)": {
+    "n": 139,
+    "hit": 0.921,
+    "near10": 0.935
+   },
+   "large (\u22654000)": {
+    "n": 48,
+    "hit": 0.958,
+    "near10": 0.958
+   }
+  },
+  "miss_distance_px_median": 222.39999999999998,
+  "per_target_gpu_ms_median": 135.9,
+  "pages": {
+   "wikipedia_main": {
+    "url": "https://en.wikipedia.org/wiki/Main_Page",
+    "candidates": 42,
+    "unique": 42,
+    "sampled": 20,
+    "hits": 19,
+    "rtt_ms": 4087.2,
+    "gpu_ms": 2832.9,
+    "gpu": "Tesla T4"
+   },
+   "wikipedia_article": {
+    "url": "https://en.wikipedia.org/wiki/Eiffel_Tower",
+    "candidates": 61,
+    "unique": 53,
+    "sampled": 20,
+    "hits": 17,
+    "rtt_ms": 3981.3,
+    "gpu_ms": 2736.5,
+    "gpu": "Tesla T4"
+   },
+   "hacker_news": {
+    "url": "https://news.ycombinator.com/",
+    "candidates": 2,
+    "unique": 2,
+    "sampled": 2,
+    "hits": 2,
+    "rtt_ms": 1047.4,
+    "gpu_ms": 349.8,
+    "gpu": "Tesla T4"
+   },
+   "github_repo": {
+    "url": "https://github.com/ultralytics/ultralytics",
+    "candidates": 70,
+    "unique": 61,
+    "sampled": 20,
+    "hits": 19,
+    "rtt_ms": 4033.3,
+    "gpu_ms": 2784.2,
+    "gpu": "Tesla T4"
+   },
+   "python_docs": {
+    "url": "https://docs.python.org/3/library/stdtypes.html",
+    "candidates": 52,
+    "unique": 50,
+    "sampled": 20,
+    "hits": 18,
+    "rtt_ms": 4093.4,
+    "gpu_ms": 2843.5,
+    "gpu": "Tesla T4"
+   },
+   "python_org": {
+    "url": "https://www.python.org/",
+    "candidates": 22,
+    "unique": 20,
+    "sampled": 20,
+    "hits": 19,
+    "rtt_ms": 3876.5,
+    "gpu_ms": 2825.5,
+    "gpu": "Tesla T4"
+   },
+   "mdn_home": {
+    "url": "https://developer.mozilla.org/en-US/",
+    "candidates": 13,
+    "unique": 7,
+    "sampled": 7,
+    "hits": 7,
+    "rtt_ms": 2056.4,
+    "gpu_ms": 1008.9,
+    "gpu": "Tesla T4"
+   },
+   "arxiv_list": {
+    "url": "https://arxiv.org/list/cs.CV/recent",
+    "candidates": 69,
+    "unique": 55,
+    "sampled": 20,
+    "hits": 16,
+    "rtt_ms": 4007.2,
+    "gpu_ms": 2759.4,
+    "gpu": "Tesla T4"
+   },
+   "duckduckgo": {
+    "url": "https://duckduckgo.com/",
+    "candidates": 9,
+    "unique": 9,
+    "sampled": 9,
+    "hits": 8,
+    "rtt_ms": 2156.3,
+    "gpu_ms": 1307.0,
+    "gpu": "Tesla T4"
+   },
+   "openstreetmap": {
+    "url": "https://www.openstreetmap.org/",
+    "candidates": 36,
+    "unique": 36,
+    "sampled": 20,
+    "hits": 19,
+    "rtt_ms": 3870.0,
+    "gpu_ms": 2824.2,
+    "gpu": "Tesla T4"
+   },
+   "pypi_project": {
+    "url": "https://pypi.org/project/ultralytics/",
+    "candidates": 42,
+    "unique": 42,
+    "sampled": 20,
+    "hits": 19,
+    "rtt_ms": 4244.8,
+    "gpu_ms": 2775.9,
+    "gpu": "Tesla T4"
+   },
+   "huggingface_model": {
+    "url": "https://huggingface.co/HongxinLi/GoClick-Base",
+    "candidates": 46,
+    "unique": 44,
+    "sampled": 20,
+    "hits": 19,
+    "rtt_ms": 3817.0,
+    "gpu_ms": 2770.8,
+    "gpu": "Tesla T4"
+   }
+  }
+ },
+ "rows": [
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "scrapped",
+   "box": [
+    305,
+    736,
+    371,
+    753
+   ],
+   "area": 1122,
+   "point": [
+    335,
+    744
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 177.3
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "Frozen yogurt, blueberry-flavored",
+   "box": [
+    845,
+    367,
+    1007,
+    384
+   ],
+   "area": 2754,
+   "point": [
+    925,
+    460
+   ],
+   "hit": false,
+   "near10": false,
+   "miss_px": 76.0,
+   "ms": 172.7
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "Donate",
+   "box": [
+    1038,
+    25,
+    1083,
+    41
+   ],
+   "area": 720,
+   "point": [
+    1061,
+    34
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 147.8
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "English",
+   "box": [
+    643,
+    221,
+    688,
+    236
+   ],
+   "area": 675,
+   "point": [
+    667,
+    228
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 143.7
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "Teahouse",
+   "box": [
+    893,
+    588,
+    962,
+    605
+   ],
+   "area": 1173,
+   "point": [
+    937,
+    596
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 137.2
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "the article's talk page",
+   "box": [
+    637,
+    588,
+    787,
+    605
+   ],
+   "area": 2550,
+   "point": [
+    722,
+    596
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.7
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "Full article...",
+   "box": [
+    111,
+    762,
+    204,
+    779
+   ],
+   "area": 1581,
+   "point": [
+    160,
+    770
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 137.2
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "battleships",
+   "box": [
+    294,
+    346,
+    371,
+    363
+   ],
+   "area": 1309,
+   "point": [
+    325,
+    354
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 144.8
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "start editing the article",
+   "box": [
+    654,
+    562,
+    825,
+    579
+   ],
+   "area": 2907,
+   "point": [
+    742,
+    570
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 143.8
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "Montana class",
+   "box": [
+    53,
+    502,
+    454,
+    545
+   ],
+   "area": 17243,
+   "point": [
+    257,
+    523
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 137.5
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "anyone can edit",
+   "box": [
+    563,
+    197,
+    671,
+    214
+   ],
+   "area": 1836,
+   "point": [
+    617,
+    206
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.2
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "cryptocurrency",
+   "box": [
+    566,
+    763,
+    671,
+    780
+   ],
+   "area": 1785,
+   "point": [
+    613,
+    771
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.2
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "Log in",
+   "box": [
+    1194,
+    25,
+    1232,
+    41
+   ],
+   "area": 608,
+   "point": [
+    1213,
+    34
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 137.1
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "View history",
+   "box": [
+    909,
+    90,
+    984,
+    122
+   ],
+   "area": 2400,
+   "point": [
+    947,
+    106
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 134.3
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "be bold",
+   "box": [
+    565,
+    562,
+    618,
+    579
+   ],
+   "area": 901,
+   "point": [
+    607,
+    570
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.0
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "Milwaukee Brewers",
+   "box": [
+    642,
+    791,
+    781,
+    808
+   ],
+   "area": 2363,
+   "point": [
+    692,
+    798
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 134.0
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "Create account",
+   "box": [
+    1091,
+    25,
+    1186,
+    41
+   ],
+   "area": 1520,
+   "point": [
+    1139,
+    34
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 132.5
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "Archive",
+   "box": [
+    835,
+    656,
+    893,
+    673
+   ],
+   "area": 986,
+   "point": [
+    867,
+    665
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 134.6
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "View source",
+   "box": [
+    817,
+    90,
+    893,
+    122
+   ],
+   "area": 2432,
+   "point": [
+    854,
+    106
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 137.7
+  },
+  {
+   "page": "wikipedia_main",
+   "kind": "link",
+   "label": "German reconnaissance picture of Sovetsky Soyuz",
+   "box": [
+    53,
+    372,
+    221,
+    389
+   ],
+   "area": 2856,
+   "point": [
+    137,
+    376
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 137.9
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "cultural icon",
+   "box": [
+    264,
+    604,
+    349,
+    621
+   ],
+   "area": 1445,
+   "point": [
+    307,
+    612
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 178.8
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "[8]",
+   "box": [
+    670,
+    756,
+    684,
+    771
+   ],
+   "area": 210,
+   "point": [
+    335,
+    336
+   ],
+   "hit": false,
+   "near10": false,
+   "miss_px": 537.2,
+   "ms": 155.3
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "lattice tower",
+   "box": [
+    397,
+    328,
+    482,
+    345
+   ],
+   "area": 1445,
+   "point": [
+    435,
+    336
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 147.0
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "button",
+   "label": "Toggle Design subsection",
+   "box": [
+    37,
+    229,
+    59,
+    251
+   ],
+   "area": 484,
+   "point": [
+    54,
+    241
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 140.0
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "Replicas",
+   "box": [
+    60,
+    396,
+    224,
+    424
+   ],
+   "area": 4592,
+   "point": [
+    142,
+    410
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 132.1
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "History",
+   "box": [
+    60,
+    200,
+    224,
+    228
+   ],
+   "area": 4592,
+   "point": [
+    81,
+    214
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 130.7
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "[5]",
+   "box": [
+    425,
+    626,
+    439,
+    641
+   ],
+   "area": 210,
+   "point": [
+    335,
+    336
+   ],
+   "hit": false,
+   "near10": false,
+   "miss_px": 303.6,
+   "ms": 131.6
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "Log in",
+   "box": [
+    1194,
+    25,
+    1232,
+    41
+   ],
+   "area": 608,
+   "point": [
+    1212,
+    33
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 132.0
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "1889 World's Fair",
+   "box": [
+    396,
+    500,
+    519,
+    517
+   ],
+   "area": 2091,
+   "point": [
+    460,
+    508
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 128.9
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "References",
+   "box": [
+    60,
+    452,
+    224,
+    480
+   ],
+   "area": 4592,
+   "point": [
+    95,
+    466
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 129.8
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "48\u00b051\u203229.6\u2033N 2\u00b017\u203240.2\u2033E",
+   "box": [
+    842,
+    176,
+    988,
+    191
+   ],
+   "area": 2190,
+   "point": [
+    913,
+    184
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 131.7
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "/\u02c8a\u026af\u0259l/",
+   "box": [
+    395,
+    302,
+    441,
+    320
+   ],
+   "area": 828,
+   "point": [
+    434,
+    310
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 132.9
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "[6]",
+   "box": [
+    375,
+    652,
+    389,
+    667
+   ],
+   "area": 210,
+   "point": [
+    335,
+    336
+   ],
+   "hit": false,
+   "near10": false,
+   "miss_px": 318.5,
+   "ms": 132.6
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "button",
+   "label": "Toggle References subsection",
+   "box": [
+    37,
+    453,
+    59,
+    475
+   ],
+   "area": 484,
+   "point": [
+    54,
+    465
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 134.1
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "View source",
+   "box": [
+    817,
+    130,
+    893,
+    162
+   ],
+   "area": 2432,
+   "point": [
+    854,
+    146
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 134.5
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "See also",
+   "box": [
+    60,
+    424,
+    224,
+    452
+   ],
+   "area": 4592,
+   "point": [
+    88,
+    438
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 134.9
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "button",
+   "label": "Toggle Dimensions subsection",
+   "box": [
+    37,
+    285,
+    59,
+    307
+   ],
+   "area": 484,
+   "point": [
+    52,
+    298
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.7
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "Gustave Eiffel",
+   "box": [
+    581,
+    354,
+    680,
+    371
+   ],
+   "area": 1683,
+   "point": [
+    631,
+    362
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 133.3
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "wrought iron",
+   "box": [
+    356,
+    474,
+    444,
+    491
+   ],
+   "area": 1496,
+   "point": [
+    399,
+    482
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 130.7
+  },
+  {
+   "page": "wikipedia_article",
+   "kind": "link",
+   "label": "View history",
+   "box": [
+    909,
+    130,
+    984,
+    162
+   ],
+   "area": 2400,
+   "point": [
+    947,
+    146
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 129.6
+  },
+  {
+   "page": "hacker_news",
+   "kind": "link",
+   "label": "reload",
+   "box": [
+    103,
+    69,
+    136,
+    83
+   ],
+   "area": 462,
+   "point": [
+    119,
+    76
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 173.7
+  },
+  {
+   "page": "hacker_news",
+   "kind": "link",
+   "label": "Hacker News",
+   "box": [
+    129,
+    12,
+    212,
+    27
+   ],
+   "area": 1245,
+   "point": [
+    157,
+    19
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 176.0
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "pose-estimation",
+   "box": [
+    1090,
+    620,
+    1208,
+    646
+   ],
+   "area": 3068,
+   "point": [
+    1151,
+    631
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 178.1
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "yolo",
+   "box": [
+    1061,
+    788,
+    1111,
+    813
+   ],
+   "area": 1250,
+   "point": [
+    1144,
+    799
+   ],
+   "hit": false,
+   "near10": false,
+   "miss_px": 33.0,
+   "ms": 156.3
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": ".dockerignore",
+   "box": [
+    75,
+    621,
+    160,
+    637
+   ],
+   "area": 1360,
+   "point": [
+    101,
+    629
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 150.3
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "Homepage",
+   "box": [
+    16,
+    18,
+    48,
+    50
+   ],
+   "area": 1024,
+   "point": [
+    32,
+    35
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 151.3
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "Pricing",
+   "box": [
+    481,
+    20,
+    540,
+    48
+   ],
+   "area": 1652,
+   "point": [
+    511,
+    34
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.0
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "image-classification",
+   "box": [
+    976,
+    520,
+    1117,
+    545
+   ],
+   "area": 3525,
+   "point": [
+    1044,
+    532
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.1
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "pytorch",
+   "box": [
+    1044,
+    654,
+    1114,
+    679
+   ],
+   "area": 1750,
+   "point": [
+    1079,
+    666
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.1
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "4fb6485",
+   "box": [
+    685,
+    327,
+    728,
+    345
+   ],
+   "area": 774,
+   "point": [
+    707,
+    336
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 131.5
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "deep-learning",
+   "box": [
+    1097,
+    486,
+    1202,
+    512
+   ],
+   "area": 2730,
+   "point": [
+    1149,
+    498
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.0
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "object-tracking",
+   "box": [
+    976,
+    620,
+    1088,
+    646
+   ],
+   "area": 2912,
+   "point": [
+    1032,
+    631
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.2
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "Add AGENTS.md agent guidance with CLAUDE.md symlink (",
+   "box": [
+    410,
+    785,
+    796,
+    801
+   ],
+   "area": 6176,
+   "point": [
+    609,
+    792
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.3
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "#24683",
+   "box": [
+    617,
+    744,
+    663,
+    760
+   ],
+   "area": 736,
+   "point": [
+    640,
+    752
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.5
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "tracking",
+   "box": [
+    1138,
+    754,
+    1211,
+    780
+   ],
+   "area": 1898,
+   "point": [
+    1174,
+    766
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 133.2
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "Update YOLO26 paper citations (",
+   "box": [
+    410,
+    744,
+    617,
+    760
+   ],
+   "area": 3312,
+   "point": [
+    517,
+    752
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 131.1
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "docker",
+   "box": [
+    75,
+    416,
+    117,
+    432
+   ],
+   "area": 672,
+   "point": [
+    95,
+    423
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 134.2
+  },
+  {
+   "page": "github_repo",
+   "kind": "button",
+   "label": "main",
+   "box": [
+    32,
+    261,
+    136,
+    293
+   ],
+   "area": 3328,
+   "point": [
+    83,
+    277
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 137.9
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "Security and quality",
+   "box": [
+    807,
+    128,
+    980,
+    160
+   ],
+   "area": 5536,
+   "point": [
+    904,
+    144
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 130.0
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "Star63k (63k)",
+   "box": [
+    1150,
+    188,
+    1248,
+    216
+   ],
+   "area": 2744,
+   "point": [
+    1198,
+    202
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 131.9
+  },
+  {
+   "page": "github_repo",
+   "kind": "button",
+   "label": "Resources",
+   "box": [
+    376,
+    20,
+    481,
+    48
+   ],
+   "area": 2940,
+   "point": [
+    425,
+    34
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.9
+  },
+  {
+   "page": "github_repo",
+   "kind": "link",
+   "label": "Actions",
+   "box": [
+    528,
+    128,
+    619,
+    160
+   ],
+   "area": 2912,
+   "point": [
+    575,
+    144
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 131.7
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "Sequence Types \u2014 list, tuple, range",
+   "box": [
+    56,
+    534,
+    260,
+    567
+   ],
+   "area": 6732,
+   "point": [
+    161,
+    551
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 182.7
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "while",
+   "box": [
+    778,
+    483,
+    826,
+    500
+   ],
+   "area": 816,
+   "point": [
+    797,
+    491
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 161.3
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "__bool__()",
+   "box": [
+    861,
+    551,
+    956,
+    568
+   ],
+   "area": 1615,
+   "point": [
+    915,
+    559
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 154.9
+  },
+  {
+   "page": "python_docs",
+   "kind": "dropdown",
+   "label": "Auto Light Dark",
+   "box": [
+    983,
+    50,
+    1034,
+    69
+   ],
+   "area": 969,
+   "point": [
+    1009,
+    60
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 149.3
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "Generator iterators",
+   "box": [
+    96,
+    482,
+    208,
+    497
+   ],
+   "area": 1680,
+   "point": [
+    155,
+    490
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 141.1
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "Hashing of numeric types",
+   "box": [
+    76,
+    377,
+    226,
+    392
+   ],
+   "area": 2250,
+   "point": [
+    154,
+    385
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.2
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "3.15.2 documentation",
+   "box": [
+    479,
+    21,
+    617,
+    37
+   ],
+   "area": 2208,
+   "point": [
+    553,
+    30
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.9
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "Text and Binary Sequence Type Methods Summary",
+   "box": [
+    56,
+    675,
+    299,
+    707
+   ],
+   "area": 7776,
+   "point": [
+    177,
+    691
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.2
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "Truth Value Testing",
+   "box": [
+    56,
+    183,
+    169,
+    198
+   ],
+   "area": 1695,
+   "point": [
+    101,
+    190
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.5
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "Iterators",
+   "box": [
+    76,
+    447,
+    125,
+    462
+   ],
+   "area": 735,
+   "point": [
+    100,
+    437
+   ],
+   "hit": false,
+   "near10": true,
+   "miss_px": 10.0,
+   "ms": 134.9
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "Iterables",
+   "box": [
+    76,
+    430,
+    127,
+    445
+   ],
+   "area": 765,
+   "point": [
+    100,
+    438
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.6
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "Python built-ins reference",
+   "box": [
+    633,
+    21,
+    796,
+    37
+   ],
+   "area": 2608,
+   "point": [
+    722,
+    30
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 139.4
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "Table of Contents",
+   "box": [
+    26,
+    136,
+    171,
+    157
+   ],
+   "area": 3045,
+   "point": [
+    97,
+    146
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.4
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "Asynchronous generator iterators",
+   "box": [
+    96,
+    499,
+    241,
+    532
+   ],
+   "area": 4785,
+   "point": [
+    169,
+    515
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.0
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "NotImplemented",
+   "box": [
+    355,
+    630,
+    487,
+    647
+   ],
+   "area": 2244,
+   "point": [
+    419,
+    638
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 139.9
+  },
+  {
+   "page": "python_docs",
+   "kind": "input field",
+   "label": "Quick search",
+   "box": [
+    1046,
+    51,
+    1207,
+    69
+   ],
+   "area": 2898,
+   "point": [
+    1128,
+    60
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 139.8
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "Boolean Operations \u2014 and, or, not",
+   "box": [
+    56,
+    201,
+    277,
+    216
+   ],
+   "area": 3315,
+   "point": [
+    165,
+    209
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 138.2
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "if",
+   "box": [
+    734,
+    483,
+    755,
+    500
+   ],
+   "area": 357,
+   "point": [
+    746,
+    491
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 138.2
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "Format specifier",
+   "box": [
+    96,
+    797,
+    192,
+    812
+   ],
+   "area": 1440,
+   "point": [
+    142,
+    787
+   ],
+   "hit": false,
+   "near10": true,
+   "miss_px": 10.0,
+   "ms": 135.9
+  },
+  {
+   "page": "python_docs",
+   "kind": "link",
+   "label": "Conversion specifier",
+   "box": [
+    96,
+    780,
+    217,
+    795
+   ],
+   "area": 1815,
+   "point": [
+    148,
+    787
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.5
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "Docs",
+   "box": [
+    441,
+    3,
+    639,
+    45
+   ],
+   "area": 8316,
+   "point": [
+    540,
+    25
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 178.7
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "Documentation",
+   "box": [
+    429,
+    162,
+    594,
+    215
+   ],
+   "area": 8745,
+   "point": [
+    512,
+    188
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 169.8
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "About",
+   "box": [
+    202,
+    162,
+    294,
+    215
+   ],
+   "area": 4876,
+   "point": [
+    247,
+    188
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 149.8
+  },
+  {
+   "page": "python_org",
+   "kind": "input field",
+   "label": "Search",
+   "box": [
+    842,
+    90,
+    1066,
+    127
+   ],
+   "area": 8288,
+   "point": [
+    952,
+    109
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 141.0
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "Socialize",
+   "box": [
+    1132,
+    87,
+    1223,
+    133
+   ],
+   "area": 4186,
+   "point": [
+    1178,
+    110
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 139.4
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "See more",
+   "box": [
+    944,
+    691,
+    1033,
+    731
+   ],
+   "area": 3560,
+   "point": [
+    988,
+    712
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 140.7
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "PyPI",
+   "box": [
+    641,
+    3,
+    839,
+    45
+   ],
+   "area": 8316,
+   "point": [
+    741,
+    25
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.3
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "News",
+   "box": [
+    897,
+    162,
+    985,
+    215
+   ],
+   "area": 4664,
+   "point": [
+    941,
+    188
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 137.7
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "Python",
+   "box": [
+    41,
+    3,
+    239,
+    45
+   ],
+   "area": 8316,
+   "point": [
+    141,
+    25
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 138.6
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "Events",
+   "box": [
+    986,
+    162,
+    1082,
+    215
+   ],
+   "area": 5088,
+   "point": [
+    1033,
+    188
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.2
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "Jobs",
+   "box": [
+    841,
+    3,
+    1039,
+    45
+   ],
+   "area": 8316,
+   "point": [
+    940,
+    25
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 133.8
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": ">_ Launch Interactive Shell",
+   "box": [
+    568,
+    237,
+    612,
+    281
+   ],
+   "area": 1936,
+   "point": [
+    744,
+    25
+   ],
+   "hit": false,
+   "near10": false,
+   "miss_px": 249.7,
+   "ms": 136.0
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "PSF",
+   "box": [
+    241,
+    3,
+    439,
+    45
+   ],
+   "area": 8316,
+   "point": [
+    340,
+    25
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 141.7
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "Downloads",
+   "box": [
+    295,
+    162,
+    428,
+    215
+   ],
+   "area": 7049,
+   "point": [
+    360,
+    188
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.7
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "python\u2122",
+   "box": [
+    56,
+    63,
+    346,
+    145
+   ],
+   "area": 23780,
+   "point": [
+    183,
+    102
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 132.8
+  },
+  {
+   "page": "python_org",
+   "kind": "button",
+   "label": "GO",
+   "box": [
+    1077,
+    87,
+    1124,
+    127
+   ],
+   "area": 1880,
+   "point": [
+    1100,
+    109
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.0
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "More about defining functions",
+   "box": [
+    672,
+    323,
+    1059,
+    368
+   ],
+   "area": 17415,
+   "point": [
+    878,
+    345
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 137.8
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "Donate",
+   "box": [
+    706,
+    94,
+    781,
+    126
+   ],
+   "area": 2400,
+   "point": [
+    742,
+    110
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 132.2
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "Learn More",
+   "box": [
+    766,
+    580,
+    909,
+    607
+   ],
+   "area": 3861,
+   "point": [
+    851,
+    594
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.8
+  },
+  {
+   "page": "python_org",
+   "kind": "link",
+   "label": "Success Stories",
+   "box": [
+    730,
+    162,
+    896,
+    215
+   ],
+   "area": 8798,
+   "point": [
+    814,
+    188
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.1
+  },
+  {
+   "page": "mdn_home",
+   "kind": "link",
+   "label": "MDN",
+   "box": [
+    18,
+    161,
+    56,
+    185
+   ],
+   "area": 912,
+   "point": [
+    38,
+    173
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 174.0
+  },
+  {
+   "page": "mdn_home",
+   "kind": "link",
+   "label": "Blog",
+   "box": [
+    967,
+    106,
+    1023,
+    142
+   ],
+   "area": 2016,
+   "point": [
+    995,
+    125
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 156.9
+  },
+  {
+   "page": "mdn_home",
+   "kind": "button",
+   "label": "About",
+   "box": [
+    879,
+    106,
+    967,
+    143
+   ],
+   "area": 3256,
+   "point": [
+    925,
+    126
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 147.0
+  },
+  {
+   "page": "mdn_home",
+   "kind": "button",
+   "label": "Learn",
+   "box": [
+    668,
+    106,
+    773,
+    143
+   ],
+   "area": 3885,
+   "point": [
+    722,
+    124
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 133.7
+  },
+  {
+   "page": "mdn_home",
+   "kind": "button",
+   "label": "Tools",
+   "box": [
+    773,
+    106,
+    879,
+    143
+   ],
+   "area": 3922,
+   "point": [
+    828,
+    126
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 132.7
+  },
+  {
+   "page": "mdn_home",
+   "kind": "button",
+   "label": "Web APIs",
+   "box": [
+    488,
+    106,
+    605,
+    143
+   ],
+   "area": 4329,
+   "point": [
+    545,
+    124
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 132.3
+  },
+  {
+   "page": "mdn_home",
+   "kind": "button",
+   "label": "All",
+   "box": [
+    605,
+    106,
+    668,
+    143
+   ],
+   "area": 2331,
+   "point": [
+    637,
+    126
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 132.0
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "Zhoutong Zhang",
+   "box": [
+    553,
+    686,
+    657,
+    702
+   ],
+   "area": 1664,
+   "point": [
+    605,
+    694
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 173.0
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "Or Litany",
+   "box": [
+    441,
+    598,
+    499,
+    614
+   ],
+   "area": 928,
+   "point": [
+    472,
+    606
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 161.4
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "Weijie Lyu",
+   "box": [
+    344,
+    791,
+    409,
+    807
+   ],
+   "area": 1040,
+   "point": [
+    471,
+    606
+   ],
+   "hit": false,
+   "near10": false,
+   "miss_px": 195.1,
+   "ms": 142.5
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "arXiv:2610.42149",
+   "box": [
+    39,
+    453,
+    147,
+    468
+   ],
+   "area": 1620,
+   "point": [
+    84,
+    356
+   ],
+   "hit": false,
+   "near10": false,
+   "miss_px": 97.0,
+   "ms": 137.2
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "Ming-Hsuan Yang",
+   "box": [
+    417,
+    791,
+    530,
+    807
+   ],
+   "area": 1808,
+   "point": [
+    125,
+    501
+   ],
+   "hit": false,
+   "near10": false,
+   "miss_px": 411.5,
+   "ms": 134.5
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "all",
+   "box": [
+    306,
+    286,
+    319,
+    301
+   ],
+   "area": 195,
+   "point": [
+    310,
+    294
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.9
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "Yoonwoo Jeong",
+   "box": [
+    168,
+    494,
+    269,
+    510
+   ],
+   "area": 1616,
+   "point": [
+    221,
+    502
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 131.1
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "Jinwoo Shin",
+   "box": [
+    452,
+    494,
+    529,
+    510
+   ],
+   "area": 1232,
+   "point": [
+    489,
+    502
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 137.3
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "Mingdeng Cao",
+   "box": [
+    431,
+    686,
+    523,
+    702
+   ],
+   "area": 1472,
+   "point": [
+    477,
+    694
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 138.5
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "Zhengyang Geng",
+   "box": [
+    291,
+    686,
+    401,
+    702
+   ],
+   "area": 1760,
+   "point": [
+    348,
+    694
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 133.1
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "Richard Zhang",
+   "box": [
+    687,
+    686,
+    780,
+    702
+   ],
+   "area": 1488,
+   "point": [
+    735,
+    694
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.2
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "Mohammadreza Zandehshahvar",
+   "box": [
+    391,
+    389,
+    596,
+    405
+   ],
+   "area": 3280,
+   "point": [
+    489,
+    397
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 133.9
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "Mon, 2 Nov 2026",
+   "box": [
+    59,
+    155,
+    158,
+    170
+   ],
+   "area": 1485,
+   "point": [
+    109,
+    162
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 133.0
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "Roy M. Gabriel",
+   "box": [
+    176,
+    389,
+    271,
+    405
+   ],
+   "area": 1520,
+   "point": [
+    223,
+    397
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 131.6
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "Zongze Wu",
+   "box": [
+    59,
+    686,
+    132,
+    702
+   ],
+   "area": 1168,
+   "point": [
+    93,
+    694
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 131.8
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "Wed, 28 Oct 2026",
+   "box": [
+    59,
+    185,
+    163,
+    200
+   ],
+   "area": 1560,
+   "point": [
+    110,
+    192
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 131.0
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "this https URL",
+   "box": [
+    357,
+    704,
+    430,
+    717
+   ],
+   "area": 949,
+   "point": [
+    396,
+    711
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 130.7
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "Freeman Cheng",
+   "box": [
+    168,
+    791,
+    271,
+    807
+   ],
+   "area": 1648,
+   "point": [
+    67,
+    26
+   ],
+   "hit": false,
+   "near10": false,
+   "miss_px": 771.6,
+   "ms": 133.3
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "Marly van Assen",
+   "box": [
+    279,
+    389,
+    383,
+    405
+   ],
+   "area": 1664,
+   "point": [
+    332,
+    397
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 133.7
+  },
+  {
+   "page": "arxiv_list",
+   "kind": "link",
+   "label": "101-150",
+   "box": [
+    213,
+    271,
+    260,
+    286
+   ],
+   "area": 705,
+   "point": [
+    238,
+    278
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 138.1
+  },
+  {
+   "page": "duckduckgo",
+   "kind": "input field",
+   "label": "Search with DuckDuckGo",
+   "box": [
+    340,
+    43,
+    752,
+    75
+   ],
+   "area": 13184,
+   "point": [
+    540,
+    59
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 176.2
+  },
+  {
+   "page": "duckduckgo",
+   "kind": "link",
+   "label": "Learn about DuckDuckGo",
+   "box": [
+    64,
+    32,
+    273,
+    86
+   ],
+   "area": 11286,
+   "point": [
+    640,
+    732
+   ],
+   "hit": false,
+   "near10": false,
+   "miss_px": 743.0,
+   "ms": 165.4
+  },
+  {
+   "page": "duckduckgo",
+   "kind": "button",
+   "label": "Set As Default Search",
+   "box": [
+    384,
+    502,
+    600,
+    532
+   ],
+   "area": 6480,
+   "point": [
+    492,
+    517
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 146.9
+  },
+  {
+   "page": "duckduckgo",
+   "kind": "button",
+   "label": "Ask AI",
+   "box": [
+    856,
+    45,
+    950,
+    73
+   ],
+   "area": 2632,
+   "point": [
+    902,
+    58
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 137.1
+  },
+  {
+   "page": "duckduckgo",
+   "kind": "button",
+   "label": "AI Settings",
+   "box": [
+    1098,
+    702,
+    1216,
+    732
+   ],
+   "area": 3540,
+   "point": [
+    1155,
+    717
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.2
+  },
+  {
+   "page": "duckduckgo",
+   "kind": "button",
+   "label": "Search",
+   "box": [
+    762,
+    45,
+    856,
+    73
+   ],
+   "area": 2632,
+   "point": [
+    806,
+    59
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 140.3
+  },
+  {
+   "page": "duckduckgo",
+   "kind": "button",
+   "label": "Scroll down to learn more",
+   "box": [
+    546,
+    696,
+    734,
+    752
+   ],
+   "area": 10528,
+   "point": [
+    640,
+    732
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.2
+  },
+  {
+   "page": "duckduckgo",
+   "kind": "link",
+   "label": "Duck.ai",
+   "box": [
+    1081,
+    42,
+    1176,
+    76
+   ],
+   "area": 3230,
+   "point": [
+    1129,
+    58
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 133.7
+  },
+  {
+   "page": "duckduckgo",
+   "kind": "link",
+   "label": "Add Extension",
+   "box": [
+    680,
+    502,
+    896,
+    532
+   ],
+   "area": 6480,
+   "point": [
+    788,
+    517
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 134.8
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "button",
+   "label": "Show My Location",
+   "box": [
+    1240,
+    145,
+    1280,
+    185
+   ],
+   "area": 1600,
+   "point": [
+    1260,
+    295
+   ],
+   "hit": false,
+   "near10": false,
+   "miss_px": 110.0,
+   "ms": 181.7
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "Export",
+   "box": [
+    329,
+    13,
+    375,
+    42
+   ],
+   "area": 1334,
+   "point": [
+    352,
+    27
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 157.8
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "Communities",
+   "box": [
+    537,
+    13,
+    625,
+    42
+   ],
+   "area": 2552,
+   "point": [
+    582,
+    28
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 160.7
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "Donate",
+   "box": [
+    726,
+    13,
+    777,
+    42
+   ],
+   "area": 1479,
+   "point": [
+    751,
+    27
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 143.6
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "input field",
+   "label": "Search",
+   "box": [
+    8,
+    63,
+    263,
+    97
+   ],
+   "area": 8670,
+   "point": [
+    125,
+    80
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 139.9
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "Edit",
+   "box": [
+    187,
+    10,
+    236,
+    45
+   ],
+   "area": 1715,
+   "point": [
+    210,
+    27
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 139.3
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "Zoom Out",
+   "box": [
+    1240,
+    105,
+    1280,
+    145
+   ],
+   "area": 1600,
+   "point": [
+    1260,
+    125
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 142.1
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "button",
+   "label": "Close",
+   "box": [
+    312,
+    113,
+    342,
+    143
+   ],
+   "area": 900,
+   "point": [
+    326,
+    128
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 139.1
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "OSMF corporate members",
+   "box": [
+    16,
+    296,
+    307,
+    334
+   ],
+   "area": 11058,
+   "point": [
+    163,
+    315
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 134.6
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "Find directions between two points",
+   "box": [
+    304,
+    63,
+    342,
+    97
+   ],
+   "area": 1292,
+   "point": [
+    323,
+    80
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.0
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "Fastly",
+   "box": [
+    165,
+    296,
+    200,
+    313
+   ],
+   "area": 595,
+   "point": [
+    180,
+    305
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 137.0
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "partners",
+   "box": [
+    144,
+    317,
+    195,
+    334
+   ],
+   "area": 867,
+   "point": [
+    172,
+    326
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.3
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "History",
+   "box": [
+    279,
+    13,
+    329,
+    42
+   ],
+   "area": 1450,
+   "point": [
+    307,
+    28
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 133.2
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "OpenStreetMap",
+   "box": [
+    10,
+    13,
+    167,
+    43
+   ],
+   "area": 4710,
+   "point": [
+    99,
+    27
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.4
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "Make a Donation",
+   "box": [
+    1056,
+    784,
+    1146,
+    798
+   ],
+   "area": 1260,
+   "point": [
+    1100,
+    790
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 134.4
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "Website and API terms",
+   "box": [
+    1153,
+    784,
+    1275,
+    798
+   ],
+   "area": 1708,
+   "point": [
+    1212,
+    790
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 134.8
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "OpenStreetMap contributors",
+   "box": [
+    883,
+    784,
+    1034,
+    798
+   ],
+   "area": 2114,
+   "point": [
+    955,
+    790
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 133.5
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "Layers",
+   "box": [
+    1240,
+    195,
+    1280,
+    235
+   ],
+   "area": 1600,
+   "point": [
+    1260,
+    214
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.3
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "Start Mapping",
+   "box": [
+    179,
+    431,
+    334,
+    469
+   ],
+   "area": 5890,
+   "point": [
+    257,
+    450
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.6
+  },
+  {
+   "page": "openstreetmap",
+   "kind": "link",
+   "label": "Log In",
+   "box": [
+    1135,
+    10,
+    1198,
+    45
+   ],
+   "area": 2205,
+   "point": [
+    1165,
+    27
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 133.2
+  },
+  {
+   "page": "pypi_project",
+   "kind": "link",
+   "label": "Log in",
+   "box": [
+    973,
+    0,
+    1044,
+    86
+   ],
+   "area": 6106,
+   "point": [
+    1009,
+    43
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 180.0
+  },
+  {
+   "page": "pypi_project",
+   "kind": "link",
+   "label": "Ti\u1ebfng Vi\u1ec7t",
+   "box": [
+    707,
+    657,
+    773,
+    679
+   ],
+   "area": 1452,
+   "point": [
+    740,
+    667
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 167.8
+  },
+  {
+   "page": "pypi_project",
+   "kind": "button",
+   "label": "Change language",
+   "box": [
+    1132,
+    0,
+    1185,
+    86
+   ],
+   "area": 4558,
+   "point": [
+    1155,
+    43
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 145.6
+  },
+  {
+   "page": "pypi_project",
+   "kind": "button",
+   "label": "Search",
+   "box": [
+    490,
+    25,
+    530,
+    65
+   ],
+   "area": 1600,
+   "point": [
+    509,
+    45
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 145.7
+  },
+  {
+   "page": "pypi_project",
+   "kind": "input field",
+   "label": "Type '/' to search projects",
+   "box": [
+    230,
+    25,
+    530,
+    65
+   ],
+   "area": 12000,
+   "point": [
+    383,
+    45
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 145.1
+  },
+  {
+   "page": "pypi_project",
+   "kind": "tab",
+   "label": "Release history",
+   "box": [
+    476,
+    334,
+    633,
+    390
+   ],
+   "area": 8792,
+   "point": [
+    556,
+    362
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 132.9
+  },
+  {
+   "page": "pypi_project",
+   "kind": "tab",
+   "label": "Security",
+   "box": [
+    366,
+    334,
+    476,
+    390
+   ],
+   "area": 6160,
+   "point": [
+    421,
+    362
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 136.1
+  },
+  {
+   "page": "pypi_project",
+   "kind": "link",
+   "label": "Documentation",
+   "box": [
+    945,
+    594,
+    1175,
+    626
+   ],
+   "area": 7360,
+   "point": [
+    1052,
+    610
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 130.6
+  },
+  {
+   "page": "pypi_project",
+   "kind": "link",
+   "label": "Run Ultralytics on Gradient",
+   "box": [
+    247,
+    705,
+    377,
+    727
+   ],
+   "area": 2860,
+   "point": [
+    314,
+    717
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 132.2
+  },
+  {
+   "page": "pypi_project",
+   "kind": "link",
+   "label": "Ultralytics YOLO banner",
+   "box": [
+    95,
+    519,
+    875,
+    541
+   ],
+   "area": 17160,
+   "point": [
+    484,
+    532
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 130.8
+  },
+  {
+   "page": "pypi_project",
+   "kind": "link",
+   "label": "Blog",
+   "box": [
+    844,
+    0,
+    904,
+    86
+   ],
+   "area": 5160,
+   "point": [
+    874,
+    43
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 133.5
+  },
+  {
+   "page": "pypi_project",
+   "kind": "link",
+   "label": "Ultralytics Reddit",
+   "box": [
+    680,
+    681,
+    777,
+    703
+   ],
+   "area": 2134,
+   "point": [
+    728,
+    693
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 134.1
+  },
+  {
+   "page": "pypi_project",
+   "kind": "link",
+   "label": "Portugu\u00eas",
+   "box": [
+    571,
+    657,
+    641,
+    679
+   ],
+   "area": 1540,
+   "point": [
+    605,
+    667
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 132.2
+  },
+  {
+   "page": "pypi_project",
+   "kind": "link",
+   "label": "PyPI",
+   "box": [
+    95,
+    0,
+    160,
+    87
+   ],
+   "area": 5655,
+   "point": [
+    975,
+    729
+   ],
+   "hit": false,
+   "near10": false,
+   "miss_px": 1037.5,
+   "ms": 132.6
+  },
+  {
+   "page": "pypi_project",
+   "kind": "link",
+   "label": "\u0420\u0443\u0441\u0441\u043a\u0438\u0439",
+   "box": [
+    309,
+    657,
+    365,
+    679
+   ],
+   "area": 1232,
+   "point": [
+    335,
+    667
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 133.6
+  },
+  {
+   "page": "pypi_project",
+   "kind": "link",
+   "label": "Open Ultralytics In Kaggle",
+   "box": [
+    500,
+    705,
+    611,
+    727
+   ],
+   "area": 2442,
+   "point": [
+    556,
+    718
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 134.3
+  },
+  {
+   "page": "pypi_project",
+   "kind": "link",
+   "label": "Fran\u00e7ais",
+   "box": [
+    440,
+    657,
+    497,
+    679
+   ],
+   "area": 1254,
+   "point": [
+    468,
+    667
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 132.0
+  },
+  {
+   "page": "pypi_project",
+   "kind": "link",
+   "label": "Open Ultralytics In Colab",
+   "box": [
+    380,
+    705,
+    497,
+    727
+   ],
+   "area": 2574,
+   "point": [
+    451,
+    717
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 131.9
+  },
+  {
+   "page": "pypi_project",
+   "kind": "button",
+   "label": "Copy PIP instructions",
+   "box": [
+    343,
+    245,
+    394,
+    293
+   ],
+   "area": 2448,
+   "point": [
+    369,
+    268
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 132.7
+  },
+  {
+   "page": "pypi_project",
+   "kind": "link",
+   "label": "Source",
+   "box": [
+    936,
+    547,
+    1184,
+    580
+   ],
+   "area": 8184,
+   "point": [
+    984,
+    562
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 131.5
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "button",
+   "label": "1",
+   "box": [
+    365,
+    105,
+    385,
+    127
+   ],
+   "area": 440,
+   "point": [
+    375,
+    117
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 176.0
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "link",
+   "label": "Spaces",
+   "box": [
+    747,
+    18,
+    832,
+    46
+   ],
+   "area": 2380,
+   "point": [
+    799,
+    33
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 172.5
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "link",
+   "label": "\ud83d\ude4b Ask for provider support",
+   "box": [
+    1070,
+    533,
+    1260,
+    561
+   ],
+   "area": 5320,
+   "point": [
+    1167,
+    547
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 144.6
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "link",
+   "label": "GUI",
+   "box": [
+    606,
+    142,
+    644,
+    170
+   ],
+   "area": 1064,
+   "point": [
+    626,
+    157
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 138.2
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "link",
+   "label": "GUI-Grounding",
+   "box": [
+    757,
+    142,
+    861,
+    170
+   ],
+   "area": 2912,
+   "point": [
+    809,
+    157
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.7
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "link",
+   "label": "Files and versions xet",
+   "box": [
+    143,
+    192,
+    364,
+    240
+   ],
+   "area": 10608,
+   "point": [
+    247,
+    216
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 141.5
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "link",
+   "label": "GoClick-Base",
+   "box": [
+    130,
+    99,
+    274,
+    131
+   ],
+   "area": 4608,
+   "point": [
+    202,
+    117
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.6
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "link",
+   "label": "Datasets",
+   "box": [
+    643,
+    18,
+    743,
+    46
+   ],
+   "area": 2800,
+   "point": [
+    704,
+    33
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 132.3
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "button",
+   "label": "Show files",
+   "box": [
+    300,
+    281,
+    360,
+    302
+   ],
+   "area": 1260,
+   "point": [
+    330,
+    292
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 135.7
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "button",
+   "label": "Deploy",
+   "box": [
+    865,
+    201,
+    967,
+    231
+   ],
+   "area": 3060,
+   "point": [
+    918,
+    216
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 133.8
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "link",
+   "label": "Models",
+   "box": [
+    552,
+    18,
+    639,
+    46
+   ],
+   "area": 2436,
+   "point": [
+    598,
+    33
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 130.6
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "link",
+   "label": "Docs",
+   "box": [
+    933,
+    18,
+    1004,
+    46
+   ],
+   "area": 1988,
+   "point": [
+    966,
+    33
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 129.7
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "button",
+   "label": "License: mit",
+   "box": [
+    1115,
+    142,
+    1227,
+    170
+   ],
+   "area": 3136,
+   "point": [
+    1170,
+    157
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 131.2
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "link",
+   "label": "GoClickLarge",
+   "box": [
+    225,
+    376,
+    365,
+    402
+   ],
+   "area": 3640,
+   "point": [
+    283,
+    386
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 128.2
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "link",
+   "label": "Log In",
+   "box": [
+    1123,
+    18,
+    1182,
+    46
+   ],
+   "area": 1652,
+   "point": [
+    1152,
+    33
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 131.1
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "link",
+   "label": "SFTData",
+   "box": [
+    507,
+    376,
+    605,
+    402
+   ],
+   "area": 2548,
+   "point": [
+    346,
+    422
+   ],
+   "hit": false,
+   "near10": false,
+   "miss_px": 162.2,
+   "ms": 133.4
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "link",
+   "label": "custom_code",
+   "box": [
+    867,
+    142,
+    968,
+    170
+   ],
+   "area": 2828,
+   "point": [
+    918,
+    157
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 137.3
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "link",
+   "label": "Transformers",
+   "box": [
+    182,
+    142,
+    303,
+    170
+   ],
+   "area": 3388,
+   "point": [
+    247,
+    157
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 133.1
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "link",
+   "label": "florence2",
+   "box": [
+    524,
+    142,
+    600,
+    170
+   ],
+   "area": 2128,
+   "point": [
+    562,
+    157
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 134.8
+  },
+  {
+   "page": "huggingface_model",
+   "kind": "link",
+   "label": "Buckets",
+   "box": [
+    836,
+    18,
+    929,
+    46
+   ],
+   "area": 2604,
+   "point": [
+    891,
+    33
+   ],
+   "hit": true,
+   "near10": true,
+   "miss_px": 0.0,
+   "ms": 134.9
+  }
+ ]
+}

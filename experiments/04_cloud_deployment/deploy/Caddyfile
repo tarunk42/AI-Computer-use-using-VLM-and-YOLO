@@ -1,0 +1,10 @@
+# Public HTTPS entry for the guided web UI. sslip.io maps the name to the VM's IP;
+# Caddy gets a Let's Encrypt certificate on port 443 by itself.
+<vm-ip-with-dashes>.sslip.io {
+	basicauth {
+		demo <bcrypt hash from: caddy hash-password>
+	}
+	reverse_proxy 127.0.0.1:8770 {
+		flush_interval -1
+	}
+}

@@ -1,0 +1,19 @@
+{
+ "label": "firefox_desktop",
+ "runs": [
+  {
+   "fps": 6.0,
+   "cpu_pct": 85
+  },
+  {
+   "fps": 5.3,
+   "cpu_pct": 61
+  },
+  {
+   "fps": 6.0,
+   "cpu_pct": 45
+  }
+ ],
+ "median_fps": 6.0,
+ "median_cpu_pct": 61
+}

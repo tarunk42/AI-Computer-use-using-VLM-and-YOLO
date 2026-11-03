@@ -1,0 +1,19 @@
+{
+ "label": "headless_chromium",
+ "runs": [
+  {
+   "fps": 2.2,
+   "cpu_pct": 76
+  },
+  {
+   "fps": 2.3,
+   "cpu_pct": 75
+  },
+  {
+   "fps": 1.0,
+   "cpu_pct": 69
+  }
+ ],
+ "median_fps": 2.2,
+ "median_cpu_pct": 75
+}
