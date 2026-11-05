@@ -4,7 +4,7 @@
  you (browser, 127.0.0.1:8770)                           Modal (us-east)
  ┌──────────────────────────┐                           ┌───────────────────────────┐
  │ live view  + click point │◄── /state, /screen.jpg ──┐ │ GoClick-Base, fp16        │
- │ Approve / Reject / Stop  │── /decide ─────────────┐ │ │ T4 (L4/A10G fallback)      │
+ │ Approve / Reject / Stop  │── /decide ─────────────┐ │ │ T4 (L4 fallback)          │
  └──────────────────────────┘                        │ │ │ weights baked into image  │
                                                      ▼ │ │ token auth, 120 s idle    │
  ┌──────────────── webdemo.py + agent.py (host) ───────┴─┐ └─────────────▲─────────────┘

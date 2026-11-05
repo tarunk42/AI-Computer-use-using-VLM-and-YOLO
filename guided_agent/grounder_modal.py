@@ -12,7 +12,7 @@ import modal
 
 MODEL_ID = "HongxinLi/GoClick-Base"
 MODEL_DIR = "/model"
-GPU = ["T4", "L4", "A10G"]  # cheapest first; fallbacks avoid capacity waits
+GPU = ["T4", "L4"]  # cheapest first; fallbacks avoid capacity waits
 
 TEMPLATES = {
     "description": "Where is the {q} element? (Output the center coordinates of the target)",

@@ -192,7 +192,7 @@ frames with Chromium's screencast. The agent picks one with `DESKTOP_URL`. More 
 | Planner | DeepSeek `deepseek-flash`, thinking off, temperature 0 | API | `guided_agent/agent.py` |
 | Grounder | GoClick-Base (Florence-2, 0.2 B), fp16 | — | `guided_agent/grounder_modal.py` |
 | Grounder runtime | PyTorch / torchvision / Transformers / timm, Python 3.12 on Debian slim | 2.5.1 / 0.20.1 / 4.45.0 / 1.0.15 | `guided_agent/grounder_modal.py` |
-| GPU serving | Modal, T4 first, L4 and A10G as fallbacks, 120 s idle shutdown | 1.6.3 | `guided_agent/grounder_modal.py` |
+| GPU serving | Modal, T4 first, L4 as fallback, 120 s idle shutdown | 1.6.3 | `guided_agent/grounder_modal.py` |
 | Host app | FastAPI, Uvicorn, HTTPX, OpenAI SDK, Pillow, NumPy | see file | `guided_agent/requirements.txt` |
 | Desktop | Alpine 3.22, Xvfb, Openbox, Firefox 142, xdotool | 3.22 / 142.0 | `guided_agent/desktop/Dockerfile` |
 | Chromium backends | Playwright with its Chromium build | 1.64.1 / 156.0 | `experiments/04_cloud_deployment/deploy/` |
